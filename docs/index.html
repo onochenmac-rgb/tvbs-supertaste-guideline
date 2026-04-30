@@ -185,11 +185,10 @@
   .combo .item.horizontal img{max-width:min(78%,360px);height:auto;}
   .combo .item.vertical img{max-height:200px;transform:scale(0.88);}
   .combo-config{grid-template-columns:1.5fr 1fr;}
-  .combo-config .item{min-height:auto;}
+  .combo-config .item{min-height:auto;padding:0;overflow:hidden;}
   .combo-config .item.h-config{aspect-ratio:16/9;}
   .combo-config .item.v-config{aspect-ratio:3/4;}
-  .combo-config .item.h-config img{max-width:85%;height:auto;max-height:none;}
-  .combo-config .item.v-config img{max-width:75%;height:auto;max-height:none;}
+  .combo-config .item img{width:100%;height:100%;object-fit:contain;max-height:none;}
   @media(max-width:1024px){.combo-config{grid-template-columns:1fr;}.combo-config .item.h-config,.combo-config .item.v-config{aspect-ratio:auto;min-height:220px;}}
 
   /* ── color palette ── */
