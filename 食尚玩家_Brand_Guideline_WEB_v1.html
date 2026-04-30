@@ -188,10 +188,27 @@
   .combo .item>.ck{position:absolute;top:24px;left:28px;font-family:var(--en);font-size:11px;color:var(--g500);font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
   .combo .item img{max-height:200px;width:auto;}
   .combo .item.horizontal img{max-width:min(78%,360px);height:auto;}
-  /* ── 1-2/1-3/1-4 統一 logo 尺寸 ── */
-  .combo .item.horizontal img,.combo-config .item.horizontal img{max-width:min(78%,360px);height:auto;}
-  .combo .item.vertical img,.combo-config .item.vertical img{max-height:209px;width:auto;transform:scale(0.97);}
-  @media(max-width:1024px){.combo-config .item img{max-width:85%;}}
+  /* ── 1-2 logo 尺寸 ── */
+  .combo .item.horizontal img{max-width:min(78%,360px);height:auto;}
+  .combo .item.vertical img{max-height:209px;width:auto;transform:scale(0.97);}
+  /* ── cfg annotation (1-3) ── */
+  .cfg-ruler{display:flex;align-items:center;gap:8px;color:var(--orange);font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.08em;width:100%;margin-bottom:12px;flex-shrink:0;}
+  .cfg-ruler::before,.cfg-ruler::after{content:'';flex:1;height:1px;background:var(--orange);opacity:.4;}
+  .cfg-body{display:flex;align-items:stretch;gap:8px;width:100%;flex:1;}
+  .cfg-ruler-v{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--orange);font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.05em;flex-shrink:0;min-width:28px;}
+  .cfg-ruler-v::before,.cfg-ruler-v::after{content:'';flex:1;width:1px;background:var(--orange);opacity:.4;display:block;}
+  .cfg-logo{flex:1;display:flex;align-items:center;justify-content:center;}
+  .cfg-logo img{max-width:90%;height:auto;display:block;}
+  .cfg-logo.v img{max-height:160px;max-width:none;width:auto;}
+  /* ── clear space (1-4) ── */
+  .cs-zone{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:clamp(18px,3vw,32px);border:1.5px dashed rgba(240,124,34,.45);border-radius:4px;}
+  .cs-zone img{display:block;max-width:260px;height:auto;}
+  .cs-zone.v img{max-width:none;max-height:150px;width:auto;}
+  .cs-x{position:absolute;font-family:var(--en);font-size:11px;font-weight:700;color:var(--orange);background:var(--white);padding:0 3px;letter-spacing:.05em;line-height:1;}
+  .cs-x.t{top:-8px;left:50%;transform:translateX(-50%);}
+  .cs-x.b{bottom:-8px;left:50%;transform:translateX(-50%);}
+  .cs-x.l{left:-8px;top:50%;transform:translateY(-50%);}
+  .cs-x.r{right:-8px;top:50%;transform:translateY(-50%);}
 
   /* ── color palette ── */
   .palette{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);}
@@ -725,9 +742,23 @@
       <p><strong>直式標誌</strong>：寬度比例為 6.5X，總高度為 4.5X。透過雙行堆疊與比例調整，確保在垂直受限的空間下，依然保有最大的品牌辨識度與結構平衡。</p>
     </div>
   </div>
-  <div class="combo combo-config">
-    <div class="item horizontal"><span class="ck">Horizontal</span><img src="../../web-assets/logo/logo-h.png" alt="橫式標誌" loading="lazy"></div>
-    <div class="item vertical"><span class="ck">Vertical</span><img src="../../web-assets/logo/logo-v.png" alt="直式標誌" loading="lazy"></div>
+  <div class="combo">
+    <div class="item horizontal">
+      <span class="ck">Horizontal</span>
+      <div class="cfg-ruler">8.8X</div>
+      <div class="cfg-body">
+        <div class="cfg-ruler-v">3.2X</div>
+        <div class="cfg-logo"><img src="../../web-assets/logo/logo-h.png" alt="橫式標誌"></div>
+      </div>
+    </div>
+    <div class="item vertical">
+      <span class="ck">Vertical</span>
+      <div class="cfg-ruler">6.5X</div>
+      <div class="cfg-body">
+        <div class="cfg-ruler-v">4.5X</div>
+        <div class="cfg-logo v"><img src="../../web-assets/logo/logo-v.png" alt="直式標誌"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -742,9 +773,23 @@
       <p>任何文字、圖像或邊框均不得侵入此範圍，無論橫式或直式標誌皆適用。</p>
     </div>
   </div>
-  <div class="combo combo-config">
-    <div class="item horizontal"><span class="ck">Horizontal</span><img src="../../web-assets/logo/logo-h.png" alt="橫式標誌" loading="lazy"></div>
-    <div class="item vertical"><span class="ck">Vertical</span><img src="../../web-assets/logo/logo-v.png" alt="直式標誌" loading="lazy"></div>
+  <div class="combo">
+    <div class="item horizontal">
+      <span class="ck">Horizontal</span>
+      <div class="cs-zone">
+        <img src="../../web-assets/logo/logo-h.png" alt="橫式標誌">
+        <span class="cs-x t">X</span><span class="cs-x b">X</span>
+        <span class="cs-x l">X</span><span class="cs-x r">X</span>
+      </div>
+    </div>
+    <div class="item vertical">
+      <span class="ck">Vertical</span>
+      <div class="cs-zone v">
+        <img src="../../web-assets/logo/logo-v.png" alt="直式標誌">
+        <span class="cs-x t">X</span><span class="cs-x b">X</span>
+        <span class="cs-x l">X</span><span class="cs-x r">X</span>
+      </div>
+    </div>
   </div>
 </section>
 
