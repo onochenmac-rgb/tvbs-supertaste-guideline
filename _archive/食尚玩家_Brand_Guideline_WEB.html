@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="食尚玩家 Brand Identity Guideline V1.1 — 品牌核心、標誌系統、色彩、字型、視覺語言、聲音語氣、應用示範與素材下載。TVBS 2026。">
+<meta name="theme-color" content="#FF7500">
+<meta property="og:type" content="website">
+<meta property="og:title" content="食尚玩家 Brand Guideline">
+<meta property="og:description" content="食尚玩家品牌識別指南——Anywhere · Anytime · Any Way。">
+<meta property="og:image" content="Guideline/tvbs-食尚玩家-brand-guidelines.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="FA/標誌/PNG/tvbs-食尚玩家-vertical.png">
+<link rel="preload" as="image" href="Guideline/tvbs-食尚玩家-brand-guidelines.png" fetchpriority="high">
+<title>食尚玩家 Brand Guideline</title>
+<style>
+/* ── FONT ── */
+@font-face{ font-family:'LS'; src:local('LINE Seed Sans TC'),local('LINESeedSansTCApp-Th'); font-weight:100; }
+@font-face{ font-family:'LS'; src:local('LINE Seed Sans TC'),local('LINESeedSansTCApp-Rg'); font-weight:400; }
+@font-face{ font-family:'LS'; src:local('LINE Seed Sans TC Bold'),local('LINESeedSansTCApp-Bd'); font-weight:700; }
+@font-face{ font-family:'LS'; src:local('LINE Seed Sans TC ExtraBold'),local('LINESeedSansTCApp-XBd'); font-weight:800; }
+
+/* ── TOKENS ── */
+:root{
+  --o:#FF7500; --k:#111111; --b:#1A1A1A;
+  --w:#FFFFFF; --g1:#F5F5F5; --g2:#E8E8E8; --g3:#AAAAAA; --g4:#767676;
+  --y:#FFFF00;
+  --nav:228px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --f:'LS','Noto Sans TC',-apple-system,sans-serif;
+}
+
+/* ── RESET ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:var(--f);background:var(--w);color:var(--k);overflow-x:hidden;line-height:1.65;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+
+/* ── SIDEBAR ── */
+.nav{
+  position:fixed;left:0;top:0;width:var(--nav);height:100vh;
+  background:var(--b);display:flex;flex-direction:column;z-index:300;overflow-y:auto;
+  scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav-head{padding:32px 24px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-head img{width:120px}
+.nav-links{flex:1;padding:10px 0;list-style:none}
+.nav-links a{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 24px;font-size:11.5px;font-weight:400;letter-spacing:.2px;
+  color:rgba(255,255,255,.28);
+  border-left:2px solid transparent;
+  transition:color .18s,background .18s,border-color .18s;
+}
+.nav-links a .i{font-size:9px;letter-spacing:1px;color:rgba(255,117,0,.35);flex-shrink:0;width:16px;transition:color .18s}
+.nav-links a:hover{color:rgba(255,255,255,.6);background:rgba(255,255,255,.02)}
+.nav-links a.on{color:var(--w);border-left-color:var(--o);background:rgba(255,117,0,.06);font-weight:700}
+.nav-links a.on .i{color:var(--o)}
+.nav-foot{padding:18px 24px;border-top:1px solid rgba(255,255,255,.06);font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.12)}
+
+/* ── MAIN ── */
+.main{margin-left:var(--nav)}
+
+/* ══════════════════════════
+   HERO
+══════════════════════════ */
+.hero{
+  height:100vh;min-height:600px;
+  background:var(--o);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  /* calc(100% + nav) avoids scrollbar-width issue of 100vw */
+  width:calc(100% + var(--nav));margin-left:calc(-1 * var(--nav));
+}
+.hero-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;object-position:center;
+  user-select:none;-webkit-user-drag:none;pointer-events:none;
+}
+@keyframes bgFade{from{opacity:0}to{opacity:1}}
+
+.hero-scroll{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.45);text-transform:uppercase;
+  opacity:0;animation:fadeUp .5s var(--ease) .8s forwards;
+}
+.hero-scroll-line{width:1px;height:32px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════════════════════════
+   SECTION BASE
+══════════════════════════ */
+.sec{padding:96px 80px;border-bottom:1px solid var(--g2);background:var(--w)}
+.sec-gray{background:var(--g1)}
+
+.sec-head{
+  display:grid;grid-template-columns:1fr 2fr;
+  gap:0 64px;align-items:end;
+  margin-bottom:64px;padding-bottom:40px;
+  border-bottom:1px solid var(--g2);
+  position:relative;
+}
+/* Large decorative section number */
+.sec-big-num{
+  position:absolute;right:0;top:-16px;
+  font-size:100px;font-weight:800;line-height:1;
+  color:rgba(0,0,0,.028);letter-spacing:-4px;
+  pointer-events:none;user-select:none;
+}
+.sec-gray .sec-big-num{color:rgba(0,0,0,.04)}
+.sec-left{}
+.sec-eyebrow{
+  font-size:9px;font-weight:700;letter-spacing:2px;
+  color:var(--o);text-transform:uppercase;margin-bottom:12px;
+}
+.sec-title{
+  font-size:clamp(26px,3.2vw,44px);font-weight:800;
+  line-height:1.08;letter-spacing:-1.5px;
+  word-break:keep-all;
+}
+.sec-right{}
+.sec-desc{
+  font-size:14px;color:var(--g4);line-height:1.95;
+  word-break:keep-all;max-width:460px;
+}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 20px;font-size:11px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border:1.5px solid currentColor;cursor:pointer;
+  transition:background .15s,color .15s;font-family:var(--f);
+  white-space:nowrap;
+}
+.btn-k{color:var(--k)}.btn-k:hover{background:var(--k);color:var(--w)}
+.btn-o{color:var(--o)}.btn-o:hover{background:var(--o);color:var(--w)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+
+/* ── LABELS ── */
+.lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--g3);margin-bottom:16px}
+.lbl-o{color:var(--o)}
+
+/* ── DIVIDER ── */
+.dv{height:1px;background:var(--g2);margin:56px 0}
+
+/* ══════════════════════════
+   01 BRAND CORE
+══════════════════════════ */
+.statement{
+  background:var(--b);padding:56px 60px;margin-bottom:64px;
+  border-left:3px solid var(--o);
+}
+.statement-text{
+  font-size:clamp(17px,2vw,24px);font-weight:700;
+  color:var(--w);line-height:1.8;word-break:keep-all;
+}
+.statement-text strong{color:var(--o)}
+.statement-foot{
+  margin-top:18px;font-size:11px;letter-spacing:2px;
+  font-weight:400;color:rgba(255,255,255,.22);text-transform:uppercase;
+}
+
+/* ── Brand Essence Banner ── */
+.essence-banner{
+  position:relative;min-height:380px;overflow:hidden;
+  margin-bottom:64px;display:flex;align-items:flex-end;
+  border-radius:8px;
+}
+.essence-banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.essence-banner-scrim{position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,117,0,.85) 0%,rgba(26,26,26,.88) 55%,rgba(26,26,26,.6) 100%)}
+.essence-banner-content{position:relative;z-index:2;padding:52px 56px;border-left:3px solid var(--o);width:100%}
+.essence-banner .statement-text{color:var(--w)}
+.essence-banner .statement-foot{color:rgba(255,255,255,.35);margin-top:14px}
+
+/* ── Brand Personality Cards ── */
+.p3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g2);margin-bottom:64px;border-radius:8px;overflow:hidden}
+.pc{background:var(--k);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.pc-img-wrap{position:relative;height:260px;overflow:hidden;flex-shrink:0}
+.pc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.pc:hover .pc-img{transform:scale(1.04)}
+.pc-scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.55) 100%)}
+.pc-text{padding:32px;flex:1}
+.pc-en{font-size:36px;font-weight:800;line-height:1;letter-spacing:-1px;color:var(--o);text-transform:uppercase;margin-bottom:6px}
+.pc-zh{font-size:11px;font-weight:700;margin-bottom:14px;letter-spacing:1.5px;color:rgba(255,255,255,.38)}
+.pc-body{font-size:13px;line-height:1.9;color:rgba(255,255,255,.62);word-break:normal;overflow-wrap:break-word}
+
+.shifts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g2)}
+.sh{background:var(--b);padding:44px 32px;text-align:center}
+.sh-fl{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:8px}
+.sh-fw{font-size:28px;font-weight:800;color:rgba(255,255,255,.38);margin-bottom:12px}
+.sh-arr{font-size:16px;color:var(--o);display:block;margin-bottom:12px}
+.sh-tl{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:8px}
+.sh-tw{font-size:28px;font-weight:800;color:var(--o)}
+
+/* ══════════════════════════
+   02 LOGO
+══════════════════════════ */
+/* showcase grid */
+.lg-grid{display:grid;gap:1px;background:var(--g2);margin-bottom:2px;border-radius:8px;overflow:hidden}
+.lg-2{grid-template-columns:1fr 1fr;align-items:start}
+.lg-3{grid-template-columns:1fr 1fr 1fr;align-items:start}
+
+.lg-cell{display:flex;flex-direction:column;overflow:hidden}
+.lg-bg{display:flex;align-items:center;justify-content:center;padding:48px 40px}
+/* Logo sizing: 直式×1.45 → 「食」字視覺等高；flex:none 防止 flex:1 覆蓋固定高度 */
+.lg-bg img{object-fit:contain;display:block;width:auto}
+/* 直式/橫式：box-sizing:border-box，height 包含 padding，兩格完全等高 */
+.logo-h .lg-bg img{height:120px}
+.logo-h .lg-bg{height:270px;box-sizing:border-box;flex:none}
+.logo-v .lg-bg img{height:174px}
+.logo-v .lg-bg{height:270px;box-sizing:border-box;flex:none}
+/* 浮水印：height 包含 padding，三格等高 */
+.logo-wm .lg-bg img{width:78%;height:auto}
+.logo-wm .lg-bg{height:180px;box-sizing:border-box;flex:none}
+.logo-full .lg-bg img{height:120px;max-width:90%}
+.lg-foot{
+  padding:16px 20px;background:var(--g1);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border-top:1px solid var(--g2);
+}
+.lg-name{font-size:12px;font-weight:700;color:var(--k)}
+.lg-desc{font-size:10px;color:var(--g4);margin-top:2px;letter-spacing:.3px}
+
+/* version table */
+.vtbl{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:40px}
+.vtbl th{
+  padding:11px 18px;text-align:left;background:var(--k);color:var(--w);
+  font-size:9px;letter-spacing:2px;font-weight:700;text-transform:uppercase;
+}
+.vtbl td{padding:13px 18px;border-bottom:1px solid var(--g2);color:var(--g4)}
+.vtbl tr:last-child td{border:none}
+.vtbl tr:hover td{background:var(--g1)}
+.chip{display:inline-flex;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.chip-o{background:var(--o);color:#fff}
+.chip-k{background:var(--k);color:#fff}
+.chip-g{background:var(--g2);color:var(--g4)}
+
+/* clear space */
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g2);margin-bottom:0}
+.cs-panel{background:#fff;overflow:hidden}
+.cs-panel-label{
+  padding:14px 20px 0;
+  font-size:9px;letter-spacing:1.5px;font-weight:700;
+  text-transform:uppercase;color:var(--g3);
+}
+.cs-note{
+  font-size:12px;color:var(--g4);line-height:1.9;
+  padding:16px 20px;border-top:1px solid var(--g2);background:#fafafa;
+  margin-bottom:24px;
+}
+/* Dimension line draw-in animation */
+.cs-line{
+  stroke-dasharray:300;
+  stroke-dashoffset:300;
+  transition:stroke-dashoffset 0s;
+}
+.cs-anim.cs-on .cs-line{
+  stroke-dashoffset:0;
+  transition:stroke-dashoffset .7s cubic-bezier(.4,0,.2,1);
+}
+.cs-anim.cs-on .cs-dim:nth-child(2) .cs-line{transition-delay:.1s}
+.cs-anim.cs-on .cs-dim:nth-child(3) .cs-line{transition-delay:.2s}
+.cs-anim.cs-on .cs-dim:nth-child(4) .cs-line{transition-delay:.3s}
+
+/* min size cards */
+.ms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+/* donts grid */
+.donts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:transparent;padding:16px 0}
+.ms-card{border-radius:8px;overflow:hidden;border:1px solid var(--g2)}
+.ms-bg{height:160px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:32px;background:var(--g1)}
+.ms-foot{padding:14px 18px;background:var(--w);display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--g2)}
+.ms-label{font-size:11px;font-weight:700;color:var(--g4);letter-spacing:.3px}
+.ms-val{font-size:13px;font-weight:700;color:var(--k)}
+
+/* do dont */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g2)}
+.do-b{background:var(--b);padding:36px;border-radius:8px;overflow:hidden}
+.dn-b{background:var(--b);padding:36px;border-radius:8px;overflow:hidden}
+.do-lab{font-size:9px;font-weight:700;letter-spacing:3px;color:#6FCF73;text-transform:uppercase;margin-bottom:18px}
+.dn-lab{font-size:9px;font-weight:700;letter-spacing:3px;color:#EF5350;text-transform:uppercase;margin-bottom:18px}
+.rl{list-style:none}
+.rl li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;color:rgba(255,255,255,.75);word-break:keep-all}
+.rl li:last-child{border:none}
+.rl li b{flex-shrink:0;font-weight:700}
+.do-b .rl li b{color:#6FCF73}
+.dn-b .rl li b{color:#EF5350}
+
+/* Don't visual examples */
+.dont-ex{
+  position:relative;background:#F0F0F0;overflow:hidden;
+  padding:36px 24px 24px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+  border-radius:8px;
+}
+/* diagonal red slash */
+.dont-ex::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom right,
+    transparent calc(50% - 1px),
+    rgba(210,30,30,.55) calc(50% - 1px),
+    rgba(210,30,30,.55) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+  pointer-events:none;z-index:5;
+}
+.dont-ex-logo{
+  height:64px;display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:2;
+}
+.dont-ex-label{
+  font-size:9px;letter-spacing:1.5px;font-weight:700;
+  text-transform:uppercase;color:#CC2222;
+  position:relative;z-index:2;
+}
+
+/* ══════════════════════════
+   03 COLOR
+══════════════════════════ */
+.cbar{display:grid;grid-template-columns:3fr 2fr 1fr 1fr;height:240px;margin-bottom:1px;cursor:pointer}
+.cb{
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:22px 26px;position:relative;overflow:hidden;
+  transition:flex-grow .3s var(--ease);
+}
+.cb:hover{flex-grow:2.5}
+.cb-hint{position:absolute;top:14px;right:14px;font-size:9px;letter-spacing:2px;font-weight:700;text-transform:uppercase;padding:4px 9px;background:rgba(0,0,0,.18);opacity:0;transition:opacity .12s;pointer-events:none}
+.cb:hover .cb-hint{opacity:1}
+.cb-name{font-size:15px;font-weight:700;margin-bottom:3px}
+.cb-hex{font-size:12px;letter-spacing:2px;opacity:.65}
+
+.cspecs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g2);margin-bottom:56px}
+.cs-card{background:var(--w);padding:24px}
+.cs-sw{height:52px;margin-bottom:18px}
+.cs-nm{font-size:12px;font-weight:700;margin-bottom:12px;color:var(--k)}
+.cs-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--g2);font-size:12px}
+.cs-row:last-child{border:none}
+.cs-k{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--g3)}
+.cs-v{font-weight:500;color:var(--k)}
+
+.combos{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g2);margin-bottom:40px}
+.combo{padding:26px}
+.combo-dots{display:flex;gap:4px;margin-bottom:12px}
+.combo-dot{width:14px;height:14px;border-radius:1px}
+.combo-nm{font-size:12px;font-weight:700;margin-bottom:4px;word-break:keep-all}
+.combo-use{font-size:10px;letter-spacing:1px;text-transform:uppercase}
+
+/* ══════════════════════════
+   04 TYPOGRAPHY
+══════════════════════════ */
+.type-hero{
+  background:var(--b);padding:80px 80px 72px;margin-bottom:1px;
+  position:relative;overflow:hidden;text-align:center;
+}
+.type-hero-eyebrow{
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,.25);margin-bottom:48px;font-weight:400;
+}
+/* Four-weight horizontal specimen row */
+.type-hero-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,255,255,.06);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.tw-col{
+  padding:32px 28px 28px;background:var(--b);
+  display:flex;flex-direction:column;gap:12px;
+}
+.tw-col:first-child{padding-left:28px}
+.tw-name{
+  font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.22);font-weight:400;
+}
+.tw-sample{
+  font-family:var(--f);color:var(--w);letter-spacing:-.5px;
+  font-size:clamp(28px,3.2vw,44px);line-height:1;
+}
+
+.tscale{display:flex;flex-direction:column;gap:1px;margin-bottom:56px}
+.tr{display:grid;grid-template-columns:160px 1fr;align-items:center;gap:24px;padding:22px 28px;background:var(--g1);transition:background .12s}
+.tr:hover{background:var(--g2)}
+.tr-m .lv{font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--o);text-transform:uppercase;margin-bottom:4px}
+.tr-m .sp{font-size:11px;color:var(--g4);line-height:1.8}
+.tr-s{font-family:var(--f);color:var(--k)}
+
+/* ══════════════════════════
+   05 VISUAL LANGUAGE
+══════════════════════════ */
+.path-cover{
+  background:var(--b);padding:72px 80px;margin-bottom:1px;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.pc-kicker{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--o);text-transform:uppercase;margin-bottom:14px}
+.pc-title{font-size:clamp(28px,3.5vw,48px);font-weight:800;color:var(--w);line-height:1.05;letter-spacing:-1px;margin-bottom:16px;word-break:keep-all}
+.path-cover .pc-body{font-size:14px;line-height:1.9;color:rgba(255,255,255,.4);word-break:keep-all}
+
+.path-demo-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:32px}
+.path-demo-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.path-demo-row:last-child{margin-bottom:0}
+.path-demo-lbl{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.25);width:64px;text-align:right;flex-shrink:0}
+.path-demo-row svg{flex:1}
+
+/* path usage rules */
+.path-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g2);margin-bottom:40px}
+.pr{background:var(--w);padding:36px 28px;transition:background .2s}
+.pr:hover{background:var(--g1)}
+.pr-num{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--o);text-transform:uppercase;margin-bottom:14px}
+.pr-t{font-size:22px;font-weight:800;color:var(--k);letter-spacing:-.5px;margin-bottom:8px}
+.pr-b{font-size:13px;line-height:1.9;color:var(--g4);word-break:keep-all}
+
+/* path color swatches */
+.pcols{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g2);margin-bottom:40px}
+.pcol{height:100px;display:flex;align-items:flex-end;padding:16px 20px}
+.pcol-line{width:56px;height:3px;border-radius:2px;margin-bottom:10px}
+.pcol-nm{font-size:11px;font-weight:700}
+.pcol-use{font-size:10px;opacity:.45;letter-spacing:.5px}
+
+/* path placeholder for user-supplied graphics */
+.path-asset-placeholder{
+  background:var(--g1);border:1px dashed var(--g2);
+  min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;margin-bottom:40px;
+}
+.path-asset-placeholder .ph-icon{font-size:24px;color:var(--g2)}
+.path-asset-placeholder .ph-label{font-size:10px;letter-spacing:3px;color:var(--g3);text-transform:uppercase}
+
+/* path usage context grid */
+.path-context{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--g2);margin-bottom:40px}
+.pctx{padding:36px;position:relative;overflow:hidden}
+.pctx-label{font-size:9px;letter-spacing:3px;font-weight:700;text-transform:uppercase;margin-bottom:16px}
+.pctx-desc{font-size:13px;line-height:1.8;word-break:keep-all}
+.pctx svg{margin:16px 0}
+
+/* ══════════════════════════
+   06 VOICE
+══════════════════════════ */
+.voice-pull{background:var(--b);padding:52px 56px;margin-bottom:0;border-left:3px solid var(--o)}
+.voice-pull-text{font-size:clamp(18px,2.2vw,28px);font-weight:700;color:var(--w);line-height:1.6;word-break:keep-all}
+.voice-pull-text u{text-decoration-color:rgba(255,117,0,.6);text-underline-offset:5px}
+
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g2)}
+.ve{padding:36px}
+.ve-lab{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid}
+.ve-text{font-size:14px;line-height:1.9;margin-bottom:10px;word-break:keep-all}
+.ve-tag{display:inline-flex;padding:3px 9px;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.ve-do{background:var(--b)}
+.ve-do .ve-lab{color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.06)}
+.ve-do .ve-text{color:var(--w)}
+.ve-do .ve-tag{background:rgba(255,117,0,.15);color:var(--o)}
+.ve-dn{background:var(--b)}
+.ve-dn .ve-lab{color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.06)}
+.ve-dn .ve-text{color:rgba(255,255,255,.55)}
+.ve-dn .ve-tag{background:rgba(255,255,255,.07);color:rgba(255,255,255,.4)}
+
+/* ══════════════════════════
+   07 APPLICATIONS
+══════════════════════════ */
+.apps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g2)}
+.app{background:var(--w);padding:44px;border-radius:8px;overflow:hidden}
+.app-ico{width:36px;height:36px;background:var(--k);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.app-t{font-size:20px;font-weight:800;letter-spacing:-.5px;margin-bottom:7px;word-break:keep-all}
+.app-d{font-size:13px;color:var(--g4);line-height:1.8;margin-bottom:24px;word-break:keep-all}
+.app-list{list-style:none}
+.app-list li{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--g2);font-size:12px;color:var(--g4)}
+.app-list li:last-child{border:none}
+.app-list li strong{color:var(--k);font-weight:700}
+
+/* ══════════════════════════
+   08 DOWNLOADS
+══════════════════════════ */
+.dlgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g2)}
+.dlcard{background:var(--w);padding:36px;display:flex;flex-direction:column;gap:16px;transition:background .12s}
+.dlcard:hover{background:var(--g1)}
+.dlhead{display:flex;align-items:center;gap:14px}
+.dlico{width:40px;height:40px;background:var(--k);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dlname{font-size:13px;font-weight:700;color:var(--k)}
+.dltype{font-size:10px;color:var(--g4);margin-top:2px}
+.dldesc{font-size:13px;color:var(--g4);line-height:1.8;flex:1;word-break:keep-all}
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+.footer{
+  background:var(--b);padding:56px 80px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+.footer-l{display:flex;align-items:center;gap:32px}
+.footer-logo{width:112px;opacity:.75;flex-shrink:0}
+.footer-meta{display:flex;flex-direction:column;gap:5px}
+.footer-tagline{font-size:9px;letter-spacing:2.5px;color:rgba(255,255,255,.2);text-transform:uppercase}
+.footer-ver{font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.12);text-transform:uppercase}
+.footer-r{text-align:right}
+.footer-copy{font-size:10px;letter-spacing:.5px;color:rgba(255,255,255,.15);line-height:2}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:24px;left:calc(var(--nav) + 20px);background:var(--o);color:#fff;padding:8px 16px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:0;transform:translateY(5px);transition:opacity .12s,transform .12s;pointer-events:none;z-index:999}
+.toast.on{opacity:1;transform:translateY(0)}
+
+/* ── UTIL ── */
+.mt-40{margin-top:40px}.mt-56{margin-top:56px}.mt-64{margin-top:64px}
+.note-o{font-size:12px;color:var(--o);background:rgba(255,117,0,.05);padding:16px 20px;border-left:3px solid var(--o);margin-top:24px;line-height:1.9;word-break:keep-all}
+
+/* ── A11Y ── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;left:16px;top:-40px;z-index:999;background:var(--k);color:var(--w);padding:10px 16px;font-size:12px;font-weight:700;letter-spacing:1px;border-radius:4px;transition:top .2s}
+.skip-link:focus{top:16px;outline:2px solid var(--o);outline-offset:2px}
+.cb:focus-visible{outline:3px solid var(--y);outline-offset:-3px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.reveal-stagger>*{opacity:1!important;transform:none!important}
+  .cs-line{stroke-dashoffset:0!important}
+}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-prog{position:fixed;top:0;left:var(--nav);right:0;height:2px;background:rgba(0,0,0,.04);z-index:500;pointer-events:none}
+.scroll-prog-fill{height:100%;width:0;background:var(--o);transition:width .08s linear}
+@media(max-width:900px){.scroll-prog{left:0;top:56px}}
+
+/* ── CONTRAST TABLE ── */
+.ctbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:16px;margin-bottom:40px}
+.ctbl th{padding:11px 16px;text-align:left;background:var(--k);color:var(--w);font-size:9px;letter-spacing:2px;font-weight:700;text-transform:uppercase}
+.ctbl td{padding:14px 16px;border-bottom:1px solid var(--g2);color:var(--g4);vertical-align:middle}
+.ctbl tr:last-child td{border:none}
+.ct-swatch{display:inline-block;width:56px;height:18px;vertical-align:middle;margin-right:10px;border:1px solid var(--g2);border-radius:2px}
+.ct-pass{color:#2B8F4E;font-weight:700}
+.ct-warn{color:#C87617;font-weight:700}
+.ct-fail{color:#CC2222;font-weight:700}
+
+/* ── TYPE RULES TABLE ── */
+.typerule{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g2);margin-top:24px;margin-bottom:40px}
+.typerule-cell{background:var(--w);padding:24px}
+.typerule-lbl{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--o);text-transform:uppercase;margin-bottom:10px}
+.typerule-v{font-size:15px;font-weight:700;color:var(--k);margin-bottom:6px;letter-spacing:-.3px}
+.typerule-d{font-size:11px;color:var(--g4);line-height:1.8}
+
+/* ── PHOTO EXAMPLES ── */
+.photo-ex{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.photo-cell{aspect-ratio:4/3;border-radius:6px;overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:12px;font-size:9px;letter-spacing:1.5px;font-weight:700;text-transform:uppercase}
+.photo-cell.do{background:linear-gradient(135deg,#6B4A2F 0%,#C89060 45%,#F0CE9C 100%);color:rgba(255,255,255,.88)}
+.photo-cell.dn{background:linear-gradient(135deg,#EDEDED 0%,#F8F8F8 100%);color:#B0B0B0}
+.photo-cell::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.15),transparent 60%);pointer-events:none}
+
+/* ── PATH ASSET LIB ── */
+.path-lib{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g2);margin-bottom:16px;border-radius:6px;overflow:hidden}
+.path-lib-cell{background:var(--w);padding:28px 20px;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;min-height:120px}
+.path-lib-cell.dark{background:var(--b)}
+.path-lib-cell svg{width:100%;height:auto;max-height:48px}
+.path-lib-lbl{font-size:9px;letter-spacing:1.5px;color:var(--g3);font-weight:700;text-transform:uppercase}
+.path-lib-cell.dark .path-lib-lbl{color:rgba(255,255,255,.35)}
+
+/* ── STROKE WEIGHT DEMO ── */
+.stroke-demo{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g2);margin-top:16px;margin-bottom:40px;border-radius:6px;overflow:hidden}
+.stroke-demo-cell{background:var(--w);padding:20px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.stroke-demo-cell svg{width:100%;max-width:120px;height:auto}
+.stroke-demo-lbl{font-size:10px;font-weight:700;color:var(--k);letter-spacing:.5px}
+.stroke-demo-sub{font-size:9px;color:var(--g4);letter-spacing:1px;text-transform:uppercase}
+
+/* ── APP MOCKUP ── */
+.mock-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.mock-ig{aspect-ratio:1/1;background:#1A1A1A;border-radius:6px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.mock-ig::after{content:'';position:absolute;bottom:30%;left:-10%;right:-10%;height:2px;background:#FFFF00;transform:rotate(-3deg);box-shadow:0 0 16px rgba(255,255,0,.5)}
+.mock-story{aspect-ratio:9/16;background:linear-gradient(180deg,#FF7500,#E56800);border-radius:6px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.mock-story::after{content:'';position:absolute;top:50%;left:-20%;right:-20%;height:2px;background:#fff;transform:rotate(4deg)}
+.mock-bus{aspect-ratio:2/3;background:#0f0f0f;border-radius:6px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.mock-bus::after{content:'';position:absolute;top:40%;left:-10%;right:-10%;height:3px;background:#FFFF00;transform:rotate(-2deg)}
+.mock-lbl{font-size:8px;letter-spacing:2px;color:rgba(255,255,255,.4);font-weight:700;text-transform:uppercase;position:relative;z-index:2}
+.mock-title{font-size:14px;font-weight:800;color:#fff;line-height:1.1;position:relative;z-index:2}
+.mock-title.ig{color:#fff}
+.mock-logo-w{height:18px;width:auto;position:relative;z-index:2;opacity:.92}
+
+/* ── CHANGELOG ── */
+.changelog{background:var(--g1);padding:32px;border-left:3px solid var(--o);margin-top:40px}
+.changelog-t{font-size:11px;letter-spacing:2.5px;font-weight:700;text-transform:uppercase;color:var(--o);margin-bottom:20px}
+.changelog-list{list-style:none;font-size:12px;color:var(--g4);line-height:1.9}
+.changelog-list li{padding:10px 0;border-bottom:1px dashed var(--g2);display:flex;gap:18px;align-items:flex-start}
+.changelog-list li:last-child{border:none}
+.changelog-list li b{color:var(--k);font-weight:700;flex-shrink:0;min-width:84px;letter-spacing:.5px}
+
+/* ── KBD HINT ── */
+.kbd-hint{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.15);text-transform:uppercase;margin-top:16px;padding:0 24px}
+.kbd-hint kbd{display:inline-block;padding:1px 6px;margin:0 2px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:3px;font-size:9px;color:rgba(255,255,255,.5);font-family:var(--f)}
+
+/* ── PRINT ── */
+@media print{
+  .nav,.mob-bar,.nav-overlay,.scroll-prog,.toast,.hero-scroll,.btns,.btn,.kbd-hint{display:none!important}
+  .main{margin-left:0!important}
+  .sec{padding:24px 20px!important;break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #ccc}
+  .hero{height:auto!important;min-height:0!important;padding:40px 20px!important;width:100%!important;margin:0!important;background:#fff!important;color:#000!important}
+  body{background:#fff!important;color:#000!important;overflow:visible!important}
+  .sec-big-num{display:none!important}
+  .reveal,.reveal-stagger>*{opacity:1!important;transform:none!important}
+  .statement,.voice-pull,.path-cover,.type-hero,.ve-do,.ve-dn,.do-b,.dn-b{background:#f8f8f8!important;color:#000!important}
+  .statement-text,.voice-pull-text,.pc-title,.ve-text,.rl li{color:#000!important}
+  a[href]::after{content:" (" attr(href) ")";font-size:9px;color:#888}
+  a[href^="#"]::after,a[href^="javascript:"]::after{content:""}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .65s var(--ease),transform .65s var(--ease);
+}
+.reveal.on{opacity:1;transform:none}
+/* stagger children */
+.reveal-stagger > *{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.reveal-stagger.on > *:nth-child(1){transition-delay:.05s;opacity:1;transform:none}
+.reveal-stagger.on > *:nth-child(2){transition-delay:.12s;opacity:1;transform:none}
+.reveal-stagger.on > *:nth-child(3){transition-delay:.19s;opacity:1;transform:none}
+.reveal-stagger.on > *:nth-child(4){transition-delay:.26s;opacity:1;transform:none}
+
+/* Brand personality cards hover */
+.pc{transition:background .2s}
+
+.app{transition:background .22s var(--ease)}
+.app:hover{background:var(--b)}
+.app:hover .app-t{color:var(--w)}
+.app:hover .app-d{color:rgba(255,255,255,.35)}
+.app:hover .app-list li{border-color:rgba(255,255,255,.06);color:rgba(255,255,255,.35)}
+.app:hover .app-list li strong{color:var(--o)}
+.app:hover .app-ico{background:var(--o)}
+.app:hover .app-ico svg{stroke:#fff}
+
+.dlcard{transition:background .22s var(--ease),transform .18s var(--ease)}
+.dlcard:hover{background:var(--b);transform:translateY(-2px)}
+.dlcard:hover .dlname{color:var(--w)}
+.dlcard:hover .dltype{color:rgba(255,255,255,.3)}
+.dlcard:hover .dldesc{color:rgba(255,255,255,.35)}
+.dlcard:hover .dlico{background:var(--o)}
+
+/* ══════════════════════════
+   MOBILE NAV TOGGLE
+══════════════════════════ */
+.mob-bar{
+  display:none;position:fixed;top:0;left:0;right:0;height:56px;
+  background:var(--b);z-index:400;
+  align-items:center;justify-content:space-between;
+  padding:0 20px;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.mob-logo{height:32px;width:auto}
+.mob-menu{
+  width:40px;height:40px;background:none;border:none;cursor:pointer;
+  display:flex;flex-direction:column;justify-content:center;gap:5px;padding:8px;
+}
+.mob-menu span{display:block;height:1.5px;background:rgba(255,255,255,.65);transition:transform .2s,opacity .2s}
+.mob-menu.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.mob-menu.open span:nth-child(2){opacity:0}
+.mob-menu.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:290;opacity:0;transition:opacity .2s}
+.nav-overlay.on{opacity:1}
+
+/* ══════════════════════════
+   RWD ≤ 900px
+══════════════════════════ */
+@media(max-width:900px){
+  :root{--nav:0px}
+
+  /* Show mobile top bar */
+  .mob-bar{display:flex}
+  .nav-overlay{display:block;pointer-events:none}
+  .nav-overlay.on{pointer-events:auto}
+
+  /* Sidebar slides in as overlay */
+  .nav{
+    width:75vw;max-width:300px;
+    transform:translateX(-100%);transition:transform .28s var(--ease);
+    top:0;z-index:350;
+  }
+  .nav.open{transform:translateX(0)}
+  .nav-head{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .nav-head img{width:100px}
+
+  /* Main: no left margin, account for top bar */
+  .main{margin-left:0;padding-top:56px}
+
+  /* Hero: full viewport, no offset needed */
+  .hero{width:100vw;margin-left:0;min-height:100svh}
+  .hero-logo{width:clamp(220px,72vw,400px)}
+
+  /* Section padding */
+  .sec{padding:56px 24px}
+  .type-hero{padding:48px 24px 40px}
+
+  /* Grids → single column */
+  .p3{grid-template-columns:1fr}
+  .pc-img-wrap{height:200px}
+  .essence-banner{min-height:300px}
+  .essence-banner-content{padding:36px 24px}
+  .lg-2{grid-template-columns:1fr}
+  .lg-3{grid-template-columns:1fr}
+  .shifts{grid-template-columns:1fr}
+  .apps{grid-template-columns:1fr}
+  .dlgrid{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:1fr}
+  .dd{grid-template-columns:1fr}
+  .donts-grid{grid-template-columns:repeat(2,1fr)}
+  .ms-grid{grid-template-columns:1fr}
+  .path-context{grid-template-columns:1fr}
+  .cspecs{grid-template-columns:repeat(2,1fr)}
+  .combos{grid-template-columns:repeat(2,1fr)}
+  .path-rules{grid-template-columns:1fr}
+  .pcols{grid-template-columns:1fr}
+  .path-cover{grid-template-columns:1fr;padding:48px 24px;gap:32px}
+  .cbar{grid-template-columns:1fr 1fr;height:180px}
+
+  /* type-hero weight grid */
+  .type-hero-row{grid-template-columns:repeat(2,1fr)}
+  .tw-col:first-child{padding-left:28px}
+
+  /* Section head → stack */
+  .sec-head{grid-template-columns:1fr;gap:16px}
+  .sec-big-num{display:none}
+
+  /* Statement */
+  .statement{padding:36px 24px}
+
+  /* Voice grid */
+  .vgrid{grid-template-columns:1fr}
+
+  /* Footer */
+  .footer{flex-direction:column;gap:24px;padding:40px 24px;text-align:center}
+  .footer-l{flex-direction:column;gap:12px;align-items:center}
+  .footer-r{text-align:center}
+
+  /* Toast offset */
+  .toast{left:20px}
+
+  /* Clear space */
+  .cs-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:480px){
+  .sec{padding:44px 20px}
+  .type-hero{padding:40px 20px 32px}
+  .cspecs{grid-template-columns:1fr}
+  .combos{grid-template-columns:1fr}
+  .type-hero-row{grid-template-columns:1fr 1fr}
+  .cbar{height:140px}
+}
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">食尚玩家 品牌識別指南 Brand Identity Guideline V1.1</h1>
+
+<!-- ══ SKIP LINK ══ -->
+<a class="skip-link" href="#brand">跳至主要內容</a>
+
+<!-- ══ SCROLL PROGRESS ══ -->
+<div class="scroll-prog" aria-hidden="true"><div class="scroll-prog-fill" id="scrollProg"></div></div>
+
+<!-- ══ MOBILE TOP BAR ══ -->
+<div class="mob-bar">
+  <img class="mob-logo" src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo-w.png" alt="食尚玩家品牌識別指南">
+  <button class="mob-menu" id="mobMenu" aria-label="開啟側邊選單" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- ══ SIDEBAR ══ -->
+<nav class="nav" id="sidebar" aria-label="章節導覽">
+  <div class="nav-head">
+    <a href="#top"><img src="FA/標誌/PNG/tvbs-食尚玩家-vertical-w.png" alt="食尚玩家"></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#brand"><span class="i">01</span>品牌核心</a></li>
+    <li><a href="#logo"><span class="i">02</span>標誌系統</a></li>
+    <li><a href="#color"><span class="i">03</span>色彩系統</a></li>
+    <li><a href="#type"><span class="i">04</span>字型系統</a></li>
+    <li><a href="#visual"><span class="i">05</span>視覺語言</a></li>
+    <li><a href="#voice"><span class="i">06</span>聲音語氣</a></li>
+    <li><a href="#apply"><span class="i">07</span>應用示範</a></li>
+    <li><a href="#files"><span class="i">08</span>素材下載</a></li>
+  </ul>
+  <div class="nav-foot">TVBS · 2026</div>
+</nav>
+
+<!-- ══ MAIN ══ -->
+<main class="main">
+
+<!-- HERO -->
+<section class="hero" id="top" aria-label="食尚玩家品牌識別指南 封面">
+  <img class="hero-img" src="Guideline/tvbs-食尚玩家-brand-guidelines.png" alt="食尚玩家 Brand Identity Guideline · 2026 主視覺" fetchpriority="high" decoding="async">
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══ 01 BRAND CORE ══ -->
+<section class="sec" id="brand">
+  <div class="sec-head">
+    <div class="sec-big-num">01</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">01 — Brand Core</div>
+      <div class="sec-title">品牌核心</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">食尚玩家不只是節目，而是一種生活態度——隨時出發、到處探索、真實分享。品牌核心定義了存在的理由與溝通的方式。</div>
+    </div>
+  </div>
+
+  <div class="lbl lbl-o">Brand Essence · 品牌本質</div>
+  <div class="essence-banner">
+    <img class="essence-banner-img" src="Guideline/link/品牌本質.jpg" alt="品牌本質" loading="lazy" decoding="async">
+    <div class="essence-banner-scrim"></div>
+    <div class="essence-banner-content">
+      <div class="statement-text">食尚玩家，是一個<strong>懂玩、敢玩、隨時都搞得到</strong>的玩咖朋友，用各種創意玩法，帶你在 anywhere、anytime、any way 玩出自己的生活體驗。</div>
+      <div class="statement-foot">Anywhere · Anytime · Any Way</div>
+    </div>
+  </div>
+
+  <div class="lbl lbl-o mt-64">Brand Personality · 品牌個性</div>
+  <div class="p3">
+    <div class="pc">
+      <div class="pc-img-wrap">
+        <img class="pc-img" src="Guideline/link/playful.jpg" alt="Playful" loading="lazy" decoding="async">
+        <div class="pc-scrim"></div>
+      </div>
+      <div class="pc-text">
+        <div class="pc-en">Playful</div>
+        <div class="pc-zh">愛玩・會玩</div>
+        <div class="pc-body">不只說玩，真的去做、認真執行。把玩當成事業，玩到輕鬆、好玩、隨時有驚喜。</div>
+      </div>
+    </div>
+    <div class="pc">
+      <div class="pc-img-wrap">
+        <img class="pc-img" src="Guideline/link/Imaginative.jpg" alt="Imaginative" loading="lazy" decoding="async">
+        <div class="pc-scrim"></div>
+      </div>
+      <div class="pc-text">
+        <div class="pc-en">Imaginative</div>
+        <div class="pc-zh">玩出新想像</div>
+        <div class="pc-body">同一個城市，可以玩出不同主題、路線、故事。換一種想法，生活裡到處都是好玩日常。</div>
+      </div>
+    </div>
+    <div class="pc">
+      <div class="pc-img-wrap">
+        <img class="pc-img" src="Guideline/link/real.png" alt="Real" loading="lazy" decoding="async">
+        <div class="pc-scrim"></div>
+      </div>
+      <div class="pc-text">
+        <div class="pc-en">Real</div>
+        <div class="pc-zh">真實・不做作・在地</div>
+        <div class="pc-body">講真話，不虛飾。有缺點也講清楚。像鄰居朋友分享在地玩經驗，真實自在。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lbl lbl-o">Brand Shift · 品牌位移</div>
+  <div class="shifts">
+    <div class="sh"><div class="sh-fl">From</div><div class="sh-fw">吃</div><span class="sh-arr">↓</span><div class="sh-tl">To</div><div class="sh-tw">玩</div></div>
+    <div class="sh"><div class="sh-fl">From</div><div class="sh-fw">資訊</div><span class="sh-arr">↓</span><div class="sh-tl">To</div><div class="sh-tw">體驗</div></div>
+    <div class="sh"><div class="sh-fl">From</div><div class="sh-fw">節目</div><span class="sh-arr">↓</span><div class="sh-tl">To</div><div class="sh-tw">朋友</div></div>
+  </div>
+</section>
+
+<!-- ══ 02 LOGO ══ -->
+<section class="sec" id="logo">
+  <div class="sec-head">
+    <div class="sec-big-num">02</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">02 — Logo System</div>
+      <div class="sec-title">標誌系統</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">標誌將「玩」與「行走的腳步」合而為一，「家」的筆畫轉化為探索路線。每個版本對應特定使用情境，請勿混用。</div>
+    </div>
+  </div>
+
+  <!-- Standard -->
+  <div class="lbl lbl-o">標準版 · Standard</div>
+  <div class="lg-grid lg-2 reveal" style="margin-bottom:48px;">
+    <div class="lg-cell logo-v">
+      <div class="lg-bg" style="background:#fff;">
+        <img src="FA/標誌/PNG/tvbs-食尚玩家-vertical.png" alt="垂直版" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">垂直版</div><div class="lg-desc">白底・社群頭像・方形版面</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 14px;" href="YOUR_DRIVE" target="_blank">↓ 下載</a>
+      </div>
+    </div>
+    <div class="lg-cell logo-h">
+      <div class="lg-bg" style="background:#fff;">
+        <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="水平版" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">水平版</div><div class="lg-desc">白底・橫向版面・印刷首選</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 14px;" href="YOUR_DRIVE" target="_blank">↓ 下載</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- White -->
+  <div class="lbl lbl-o">白色版 · White</div>
+  <div class="lg-grid lg-2 reveal" style="margin-bottom:48px;">
+    <div class="lg-cell logo-v">
+      <div class="lg-bg" style="background:#1A1A1A;">
+        <img src="FA/標誌/PNG/tvbs-食尚玩家-vertical-w.png" alt="白色垂直版" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">白色垂直版</div><div class="lg-desc">深色背景・深色系版面</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 14px;" href="YOUR_DRIVE" target="_blank">↓ 下載</a>
+      </div>
+    </div>
+    <div class="lg-cell logo-h">
+      <div class="lg-bg" style="background:#1A1A1A;">
+        <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo-w.png" alt="白色水平版" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">白色水平版</div><div class="lg-desc">深色背景・橫向深色版面</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 14px;" href="YOUR_DRIVE" target="_blank">↓ 下載</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Watermarks -->
+  <div class="lbl lbl-o">浮水印版 · Watermark</div>
+  <div class="lg-grid lg-3 reveal" style="margin-bottom:48px;">
+    <div class="lg-cell logo-wm">
+      <div class="lg-bg" style="background:#D5D5D5;">
+        <img src="FA/浮水印/PNG/tvbs-食尚玩家浮水印-Horizontal-深色透明.png" alt="深色透明" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">深色透明</div><div class="lg-desc">淺色背景照片</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 12px;" href="YOUR_DRIVE" target="_blank">↓</a>
+      </div>
+    </div>
+    <div class="lg-cell logo-wm">
+      <div class="lg-bg" style="background:#555;">
+        <img src="FA/浮水印/PNG/tvbs-食尚玩家浮水印-Horizontal-淺色透明.png" alt="淺色透明" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">淺色透明</div><div class="lg-desc">深色背景照片</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 12px;" href="YOUR_DRIVE" target="_blank">↓</a>
+      </div>
+    </div>
+    <div class="lg-cell logo-wm">
+      <div class="lg-bg" style="background:#F0F0F0;">
+        <img src="FA/浮水印/PNG/tvbs-食尚玩家浮水印-Horizontal-陰影.png" alt="陰影版" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">陰影版</div><div class="lg-desc">電視・影片字卡</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 12px;" href="YOUR_DRIVE" target="_blank">↓</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mirror -->
+  <div class="lbl lbl-o">鏡面版 · Mirror</div>
+  <div class="lg-grid reveal" style="margin-bottom:48px;">
+    <div class="lg-cell logo-full">
+      <div class="lg-bg" style="background:#000 url('image/電視雜訊.png') center/cover;min-height:220px;position:relative;">
+        <img src="FA/標誌/PNG/tvbs-食尚玩家-鏡面-logo.png" alt="鏡面版" loading="lazy" decoding="async">
+      </div>
+      <div class="lg-foot">
+        <div><div class="lg-name">鏡面版</div><div class="lg-desc">特殊版面應用</div></div>
+        <a class="btn btn-k" style="font-size:10px;padding:7px 14px;" href="YOUR_DRIVE" target="_blank">↓ 下載</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Version table -->
+  <div class="dv"></div>
+  <div class="lbl lbl-o">版本選用規則 · Usage Guide</div>
+  <table class="vtbl">
+    <tr><th>背景情境</th><th>使用版本</th><th>色彩</th></tr>
+    <tr><td>白色 / 淺色純色底</td><td>標準版（橘＋黑）</td><td><span class="chip chip-o">橘＋黑</span></td></tr>
+    <tr><td>深色底</td><td>白色版</td><td><span class="chip chip-k">白色</span></td></tr>
+    <tr><td>淺色照片 / 淺色插圖</td><td>浮水印——深色透明</td><td><span class="chip chip-g">深灰透明</span></td></tr>
+    <tr><td>深色照片</td><td>浮水印——淺色透明</td><td><span class="chip chip-k">白色透明</span></td></tr>
+    <tr><td>影片畫面 / 電視螢幕</td><td>浮水印——陰影版</td><td><span class="chip chip-k">白＋陰影</span></td></tr>
+  </table>
+
+  <!-- Clear Space — two-column static SVG grid -->
+  <div class="dv"></div>
+  <div class="lbl lbl-o">安全淨空 · Clear Space</div>
+  <div class="cs-grid">
+
+    <!-- ── Horizontal logo ──
+         viewBox 560×320 | Logo h=130 w=314 (≈130×2.42) | center(280,160)
+         X = 130×25% = 32 | clear: x=114 y=98 w=314+64=378...
+         logo: x=123 y=95 w=314 h=130 | X=32
+         clear: x=91 y=63 w=378 h=194 → right=469 (clips) → shrink to w=280 h=116
+         Logo w=280 h=116 | center(280,160) | x=140 y=102 | X=29
+         clear: x=111 y=73 w=338 h=174 right=449 bottom=247
+    -->
+    <div class="cs-panel cs-anim" data-cs>
+      <div class="cs-panel-label">橫式版 · Horizontal</div>
+      <!-- 1.5X=44 | clear: x=96 y=58 w=368 h=204 -->
+      <svg viewBox="0 0 560 320" width="100%" style="display:block;">
+        <rect x="96" y="58" width="368" height="204" fill="rgba(255,117,0,.04)"/>
+        <rect x="140" y="102" width="280" height="116" fill="none" stroke="#DDDDDD" stroke-width="1" stroke-dasharray="4,3"/>
+        <image href="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" x="140" y="102" width="280" height="116" preserveAspectRatio="xMidYMid meet"/>
+        <!-- LEFT x=96→140 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="96" y1="160" x2="140" y2="160" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="96" y1="153" x2="96" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="140" y1="153" x2="140" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="118" y="147" text-anchor="middle" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+        <!-- TOP y=58→102 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="280" y1="58" x2="280" y2="102" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="58"  x2="288" y2="58"  stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="102" x2="288" y2="102" stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="297" y="84" text-anchor="start" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+        <!-- RIGHT x=420→464 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="420" y1="160" x2="464" y2="160" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="420" y1="153" x2="420" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="464" y1="153" x2="464" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="442" y="147" text-anchor="middle" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+        <!-- BOTTOM y=218→262 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="280" y1="218" x2="280" y2="262" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="218" x2="288" y2="218" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="262" x2="288" y2="262" stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="297" y="244" text-anchor="start" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ── Vertical logo ──
+         viewBox 560×320 | Logo h=168 w=127 (168×0.757≈127, ratio1.31) | center(280,160)
+         h=168 = 116×1.45 → "食" visually equal to horizontal (ratio C confirmed)
+         X=29 (same as horizontal, based on horizontal logo's "食" height ÷ 4)
+         logo: x=216 y=76 w=127 h=168 | clear: x=187 y=47 w=185 h=226
+    -->
+    <div class="cs-panel cs-anim" data-cs>
+      <div class="cs-panel-label">直式版 · Vertical</div>
+      <!-- 1.5X=44 | vertical w=220 h=168 | clear: x=126 y=32 w=308 h=256 -->
+      <svg viewBox="0 0 560 320" width="100%" style="display:block;">
+        <rect x="126" y="32" width="308" height="256" fill="rgba(255,117,0,.04)"/>
+        <rect x="170" y="76" width="220" height="168" fill="none" stroke="#DDDDDD" stroke-width="1" stroke-dasharray="4,3"/>
+        <image href="FA/標誌/PNG/tvbs-食尚玩家-vertical.png" x="170" y="76" width="220" height="168" preserveAspectRatio="xMidYMid meet"/>
+        <!-- LEFT x=126→170 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="126" y1="160" x2="170" y2="160" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="126" y1="153" x2="126" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="170" y1="153" x2="170" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="148" y="147" text-anchor="middle" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+        <!-- TOP y=32→76 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="280" y1="32" x2="280" y2="76" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="32"  x2="288" y2="32"  stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="76"  x2="288" y2="76"  stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="297" y="58" text-anchor="start" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+        <!-- RIGHT x=390→434 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="390" y1="160" x2="434" y2="160" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="390" y1="153" x2="390" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="434" y1="153" x2="434" y2="167" stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="412" y="147" text-anchor="middle" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+        <!-- BOTTOM y=244→288 -->
+        <g class="cs-dim">
+          <line class="cs-line" x1="280" y1="244" x2="280" y2="288" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="244" x2="288" y2="244" stroke="#BBBBBB" stroke-width="1.5"/>
+          <line x1="272" y1="288" x2="288" y2="288" stroke="#BBBBBB" stroke-width="1.5"/>
+          <text x="297" y="270" text-anchor="start" font-size="11" font-weight="700" fill="#AAAAAA" font-family="sans-serif">1.5X</text>
+        </g>
+      </svg>
+    </div>
+
+  </div>
+  <div class="cs-note">
+    <strong>1.5X 定義</strong>：淨空範圍 = 橫式標誌中「食」字元高度的 1/4（X），四邊統一取 1.5X。直式版本採用同一值，兩版本字元視覺大小一致。任何文字、圖形、裁切邊緣均不得侵入此範圍。
+  </div>
+
+  <!-- Min size -->
+  <div class="dv"></div>
+  <div class="lbl lbl-o">最小使用尺寸 · Minimum Size</div>
+  <div class="cs-note" style="margin-bottom:24px;max-width:640px;">
+    <strong>基準原則</strong>：以 <strong>Logo 總寬</strong> 作為統一最小值——印刷 <strong>25 mm</strong> 寬、數位 <strong>100 px</strong> 寬。水平版於此尺寸下食字剛達 7mm/28px 可讀門檻，直式版食字則約 9.5mm/38px，更具裕量。</div>
+
+  <!-- 水平版 minimum -->
+  <div class="lbl" style="color:var(--k);margin-top:32px;font-size:11px;letter-spacing:1.5px;">水平版 · Horizontal（14X × 4.8X）</div>
+  <div class="ms-grid">
+    <div class="ms-card">
+      <div class="ms-bg"><img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="水平版印刷最小尺寸示範" loading="lazy" decoding="async" style="height:48px;width:auto;"></div>
+      <div class="ms-foot"><span class="ms-label">印刷最小（寬）</span><span class="ms-val">25 mm</span></div>
+    </div>
+    <div class="ms-card">
+      <div class="ms-bg"><img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="水平版數位最小尺寸示範" loading="lazy" decoding="async" style="height:30px;width:auto;"></div>
+      <div class="ms-foot"><span class="ms-label">數位最小（寬）</span><span class="ms-val">100 px</span></div>
+    </div>
+    <div class="ms-card ms-card-no">
+      <div class="ms-bg" style="position:relative;overflow:hidden;">
+        <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:16px;width:auto;opacity:.35;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom right,transparent calc(50% - 1px),rgba(210,30,30,.5) calc(50% - 1px),rgba(210,30,30,.5) calc(50% + 1px),transparent calc(50% + 1px));pointer-events:none;"></div>
+      </div>
+      <div class="ms-foot" style="flex-direction:column;align-items:flex-start;gap:2px;">
+        <span class="ms-label" style="color:#EF5350;">禁止使用</span>
+        <span style="font-size:10px;color:#999;">低於 25mm / 100px，改用純文字「食尚玩家」</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 直式版 minimum -->
+  <div class="lbl" style="color:var(--k);margin-top:32px;font-size:11px;letter-spacing:1.5px;">直式版 · Vertical（10.5X × 8X）</div>
+  <div class="ms-grid">
+    <div class="ms-card">
+      <div class="ms-bg" style="height:200px;"><img src="FA/標誌/PNG/tvbs-食尚玩家-vertical.png" alt="直式版印刷最小尺寸示範" loading="lazy" decoding="async" style="height:106px;width:auto;"></div>
+      <div class="ms-foot"><span class="ms-label">印刷最小（寬）</span><span class="ms-val">25 mm</span></div>
+    </div>
+    <div class="ms-card">
+      <div class="ms-bg" style="height:200px;"><img src="FA/標誌/PNG/tvbs-食尚玩家-vertical.png" alt="直式版數位最小尺寸示範" loading="lazy" decoding="async" style="height:66px;width:auto;"></div>
+      <div class="ms-foot"><span class="ms-label">數位最小（寬）</span><span class="ms-val">100 px</span></div>
+    </div>
+    <div class="ms-card ms-card-no">
+      <div class="ms-bg" style="position:relative;overflow:hidden;height:200px;">
+        <img src="FA/標誌/PNG/tvbs-食尚玩家-vertical.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:28px;width:auto;opacity:.35;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom right,transparent calc(50% - 1px),rgba(210,30,30,.5) calc(50% - 1px),rgba(210,30,30,.5) calc(50% + 1px),transparent calc(50% + 1px));pointer-events:none;"></div>
+      </div>
+      <div class="ms-foot" style="flex-direction:column;align-items:flex-start;gap:2px;">
+        <span class="ms-label" style="color:#EF5350;">禁止使用</span>
+        <span style="font-size:10px;color:#999;">低於 25mm / 100px，改用純文字「食尚玩家」</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-note" style="margin-top:16px;max-width:640px;">
+    <strong>為什麼兩版採用相同最小寬？</strong>品牌規範實務以 <strong>Logo 占位寬度</strong> 作為管控基準（不論幾何外框為長條或方形），方便版面預留、報價、印刷估算統一。水平版於 25mm 寬時食字剛達可讀門檻，為最嚴苛情境；直式版因字元堆疊，同寬下食字反而更大（約 9.5mm），安全裕量更充足。低於此尺寸時請改用純文字「食尚玩家」取代。
+  </div>
+
+  <!-- Do / Don't -->
+  <div class="dv"></div>
+  <div class="lbl lbl-o">Do / Don't · 正確與禁止</div>
+
+  <!-- DO row -->
+  <div style="background:var(--b);padding:28px 32px;margin-bottom:1px;border-radius:8px;overflow:hidden;">
+    <div class="do-lab" style="margin-bottom:20px;">✓ 正確使用</div>
+    <div style="display:flex;align-items:center;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="background:#fff;padding:24px 32px;display:flex;align-items:center;justify-content:center;border-radius:6px;">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="食尚玩家標誌 白底應用" loading="lazy" decoding="async" style="height:52px;width:auto;">
+        </div>
+        <span style="font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.5);">白底 · 標準色</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="background:#1A1A1A;padding:24px 32px;display:flex;align-items:center;justify-content:center;border-radius:6px;border:1px solid rgba(255,255,255,.1);">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo-w.png" alt="食尚玩家標誌 深色底應用" loading="lazy" decoding="async" style="height:52px;width:auto;">
+        </div>
+        <span style="font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.5);">深色底 · 白色版</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="background:#FF7500;padding:24px 32px;display:flex;align-items:center;justify-content:center;border-radius:6px;">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo-w.png" alt="食尚玩家標誌 主色底應用" loading="lazy" decoding="async" style="height:52px;width:auto;">
+        </div>
+        <span style="font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.5);">主色底 · 白色版</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DON'T grid -->
+  <div style="margin-bottom:8px;">
+    <div style="background:#fff;padding:20px 32px 16px;border-top:1px solid var(--g2);border-bottom:1px solid var(--g2);">
+      <div class="dn-lab" style="color:#CC2222;margin-bottom:0;">✕ 禁止使用</div>
+    </div>
+    <div class="donts-grid">
+
+      <!-- 1 拉伸 -->
+      <div class="dont-ex">
+        <div class="dont-ex-logo" style="overflow:hidden;">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:52px;width:auto;transform:scaleX(1.55);transform-origin:center;">
+        </div>
+        <span class="dont-ex-label">✕ 橫向拉伸</span>
+      </div>
+
+      <!-- 2 壓縮 -->
+      <div class="dont-ex">
+        <div class="dont-ex-logo" style="overflow:hidden;">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:52px;width:auto;transform:scaleY(0.55);transform-origin:center;">
+        </div>
+        <span class="dont-ex-label">✕ 垂直壓縮</span>
+      </div>
+
+      <!-- 3 旋轉 -->
+      <div class="dont-ex">
+        <div class="dont-ex-logo">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:44px;width:auto;transform:rotate(-18deg);transform-origin:center;">
+        </div>
+        <span class="dont-ex-label">✕ 旋轉傾斜</span>
+      </div>
+
+      <!-- 4 改色 -->
+      <div class="dont-ex">
+        <div class="dont-ex-logo">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:52px;width:auto;filter:hue-rotate(160deg) saturate(1.4);">
+        </div>
+        <span class="dont-ex-label">✕ 改變顏色</span>
+      </div>
+
+      <!-- 5 低對比背景（橘底橘字） -->
+      <div class="dont-ex" style="background:#FFB06A;">
+        <div class="dont-ex-logo">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:52px;width:auto;opacity:.55;">
+        </div>
+        <span class="dont-ex-label" style="color:#8B2000;">✕ 低對比底色</span>
+      </div>
+
+      <!-- 6 加特效 -->
+      <div class="dont-ex">
+        <div class="dont-ex-logo">
+          <img src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async" style="height:52px;width:auto;filter:drop-shadow(0 0 10px rgba(255,117,0,.95)) drop-shadow(0 0 22px rgba(255,117,0,.7));">
+        </div>
+        <span class="dont-ex-label">✕ 自加特效</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 COLOR ══ -->
+<section class="sec sec-gray" id="color">
+  <div class="sec-head">
+    <div class="sec-big-num">03</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">03 — Color System</div>
+      <div class="sec-title">色彩系統</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">食尚橘傳遞熱情與行動力，深墨黑賦予沉穩質感，電光黃作為路徑線的視覺強調色。點擊色塊可複製色碼。</div>
+    </div>
+  </div>
+
+  <div class="cbar">
+    <div class="cb" style="background:#FF7500;color:#fff;" role="button" tabindex="0" aria-label="複製色碼 食尚橘 #FF7500" data-hex="#FF7500">
+      <span class="cb-hint" style="color:#fff;">複製色碼</span>
+      <div class="cb-name">食尚橘</div><div class="cb-hex">#FF7500</div>
+    </div>
+    <div class="cb" style="background:#1A1A1A;color:#fff;" role="button" tabindex="0" aria-label="複製色碼 深墨黑 #1A1A1A" data-hex="#1A1A1A">
+      <span class="cb-hint" style="color:#fff;">複製色碼</span>
+      <div class="cb-name">深墨黑</div><div class="cb-hex">#1A1A1A</div>
+    </div>
+    <div class="cb" style="background:#FFFF00;" role="button" tabindex="0" aria-label="複製色碼 電光黃 #FFFF00" data-hex="#FFFF00">
+      <span class="cb-hint">複製色碼</span>
+      <div class="cb-name">電光黃</div><div class="cb-hex">#FFFF00</div>
+    </div>
+    <div class="cb" style="background:#fff;border:1px solid #E8E8E8;" role="button" tabindex="0" aria-label="複製色碼 純白 #FFFFFF" data-hex="#FFFFFF">
+      <span class="cb-hint">複製色碼</span>
+      <div class="cb-name">純白</div><div class="cb-hex">#FFFFFF</div>
+    </div>
+  </div>
+
+  <div class="cspecs mt-40">
+    <div class="cs-card">
+      <div class="cs-sw" style="background:#FF7500;"></div>
+      <div class="cs-nm">食尚橘 · Primary</div>
+      <div class="cs-row"><span class="cs-k">HEX</span><span class="cs-v">#FF7500</span></div>
+      <div class="cs-row"><span class="cs-k">RGB</span><span class="cs-v">255 / 117 / 0</span></div>
+      <div class="cs-row"><span class="cs-k">CMYK</span><span class="cs-v">0 / 54 / 100 / 0</span></div>
+      <div class="cs-row"><span class="cs-k">PMS</span><span class="cs-v">待確認</span></div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-sw" style="background:#1A1A1A;"></div>
+      <div class="cs-nm">深墨黑 · Secondary</div>
+      <div class="cs-row"><span class="cs-k">HEX</span><span class="cs-v">#1A1A1A</span></div>
+      <div class="cs-row"><span class="cs-k">RGB</span><span class="cs-v">26 / 26 / 26</span></div>
+      <div class="cs-row"><span class="cs-k">CMYK</span><span class="cs-v">0 / 0 / 0 / 90</span></div>
+      <div class="cs-row"><span class="cs-k">PMS</span><span class="cs-v">待確認</span></div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-sw" style="background:#FFFF00;border:1px solid #E8E8E8;"></div>
+      <div class="cs-nm">電光黃 · Accent</div>
+      <div class="cs-row"><span class="cs-k">HEX</span><span class="cs-v">#FFFF00</span></div>
+      <div class="cs-row"><span class="cs-k">RGB</span><span class="cs-v">255 / 255 / 0</span></div>
+      <div class="cs-row"><span class="cs-k">CMYK</span><span class="cs-v">0 / 0 / 100 / 0</span></div>
+      <div class="cs-row"><span class="cs-k">PMS</span><span class="cs-v">待確認</span></div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-sw" style="background:#fff;border:1px solid #E8E8E8;"></div>
+      <div class="cs-nm">純白 · Base</div>
+      <div class="cs-row"><span class="cs-k">HEX</span><span class="cs-v">#FFFFFF</span></div>
+      <div class="cs-row"><span class="cs-k">RGB</span><span class="cs-v">255 / 255 / 255</span></div>
+      <div class="cs-row"><span class="cs-k">CMYK</span><span class="cs-v">0 / 0 / 0 / 0</span></div>
+      <div class="cs-row"><span class="cs-k">PMS</span><span class="cs-v">—</span></div>
+    </div>
+  </div>
+
+  <div class="lbl lbl-o mt-56">推薦色彩組合 · Combinations</div>
+  <div class="combos">
+    <div class="combo" style="background:#1A1A1A;">
+      <div class="combo-dots"><div class="combo-dot" style="background:#1A1A1A;border:1.5px solid #444;"></div><div class="combo-dot" style="background:#FFFF00;"></div></div>
+      <div class="combo-nm" style="color:#fff;">深墨黑 ＋ 電光黃</div>
+      <div class="combo-use" style="color:rgba(255,255,255,.25);">戶外媒體首選</div>
+    </div>
+    <div class="combo" style="background:#FF7500;">
+      <div class="combo-dots"><div class="combo-dot" style="background:#FF7500;border:1.5px solid rgba(255,255,255,.4);"></div><div class="combo-dot" style="background:#fff;"></div></div>
+      <div class="combo-nm" style="color:#fff;">食尚橘 ＋ 純白</div>
+      <div class="combo-use" style="color:rgba(255,255,255,.5);">社群主視覺</div>
+    </div>
+    <div class="combo" style="background:#fff;border:1px solid var(--g2);">
+      <div class="combo-dots"><div class="combo-dot" style="background:#fff;border:1.5px solid #ccc;"></div><div class="combo-dot" style="background:#FF7500;"></div><div class="combo-dot" style="background:#1A1A1A;"></div></div>
+      <div class="combo-nm">白底 ＋ 橘 ＋ 黑</div>
+      <div class="combo-use" style="color:var(--g3);">印刷標準</div>
+    </div>
+    <div class="combo" style="background:#1A1A1A;">
+      <div class="combo-dots"><div class="combo-dot" style="background:#1A1A1A;border:1.5px solid #444;"></div><div class="combo-dot" style="background:#fff;"></div></div>
+      <div class="combo-nm" style="color:#fff;">深墨黑 ＋ 純白</div>
+      <div class="combo-use" style="color:rgba(255,255,255,.25);">深色版面</div>
+    </div>
+  </div>
+
+  <div class="btns">
+    <a class="btn btn-k" href="YOUR_DRIVE_SWATCH" target="_blank">↓ 下載 ASE 色票</a>
+  </div>
+</section>
+
+<!-- ══ 04 TYPOGRAPHY ══ -->
+<section class="sec" id="type">
+  <div class="sec-head">
+    <div class="sec-big-num">04</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">04 — Typography</div>
+      <div class="sec-title">字型系統</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">品牌統一使用 LINE Seed TC，中英文一體，SIL 開放授權，商業免費使用。</div>
+    </div>
+  </div>
+
+  <div class="type-hero reveal">
+    <div class="type-hero-eyebrow">LINE SEED TC · Brand Typeface</div>
+    <div class="type-hero-row">
+      <div class="tw-col">
+        <span class="tw-name">Thin · 100</span>
+        <span class="tw-sample" style="font-weight:100;">食尚玩家</span>
+      </div>
+      <div class="tw-col">
+        <span class="tw-name">Regular · 400</span>
+        <span class="tw-sample" style="font-weight:400;">食尚玩家</span>
+      </div>
+      <div class="tw-col">
+        <span class="tw-name">Bold · 700</span>
+        <span class="tw-sample" style="font-weight:700;">食尚玩家</span>
+      </div>
+      <div class="tw-col">
+        <span class="tw-name">ExtraBold · 800</span>
+        <span class="tw-sample" style="font-weight:800;color:var(--o);">食尚玩家</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tscale mt-40">
+    <div class="tr">
+      <div class="tr-m"><div class="lv">Level 01</div><div class="sp">ExtraBold · Display</div></div>
+      <div class="tr-s" style="font-weight:800;font-size:52px;line-height:1;letter-spacing:-2px;">食尚玩家 PLAY ON</div>
+    </div>
+    <div class="tr">
+      <div class="tr-m"><div class="lv">Level 02</div><div class="sp">Bold · Heading · 36–48px</div></div>
+      <div class="tr-s" style="font-weight:700;font-size:36px;line-height:1.1;">帶你去最好玩的地方</div>
+    </div>
+    <div class="tr">
+      <div class="tr-m"><div class="lv">Level 03</div><div class="sp">Bold · Subheading · 20–28px</div></div>
+      <div class="tr-s" style="font-weight:700;font-size:22px;">Anywhere · Anytime · Any Way</div>
+    </div>
+    <div class="tr">
+      <div class="tr-m"><div class="lv">Level 04</div><div class="sp">Regular · Body · 14–16px</div></div>
+      <div class="tr-s" style="font-weight:400;font-size:15px;line-height:1.9;color:#555;max-width:560px;">食尚玩家是一個懂玩、敢玩、隨時都搞得到的玩咖朋友，用各種創意玩法帶你玩出生活體驗。美食只是起點，記憶才是目的。</div>
+    </div>
+    <div class="tr">
+      <div class="tr-m"><div class="lv">Level 05</div><div class="sp">Thin · Caption · 11–12px</div></div>
+      <div class="tr-s" style="font-weight:100;font-size:12px;letter-spacing:2px;color:#aaa;">Caption · Metadata · 補充說明 · Note</div>
+    </div>
+  </div>
+
+  <div class="btns">
+    <a class="btn btn-k" href="https://seed.line.me/index_en.html" target="_blank">前往 LINE Seed 官方下載 ↗</a>
+  </div>
+</section>
+
+<!-- ══ 05 VISUAL LANGUAGE ══ -->
+<section class="sec sec-gray" id="visual">
+  <div class="sec-head">
+    <div class="sec-big-num">05</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">05 — Visual Language</div>
+      <div class="sec-title">視覺語言</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">路徑線源自 Logo 的設計 DNA——「家」字筆畫轉化而來，代表品牌帶領玩家前進的軌跡。</div>
+    </div>
+  </div>
+
+  <div class="path-cover">
+    <div>
+      <div class="pc-kicker">The Play Line · 路徑線</div>
+      <div class="pc-title">每一條路，都是探索。</div>
+      <div class="pc-body">路徑線是從 Logo DNA 延伸的核心視覺元素。它不是裝飾，而是品牌帶領玩家前進的軌跡。路線不規則，因為真實的探索從不按牌理出牌。</div>
+    </div>
+    <div class="path-demo-box">
+      <div class="path-demo-row">
+        <div class="path-demo-lbl">深色底</div>
+        <svg viewBox="0 0 200 28" height="28"><path d="M0,14 Q50,4 100,20 T190,10" stroke="#FFFF00" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="path-demo-row">
+        <div class="path-demo-lbl">橘色底</div>
+        <svg viewBox="0 0 200 28" height="28"><path d="M0,20 Q60,4 110,18 T190,8" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="path-demo-row">
+        <div class="path-demo-lbl">淺色底</div>
+        <svg viewBox="0 0 200 28" height="28"><path d="M0,8 Q70,22 120,10 T200,16" stroke="#1A1A1A" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div style="margin-top:12px;font-size:10px;color:rgba(255,255,255,.2);letter-spacing:1px;">路徑線為流動曲線，永遠使用開放端點</div>
+    </div>
+  </div>
+
+  <!-- Path usage rules -->
+  <div class="path-rules mt-40 reveal-stagger">
+    <div class="pr">
+      <div class="pr-num">Rule 01</div>
+      <div class="pr-t">流動</div>
+      <div class="pr-b">線條有方向性，自由彎曲但不斷裂。不對稱、不規整——反映真實旅途的隨機性，不可作為框線或圓形閉合使用。</div>
+    </div>
+    <div class="pr">
+      <div class="pr-num">Rule 02</div>
+      <div class="pr-t">引導</div>
+      <div class="pr-b">貫穿版面，將視線引導至內容主體。可作為標題色帶強調，或影片轉場的動態元素，始終服務內容不搶焦點。</div>
+    </div>
+    <div class="pr">
+      <div class="pr-num">Rule 03</div>
+      <div class="pr-t">開放</div>
+      <div class="pr-b">路徑端點永遠開放，代表探索永不停歇。線條粗細以 3–6px 為基準，依版面比例調整，不可過細或過粗。</div>
+    </div>
+  </div>
+
+  <!-- Path asset placeholder — user to supply SVG files -->
+  <div class="lbl lbl-o">路徑線素材 · Path Assets</div>
+  <div class="path-asset-placeholder">
+    <div class="ph-icon">+</div>
+    <div class="ph-label">素材置換區 — 請放入路徑線 SVG / PNG 圖檔</div>
+  </div>
+
+  <!-- Path color on different backgrounds -->
+  <div class="lbl lbl-o">色彩版本 · Color on Background</div>
+  <div class="pcols reveal">
+    <div class="pcol" style="background:#1A1A1A;">
+      <div><div class="pcol-line" style="background:#FFFF00;"></div><div class="pcol-nm" style="color:#fff;">電光黃 #FFFF00</div><div class="pcol-use" style="color:rgba(255,255,255,.4);">深色底首選</div></div>
+    </div>
+    <div class="pcol" style="background:#FF7500;">
+      <div><div class="pcol-line" style="background:#fff;"></div><div class="pcol-nm" style="color:#fff;">純白 #FFFFFF</div><div class="pcol-use" style="color:rgba(255,255,255,.5);">橘色底使用</div></div>
+    </div>
+    <div class="pcol" style="background:#F5F5F5;border:1px solid #E8E8E8;">
+      <div><div class="pcol-line" style="background:#1A1A1A;"></div><div class="pcol-nm">深墨黑 #1A1A1A</div><div class="pcol-use">淺色底點綴</div></div>
+    </div>
+  </div>
+
+  <!-- Path context: 4 use cases -->
+  <div class="lbl lbl-o mt-56">應用情境 · Usage Context</div>
+  <div class="path-context reveal-stagger">
+    <div class="pctx" style="background:#1A1A1A;">
+      <div class="pctx-label" style="color:rgba(255,255,255,.3);">情境 01 · 社群封面</div>
+      <svg viewBox="0 0 320 48" height="40" width="100%">
+        <path d="M0,32 Q80,12 160,28 T320,16" stroke="#FFFF00" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="pctx-desc" style="color:rgba(255,255,255,.5);">深色底配電光黃路徑線，作為主視覺動線或 Instagram 封面上緣裝飾。</div>
+    </div>
+    <div class="pctx" style="background:#FF7500;">
+      <div class="pctx-label" style="color:rgba(255,255,255,.5);">情境 02 · 橘底版面</div>
+      <svg viewBox="0 0 320 48" height="40" width="100%">
+        <path d="M0,20 Q100,40 200,22 T320,30" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="pctx-desc" style="color:rgba(255,255,255,.7);">橘色底配白色路徑線，用於 CTA 區塊或節目主題橫幅。</div>
+    </div>
+    <div class="pctx" style="background:#F5F5F5;">
+      <div class="pctx-label" style="color:var(--g3);">情境 03 · 淺色印刷</div>
+      <svg viewBox="0 0 320 48" height="40" width="100%">
+        <path d="M0,14 Q90,36 180,18 T320,26" stroke="#1A1A1A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="pctx-desc" style="color:var(--g4);">淺色底配深墨黑路徑線，用於白底印刷品或 DM 版面引導動線。</div>
+    </div>
+    <div class="pctx" style="background:#111;border-top:2px solid rgba(255,255,0,.25);">
+      <div class="pctx-label" style="color:rgba(255,255,255,.3);">情境 04 · 影片字卡</div>
+      <svg viewBox="0 0 320 48" height="40" width="100%">
+        <path d="M0,24 Q60,8 140,28 Q220,46 320,18" stroke="#FFFF00" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="200" stroke-dashoffset="0"/>
+      </svg>
+      <div class="pctx-desc" style="color:rgba(255,255,255,.45);">路徑線配合字卡入場動畫使用，描邊進場後淡入文字，強化節目感。</div>
+    </div>
+  </div>
+
+  <div class="lbl lbl-o mt-56">攝影風格 · Photography</div>
+  <div class="dd">
+    <div class="do-b">
+      <div class="do-lab">攝影方向</div>
+      <ul class="rl">
+        <li><b>✓</b> 真實感、現場感、非過度修圖</li>
+        <li><b>✓</b> 人與食物並存，帶入生活情境</li>
+        <li><b>✓</b> 朋友視角、自然光線</li>
+        <li><b>✓</b> 保留環境真實感與氛圍</li>
+      </ul>
+    </div>
+    <div class="dn-b">
+      <div class="dn-lab">攝影禁忌</div>
+      <ul class="rl">
+        <li><b>✕</b> 過度精修、脫離現實的棚拍感</li>
+        <li><b>✕</b> 冷白燈光、完美但無生活感</li>
+        <li><b>✕</b> 過度套用濾鏡或色調偏移</li>
+        <li><b>✕</b> 缺乏人味的純產品平拍</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="btns mt-40">
+    <a class="btn btn-k" href="YOUR_DRIVE_PATH" target="_blank">↓ 下載路徑線素材包</a>
+  </div>
+</section>
+
+<!-- ══ 06 VOICE ══ -->
+<section class="sec" id="voice">
+  <div class="sec-head">
+    <div class="sec-big-num">06</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">06 — Tone of Voice</div>
+      <div class="sec-title">聲音與語氣</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">說話方式決定了觀眾怎麼認識食尚玩家。朋友分享，不是節目主持。直接、口語、真實。</div>
+    </div>
+  </div>
+
+  <div class="voice-pull">
+    <div class="voice-pull-text">像那個最近很愛玩、哪裡玩最超好玩的<u>朋友</u>，自然地「分享」——而不是站在台上「介紹」。</div>
+  </div>
+
+  <div class="vgrid mt-40" style="margin-top:1px;">
+    <div class="ve ve-do">
+      <div class="ve-lab">✓ 食尚玩家說話的方式</div>
+      <div class="ve-text">"這家真的沒在開玩笑，排隊一小時值得！湯底喝到最後一滴那種。"</div>
+      <div class="ve-text">"大稻埕其實還藏著很多你沒發現的玩法，跟著我們走就對了。"</div>
+      <span class="ve-tag">直接・真實・口語</span>
+    </div>
+    <div class="ve ve-dn">
+      <div class="ve-lab">✕ 應該避免的語氣</div>
+      <div class="ve-text">"本節目誠摯推薦您蒞臨品嚐，感受尊享的精緻饗宴體驗。"</div>
+      <div class="ve-text">"集結全台頂尖美食，打造無與倫比的味蕾旅程。"</div>
+      <span class="ve-tag">過度正式・話術感</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 07 APPLICATIONS ══ -->
+<section class="sec sec-gray" id="apply">
+  <div class="sec-head">
+    <div class="sec-big-num">07</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">07 — Applications</div>
+      <div class="sec-title">應用示範</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">各媒介規格規範與 Logo 版本選用指引。任何對外物料均需依此規範執行。</div>
+    </div>
+  </div>
+
+  <div class="apps">
+    <div class="app">
+      <div class="app-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/></svg></div>
+      <div class="app-t">數位社群</div>
+      <div class="app-d">Instagram、Facebook、YouTube 等平台的圖片規格與 Logo 使用規範。</div>
+      <ul class="app-list">
+        <li><span>IG 方形貼文</span><strong>1080 × 1080 px</strong></li>
+        <li><span>IG Stories</span><strong>1080 × 1920 px</strong></li>
+        <li><span>YouTube 縮圖</span><strong>1280 × 720 px</strong></li>
+        <li><span>FB 橫幅</span><strong>820 × 312 px</strong></li>
+        <li><span>Logo</span><strong>浮水印（依底色）</strong></li>
+      </ul>
+    </div>
+    <div class="app">
+      <div class="app-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="app-t">影片應用</div>
+      <div class="app-d">電視節目、網路影片的浮水印位置與字卡設計規範。</div>
+      <ul class="app-list">
+        <li><span>電視浮水印</span><strong>陰影版，右下角</strong></li>
+        <li><span>社群影片</span><strong>透明版，依背景</strong></li>
+        <li><span>影片透明度</span><strong>80–100%</strong></li>
+        <li><span>社群透明度</span><strong>60–80%</strong></li>
+        <li><span>字卡底色</span><strong>黑底 ＋ 橘路徑</strong></li>
+      </ul>
+    </div>
+    <div class="app">
+      <div class="app-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="app-t">戶外媒體</div>
+      <div class="app-d">公車候車亭、大型看板等戶外廣告視覺系統。</div>
+      <ul class="app-list">
+        <li><span>主視覺系統</span><strong>黑底 ＋ 黃路徑線</strong></li>
+        <li><span>主體內容</span><strong>食物攝影 ＋ 路徑引導</strong></li>
+        <li><span>Logo</span><strong>標準版（橘＋黑）</strong></li>
+        <li><span>候車亭規格</span><strong>120 × 180 cm</strong></li>
+      </ul>
+    </div>
+    <div class="app">
+      <div class="app-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="app-t">平面印刷</div>
+      <div class="app-d">DM、海報、活動物料等印刷品色彩與字型規範。</div>
+      <ul class="app-list">
+        <li><span>色彩模式</span><strong>CMYK</strong></li>
+        <li><span>解析度</span><strong>300 dpi 以上</strong></li>
+        <li><span>出血設定</span><strong>3mm 四周</strong></li>
+        <li><span>Logo 最小尺寸</span><strong>25mm 寬</strong></li>
+        <li><span>字型</span><strong>轉外框或嵌入</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 08 DOWNLOADS ══ -->
+<section class="sec" id="files">
+  <div class="sec-head">
+    <div class="sec-big-num">08</div>
+    <div class="sec-left">
+      <div class="sec-eyebrow">08 — Downloads</div>
+      <div class="sec-title">素材下載</div>
+    </div>
+    <div class="sec-right">
+      <div class="sec-desc">所有品牌素材集中於 Google Drive，請使用官方連結取得最新版本，請勿自行修改或重新上傳。</div>
+    </div>
+  </div>
+
+  <div class="dlgrid">
+    <div class="dlcard">
+      <div class="dlhead">
+        <div class="dlico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <div><div class="dlname">Logo 完整包</div><div class="dltype">AI · EPS · PNG · SVG</div></div>
+      </div>
+      <div class="dldesc">含所有標準版、白色版、浮水印版本。垂直 / 水平 / 深色 / 淺色 / 陰影 / 鏡面，共 11 個檔案。</div>
+      <a class="btn btn-k" href="YOUR_DRIVE_LOGO" target="_blank">↓ 下載 Logo 包</a>
+    </div>
+    <div class="dlcard">
+      <div class="dlhead">
+        <div class="dlico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1 0 1.5-.8 1.5-1.5S13 19 13 18.3A1.7 1.7 0 0114.7 16.7h2.1C19.5 16.7 22 14.3 22 11.3 21.9 6 17.4 2 12 2z"/></svg></div>
+        <div><div class="dlname">色票檔案</div><div class="dltype">ASE · CLR</div></div>
+      </div>
+      <div class="dldesc">Adobe Swatch Exchange 格式，可直接匯入 Illustrator、InDesign、Photoshop 使用。</div>
+      <a class="btn btn-k" href="YOUR_DRIVE_SWATCH" target="_blank">↓ 下載色票</a>
+    </div>
+    <div class="dlcard">
+      <div class="dlhead">
+        <div class="dlico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+        <div><div class="dlname">LINE Seed TC 字型</div><div class="dltype">TTF · OTF · WOFF2</div></div>
+      </div>
+      <div class="dldesc">官方授權開源字型，SIL Open Font License，商業免費。包含 Thin / Regular / Bold / ExtraBold。</div>
+      <a class="btn btn-k" href="https://seed.line.me/index_en.html" target="_blank">前往官方下載 ↗</a>
+    </div>
+    <div class="dlcard">
+      <div class="dlhead">
+        <div class="dlico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7500" stroke-width="2"><path d="M3 3c2 0 5 2 8 8s6 8 8 8M21 3c-2 0-5 2-8 8s-6 8-8 8"/></svg></div>
+        <div><div class="dlname">路徑線素材包</div><div class="dltype">AI · SVG · PNG</div></div>
+      </div>
+      <div class="dldesc">電光黃、純白、深墨黑三色版本的路徑線向量素材，含水平與垂直方向。</div>
+      <a class="btn btn-k" href="YOUR_DRIVE_PATH" target="_blank">↓ 下載路徑線</a>
+    </div>
+  </div>
+
+  <div class="note-o mt-40">使用須知：所有品牌素材僅供 TVBS 官方授權使用。外部廠商需透過官方管道取得授權。如有素材需求或版本更新，請聯繫品牌設計部門。</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-l">
+    <img class="footer-logo" src="FA/標誌/PNG/tvbs-食尚玩家-horizontal-logo-w.png" alt="食尚玩家" loading="lazy" decoding="async">
+    <div class="footer-meta">
+      <div class="footer-tagline">Brand Identity Guideline</div>
+      <div class="footer-ver">V1.1 · TVBS · 2026</div>
+    </div>
+  </div>
+  <div class="footer-r">
+    <div class="footer-copy">© 2026 TVBS. All rights reserved.<br>Brand Design Department</div>
+  </div>
+</footer>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+// Active nav — scroll-based (most reliable)
+function updateActiveNav() {
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  let current = sections[0]?.id || '';
+  sections.forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.classList.toggle('on', a.getAttribute('href') === '#' + current));
+}
+window.addEventListener('scroll', updateActiveNav, {passive: true});
+updateActiveNav();
+
+// Scroll reveal
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08, rootMargin: '0px 0px -60px 0px'});
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObs.observe(el));
+
+
+// Clear space draw-in animation
+const csObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('cs-on');
+      csObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.3});
+document.querySelectorAll('.cs-anim').forEach(el => csObs.observe(el));
+
+// Mobile nav toggle
+const mobMenu = document.getElementById('mobMenu');
+const sidebar = document.getElementById('sidebar');
+const navOverlay = document.getElementById('navOverlay');
+function toggleNav(open) {
+  sidebar.classList.toggle('open', open);
+  mobMenu.classList.toggle('open', open);
+  navOverlay.classList.toggle('on', open);
+}
+mobMenu && mobMenu.addEventListener('click', () => toggleNav(!sidebar.classList.contains('open')));
+navOverlay && navOverlay.addEventListener('click', () => toggleNav(false));
+// Close nav on link click (mobile)
+document.querySelectorAll('.nav-links a').forEach(a =>
+  a.addEventListener('click', () => toggleNav(false)));
+
+// Copy color — click + keyboard (Enter/Space)
+function copyC(hex) {
+  navigator.clipboard.writeText(hex).then(() => {
+    const t = document.getElementById('toast');
+    t.textContent = hex + ' 已複製';
+    t.classList.add('on');
+    setTimeout(() => t.classList.remove('on'), 1800);
+  });
+}
+document.querySelectorAll('.cb[data-hex]').forEach(cb => {
+  const hex = cb.getAttribute('data-hex');
+  cb.addEventListener('click', () => copyC(hex));
+  cb.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      copyC(hex);
+    }
+  });
+});
+</script>
+</body>
+</html>
