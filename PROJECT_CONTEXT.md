@@ -8,8 +8,9 @@
 ## 專案概覽
 
 - **專案名稱**：食尚玩家 品牌識別規範網頁版
-- **對外網址**：`https://sprightly-cobbler-7bcdd2.netlify.app`（Netlify Drop 靜態托管）
-- **更新方式**：修改 HTML → 複製到 deploy 資料夾 → 整個 deploy 資料夾拖曳到 Netlify Drop
+- **對外網址**：`https://onochenmac-rgb.github.io/tvbs-supertaste-guideline/`（GitHub Pages）
+- **GitHub Repo**：`https://github.com/onochenmac-rgb/tvbs-supertaste-guideline`（Private）
+- **更新方式**：Claude 修改 HTML → Sync 指令 → commit + push → 網站自動更新
 
 ---
 
@@ -17,20 +18,21 @@
 
 | 用途 | 路徑 |
 |------|------|
-| **主要編輯檔案** | `/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_Brand_Guideline_WEB_v4.html` |
-| **Deploy 資料夾** | `/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_deploy/` |
-| **Deploy HTML** | `食尚玩家_deploy/Guideline/web/食尚玩家_Brand_Guideline_WEB_v4.html` |
-| **圖片資源** | `食尚玩家_deploy/web-assets/images/` |
-| **連結圖示** | `食尚玩家_deploy/Guideline/link/`（玩行動力.png、路探索.png、parther logo.png）|
+| **主要編輯檔案** | `/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_Brand_Guideline_WEB_v1.html` |
+| **對外 HTML** | `docs/index.html`（由 Sync 指令自動產生，勿直接編輯） |
+| **圖片資源** | `docs/web-assets/images/` |
+| **連結圖示** | `docs/Guideline/link/`（玩行動力.png、路探索.png、parther logo.png）|
 
-### Sync 指令（修改完必跑）
+### Sync 指令（修改完必跑，Claude 會自動執行）
 ```bash
-cp "/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_Brand_Guideline_WEB_v4.html" \
-   "/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_deploy/Guideline/web/"
+sed 's|../../web-assets/|web-assets/|g; s|\.\./link/|Guideline/link/|g' \
+  "食尚玩家_Brand_Guideline_WEB_v1.html" > "docs/index.html"
 ```
 
-> **注意**：Source HTML 的 `../../web-assets/` 路徑在本機直接開啟時圖片會 404，這是正常的。
-> 必須用 deploy 資料夾內的 HTML 預覽，或上傳 Netlify 後才能看到圖片。
+### Deploy 指令（Sync 完後執行）
+```bash
+git add -A && git commit -m "更新內容" && git push
+```
 
 ---
 
@@ -40,7 +42,8 @@ cp "/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_
 - **字型**：`@font-face` LINESeedTW WOFF2（4 weights：400/500/700/900）+ Google Sans Flex（CDN）
 - **CSS Custom Properties**：`--orange`、`--tc`（中文字型）、`--en`（英文字型）、`--pad-y`、`--r`（border-radius）
 - **RWD 斷點**：`max-width: 1024px`（手機/平板）
-- **圖片路徑**：`../../web-assets/images/檔案名.jpg`
+- **圖片路徑**（source 檔）：`../../web-assets/images/檔案名.jpg`
+- **Logo**：SVG 已移除，全部使用 PNG
 
 ---
 
@@ -51,22 +54,22 @@ cp "/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_
 - [x] 橫式 Logo 手機版壓縮視窗不再異常放大（`min(78%, 360px)`）
 - [x] 直式 Logo 手機版尺寸修正（`max-height: 165px; max-width: 67%`）
 - [x] 圖片統一 `aspect-ratio: 4/3 + object-fit: cover`
+- [x] Logo SVG 全部替換為 PNG，SVG 從 git 歷史記錄中清除
 
 ### 重建為 HTML（原本是 PDF 截圖）
 - [x] **p16 Text on Color**（1-8）— 4 欄色卡 grid，含好/不好對比
 - [x] **0-1 Brand Essence**（品牌精神）— 3 欄 + 箭頭 grid
 
-### Netlify Deploy
-- [x] 建立 `食尚玩家_deploy/` 資料夾結構（含 index.html redirect）
-- [x] 修復掉圖問題（補上 `Guideline/link/` 3 個 icon 檔案）
-- [x] 圖片壓縮：`playful.jpg`（186KB）、`imaginative.jpg`（174KB）、`real.jpg`（171KB）
+### GitHub 設定
+- [x] 建立 Private repo：`tvbs-supertaste-guideline`
+- [x] SSH 金鑰設定完成
+- [x] GitHub Pages 啟用（從 `docs/` 資料夾部署）
 
 ---
 
 ## 待辦清單
 
-- [ ] **GitHub 設定**：在 github.com 建立帳號 → 新增 repo → 連接 Netlify 自動部署
-- [ ] **p17 Logo Color**（1-5）— 可重建為 HTML（有 SVG logo 可用 + CSS 背景色）
+- [ ] **p17 Logo Color**（1-5）— 可重建為 HTML（CSS 背景色）
 - [ ] **p13 Minimum Size**（1-3）— 可重建為 HTML
 - [ ] **Brand Personality（0-2）**— 確認是否需要對齊 PDF 版本
 - [ ] **直式 Logo 手機大小確認**：目前 165px / 67%，使用者尚未確認是否滿意
@@ -93,8 +96,8 @@ cp "/Users/ono/Desktop/ono/食尚玩家/食尚玩家/Guideline/web/食尚玩家_
 ## 重要設計決策記錄
 
 1. **Don'ts 外框**：`.dont-cell` 邊框在截圖 `p14.jpg` 圖片內，非 CSS 控制，暫不修改
-2. **路徑策略**：所有圖片用 `../../web-assets/` 相對路徑，只在 deploy 目錄結構下正確
-3. **本機預覽**：必須用 `food_deploy/Guideline/web/HTML` 開啟，不能直接開 source 檔
+2. **路徑策略**：source 檔用 `../../web-assets/`，Sync 時自動轉換為 `web-assets/`
+3. **Logo 保護**：SVG 已從 repo 及 git 歷史中清除，僅保留 PNG
 4. **箭頭置中**：Essence 箭頭用 `padding-top: clamp(60px, 6.5vw, 90px)` 對齊圖片中段
 
 ---
