@@ -43,7 +43,7 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   p,li,dd{text-wrap:pretty;}
   html{scroll-behavior:smooth;}
-  body{font-family:var(--tc);color:var(--black);background:var(--white);line-height:1.65;letter-spacing:0.04em;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";}
+  body{font-family:var(--tc);color:rgba(255,255,255,.75);background:var(--white);line-height:1.65;letter-spacing:0.04em;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";}
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;transition:color var(--t),background var(--t),transform var(--t);}
   ul{list-style:none;}
@@ -249,22 +249,22 @@
   .type-showcase{background:var(--white);border:1px solid var(--line);padding:56px;border-radius:var(--r);}
   .type-block{padding-bottom:40px;border-bottom:1px solid var(--line);margin-bottom:40px;}
   .type-block:last-child{padding-bottom:0;border-bottom:none;margin-bottom:0;}
-  .type-block .lbl{font-family:var(--en);font-size:11px;color:var(--g500);letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:10px;}
-  .type-block .fam{font-family:var(--en);font-size:14px;color:var(--black);margin-bottom:16px;font-weight:600;}
+  .type-block .lbl{font-family:var(--en);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+  .type-block .fam{font-family:var(--en);font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px;font-weight:600;}
   .type-en{font-family:var(--en);font-weight:800;font-size:clamp(40px,5vw,64px);letter-spacing:-.02em;line-height:1.05;}
   .type-zh{font-family:var(--tc);font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1.4;letter-spacing:.02em;}
 
   /* ── type hierarchy ── */
   .hier{display:grid;grid-template-columns:240px 1fr;gap:64px;background:var(--white);border:1px solid var(--line);padding:56px;border-radius:var(--r);}
-  .hier .key{font-size:12px;color:var(--g700);line-height:1.85;}
-  .hier .key .row{padding:16px 0;border-top:1px solid var(--line);}
+  .hier .key{font-size:12px;color:rgba(255,255,255,.5);line-height:1.85;}
+  .hier .key .row{padding:16px 0;border-top:1px solid rgba(255,255,255,.08);}
   .hier .key .row:first-child{border-top:none;}
-  .hier .key .row strong{display:block;color:var(--black);font-size:13px;margin-bottom:6px;font-family:var(--en);letter-spacing:.05em;}
-  .hier h1{font-family:var(--en);font-size:clamp(40px,4.2vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:14px;}
-  .hier h1.zh{font-family:var(--tc);font-weight:900;font-size:clamp(32px,3.6vw,44px);line-height:1.3;margin-bottom:30px;}
-  .hier h2{font-family:var(--en);font-size:clamp(20px,2vw,28px);font-weight:700;margin-bottom:8px;}
-  .hier h2.zh{font-family:var(--tc);font-size:clamp(18px,1.6vw,22px);font-weight:700;margin-bottom:28px;}
-  .hier p{font-size:13.5px;color:var(--g700);line-height:1.95;margin-bottom:16px;}
+  .hier .key .row strong{display:block;color:rgba(255,255,255,.85);font-size:13px;margin-bottom:6px;font-family:var(--en);letter-spacing:.05em;}
+  .hier h1{font-family:var(--en);font-size:clamp(40px,4.2vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:14px;color:#fff;}
+  .hier h1.zh{font-family:var(--tc);font-weight:900;font-size:clamp(32px,3.6vw,44px);line-height:1.3;margin-bottom:30px;color:#fff;}
+  .hier h2{font-family:var(--en);font-size:clamp(20px,2vw,28px);font-weight:700;margin-bottom:8px;color:#fff;}
+  .hier h2.zh{font-family:var(--tc);font-size:clamp(18px,1.6vw,22px);font-weight:700;margin-bottom:28px;color:#fff;}
+  .hier p{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.95;margin-bottom:16px;}
 
   /* ── patterns ── */
   .patterns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -276,7 +276,7 @@
   .p-item:hover .p-layer.o,.p-item.tapped .p-layer.o{opacity:0;}
   .p-item:hover .p-layer.y,.p-item.tapped .p-layer.y{opacity:1;}
   .p-name{position:absolute;left:20px;bottom:18px;right:20px;font-family:var(--en);font-weight:700;font-size:16px;color:var(--orange);letter-spacing:.04em;}
-  .p-name small{display:block;font-family:var(--tc);font-weight:400;font-size:12px;color:var(--g500);letter-spacing:0;margin-top:4px;}
+  .p-name small{display:block;font-family:var(--tc);font-weight:400;font-size:12px;color:rgba(255,255,255,.5);letter-spacing:0;margin-top:4px;}
 
   /* ── PFP ── */
   .pfp-set{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
@@ -332,7 +332,7 @@
   .essence-col img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 0.45s ease;}
   .essence-img:hover img{transform:scale(1.05);}
   .essence-col h3{font-family:var(--tc);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--orange);margin-bottom:10px;line-height:1.3;}
-  .essence-col p{font-size:15px;line-height:1.7;color:var(--black);}
+  .essence-col p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.65);}
   .essence-arrow{color:var(--orange);font-size:20px;display:flex;align-items:flex-start;padding-top:clamp(60px,6.5vw,90px);}
   @media(max-width:1024px){.essence-grid{grid-template-columns:1fr;gap:32px 0;}.essence-arrow{display:none;}}
 
@@ -780,7 +780,7 @@
     <div class="zh-title">品牌色彩計畫</div>
     <div class="desc">
       <p>為確保品牌在任何場合皆能清晰呈現，應嚴格遵循色彩規範，維持一致且專業的視覺形象。<strong>禁止自行調配色號以外的漸層或色彩</strong>，以確保跨平台視覺的一致性。</p>
-      <p style="color:var(--black);font-weight:700;">▸ 點擊任一色塊即複製 HEX。</p>
+      <p style="color:rgba(255,255,255,.75);font-weight:700;">▸ 點擊任一色塊即複製 HEX。</p>
     </div>
   </div>
   <div class="palette">
@@ -964,7 +964,7 @@
     <div class="desc">
       <p><strong>「每一條路，都是探索。」</strong>路徑線是從 Logo DNA 延伸而出的核心視覺元素，不只是裝飾，更是品牌帶領玩家穿梭世界的生命軌跡。</p>
       <p><strong>品牌基因延伸</strong>：承襲 Logo 流動筆觸，將品牌記憶點轉化為無限延伸符號。<br><strong>真實探索軌跡</strong>：保留線條的不規則感與隨性筆觸，象徵品牌自由、多變、充滿驚喜的個性。</p>
-      <p style="color:var(--black);font-weight:700;">▸ 點擊或 Hover 切換 Orange / Yellow 兩款配色。</p>
+      <p style="color:rgba(255,255,255,.75);font-weight:700;">▸ 點擊或 Hover 切換 Orange / Yellow 兩款配色。</p>
       <a class="dl" href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer">完整圖案包 ↗</a>
     </div>
   </div>
