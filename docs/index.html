@@ -179,16 +179,10 @@
   .logo-meaning .mm p{font-family:var(--en);font-size:12px;color:var(--g500);letter-spacing:.15em;text-transform:uppercase;}
 
   /* ── minimum size (1-5) ── */
-  .minsize-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-  .minsize-col{display:flex;flex-direction:column;}
-  .minsize-col .ref-logo{height:auto;display:block;margin-bottom:24px;}
-  .minsize-col.horiz .ref-logo{width:100%;max-width:240px;}
-  .minsize-col.vert .ref-logo{max-width:110px;}
-  .minsize-rule{width:100%;height:1px;background:var(--line);margin-bottom:24px;}
-  .minsize-col .min-logo{display:block;height:auto;}
-  .minsize-col .min-label{font-family:var(--en);font-size:12px;color:var(--g500);line-height:1.8;margin-top:14px;letter-spacing:.01em;}
-  .minsize-col .min-label strong{display:block;color:var(--black);font-weight:700;margin-bottom:2px;}
-  @media(max-width:1024px){.minsize-wrap{grid-template-columns:1fr;}}
+  .minsize-specs{display:flex;gap:48px;padding-top:28px;border-top:1px solid var(--line);margin-top:32px;}
+  .minsize-spec{display:flex;flex-direction:column;gap:6px;}
+  .minsize-spec .spec-en{font-family:var(--en);font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.18em;text-transform:uppercase;}
+  .minsize-spec .spec-val{font-family:var(--en);font-size:12.5px;color:var(--g500);line-height:1.8;}
 
   /* ── combo (1-2) ── */
   .combo{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
@@ -748,18 +742,17 @@
 <!-- 1-5 品牌標誌極小化 -->
 <section id="s1-5" class="fade-in">
   <div class="panel">
-    <div class="minsize-wrap">
-      <div class="minsize-col horiz">
-        <img src="web-assets/logo/logo-h.png" class="ref-logo" alt="橫式標誌">
-        <div class="minsize-rule"></div>
-        <img src="web-assets/logo/logo-h.png" class="min-logo" style="width:50px;" alt="橫式最小尺寸 50px">
-        <div class="min-label"><strong>Horizontal</strong>印刷最小(W) 25 mm<br>數位最小(W) 50 px</div>
-      </div>
-      <div class="minsize-col vert">
-        <img src="web-assets/logo/logo-v.png" class="ref-logo" alt="直式標誌">
-        <div class="minsize-rule"></div>
-        <img src="web-assets/logo/logo-v.png" class="min-logo" style="width:70px;" alt="直式最小尺寸 70px">
-        <div class="min-label"><strong>Vertical</strong>印刷最小(W) 35 mm<br>數位最小(W) 70 px</div>
+    <div class="logo-feature">
+      <img src="web-assets/logo/logo-h.png" alt="食尚玩家 Logo">
+      <div class="minsize-specs">
+        <div class="minsize-spec">
+          <div class="spec-en">Horizontal</div>
+          <div class="spec-val">印刷最小(W) 25 mm<br>數位最小(W) 50 px</div>
+        </div>
+        <div class="minsize-spec">
+          <div class="spec-en">Vertical</div>
+          <div class="spec-val">印刷最小(W) 35 mm<br>數位最小(W) 70 px</div>
+        </div>
       </div>
     </div>
     <div class="panel-desc">
