@@ -1,4 +1,1149 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=Guideline/web/食尚玩家_Brand_Guideline_WEB_v4.html">
-</head><body></body></html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>食尚玩家 Brand Identity Guidelines · V1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'LINESeedTW';src:url('web-assets/fonts/LINESeedTW_OTF_Th.woff2') format('woff2');font-weight:100 300;font-style:normal;font-display:swap;}
+  @font-face{font-family:'LINESeedTW';src:url('web-assets/fonts/LINESeedTW_OTF_Rg.woff2') format('woff2');font-weight:400 500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'LINESeedTW';src:url('web-assets/fonts/LINESeedTW_OTF_Bd.woff2') format('woff2');font-weight:600 700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'LINESeedTW';src:url('web-assets/fonts/LINESeedTW_OTF_Eb.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap;}
+  :root{
+    --orange:#FF7500;
+    --orange-soft:#fff5e8;
+    --y900:#FAD700;
+    --y500:#FFFF54;
+    --y300:#FAFFCD;
+    --black:#1A1A1A;
+    --galaxy:#273544;
+    --g700:#5a5a5a;
+    --g500:#A2A2A2;
+    --g300:#E0E0E0;
+    --g200:#ececec;
+    --g100:#f5f5f0;
+    --line:#ebebeb;
+    --white:#fff;
+
+    --sb-w:280px;
+    --pad-x:64px;
+    --pad-y:48px;
+    --maxw:1240px;
+    --r:12px;
+    --r-pill:999px;
+
+    --en:'Google Sans Flex','Inter',sans-serif;
+    --tc:'LINESeedTW','Noto Sans TC','PingFang TC',sans-serif;
+    --t:.4s cubic-bezier(.25,.1,.25,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  p,li,dd{text-wrap:pretty;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--tc);color:var(--black);background:var(--white);line-height:1.65;letter-spacing:0.04em;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;transition:color var(--t),background var(--t),transform var(--t);}
+  ul{list-style:none;}
+
+  /* ── progress bar ── */
+  #progress-bar{position:fixed;top:0;left:var(--sb-w);right:0;height:3px;background:var(--orange);width:0%;z-index:600;transition:width .08s linear;}
+
+  /* ── sidebar ── */
+  /* ── sidebar ── */
+  .sidebar{position:fixed;top:0;left:0;width:var(--sb-w);height:100vh;background:var(--black);border-right:1px solid #2a2a2a;padding:36px 28px 60px;overflow-y:auto;z-index:100;}
+  .sidebar::-webkit-scrollbar{width:4px;}
+  .sidebar::-webkit-scrollbar-thumb{background:#333;border-radius:4px;}
+  .sb-logo{display:block;width:147px;margin:0 auto 36px;}
+  .sb-sub{font-size:11px;color:#666;letter-spacing:.1em;text-transform:uppercase;margin-bottom:36px;text-align:center;}
+  .nav-grp{margin-bottom:32px;}
+  .nav-grp-title{font-family:var(--en);font-weight:700;font-size:11px;color:var(--orange);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;}
+  .nav-grp ul{display:flex;flex-direction:column;gap:2px;}
+  .nav-grp li a{display:flex;align-items:baseline;gap:10px;font-size:13px;color:rgba(255,255,255,.65);padding:7px 0;transition:color var(--t);}
+  .nav-grp li a:hover{color:#fff;}
+  .nav-grp li a.active{color:var(--orange);font-weight:600;}
+  .nav-num{font-family:var(--en);font-size:11px;font-weight:500;color:rgba(255,255,255,.3);min-width:32px;letter-spacing:.04em;}
+  .nav-grp li a.active .nav-num{color:var(--orange);}
+
+  /* ── layout ── */
+  main{margin-left:var(--sb-w);}
+  section{padding:var(--pad-y) var(--pad-x);}
+
+  /* ── hero ── */
+  .hero{background:var(--orange);color:var(--white);min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:96px var(--pad-x);position:relative;overflow:hidden;}
+  .hero-logo{width:min(50vw,600px);margin-bottom:64px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.08));transition:transform .8s cubic-bezier(.25,.1,.25,1);}
+  .hero:hover .hero-logo{transform:translateY(-4px);}
+  .hero-logo-svg{width:min(50vw,600px);height:auto;display:block;margin-bottom:64px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.08));transition:transform .8s cubic-bezier(.25,.1,.25,1);}
+  @media(max-width:1024px){.hero-logo-svg{width:min(80vw,480px);}}
+  .hero:hover .hero-logo-svg{transform:translateY(-4px);}
+  .hero-title{font-family:'Google Sans Flex',sans-serif;font-weight:700;font-size:clamp(32px,4vw,52px);letter-spacing:-.02em;line-height:1.05;text-align:center;}
+  .hero-meta{margin-top:56px;font-family:var(--en);font-size:12px;line-height:2;letter-spacing:.04em;opacity:.92;text-align:center;}
+  .hero-meta b{font-weight:600;opacity:.7;letter-spacing:.18em;text-transform:uppercase;}
+  .hero-version{position:absolute;right:var(--pad-x);bottom:48px;font-family:var(--en);font-size:13px;font-weight:700;letter-spacing:.06em;}
+  .hero-scroll{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);font-family:var(--en);font-size:11px;letter-spacing:.3em;opacity:.6;cursor:pointer;animation:bounce 2.5s infinite;}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+
+  /* ── contents ── */
+  .contents{padding:120px var(--pad-x);}
+  .contents-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;}
+  .contents-title{font-family:var(--en);font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.3em;text-transform:uppercase;}
+  .contents-meta{font-family:var(--en);font-size:11px;font-weight:500;color:var(--g500);letter-spacing:.2em;text-transform:uppercase;}
+  .contents-h{font-family:var(--tc);font-size:clamp(44px,5vw,68px);font-weight:700;letter-spacing:-.01em;margin-bottom:56px;color:var(--black);}
+  .contents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:64px;}
+  .contents-grid h3{font-family:var(--en);font-size:13px;font-weight:700;color:var(--orange);letter-spacing:.2em;text-transform:uppercase;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:18px;}
+  .contents-grid li a{display:flex;gap:16px;align-items:baseline;padding:9px 0;font-size:14px;transition:color var(--t),padding var(--t);}
+  .contents-grid li a:hover{color:var(--orange);padding-left:6px;}
+  .contents-grid .num{font-family:var(--en);font-weight:600;min-width:42px;color:var(--g500);letter-spacing:.03em;}
+
+  /* ── chapter divider ── */
+  .divider{background:var(--orange);color:var(--white);padding:var(--pad-y) var(--pad-x);}
+  .divider .d-num{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;opacity:.75;margin-bottom:12px;}
+  .divider h2{font-family:var(--en);font-size:clamp(40px,5vw,68px);font-weight:800;letter-spacing:-.02em;line-height:1;}
+
+  /* ── section header (single column, top-bottom) ── */
+  .s-head{
+    margin-bottom:64px;
+    padding-bottom:36px;
+    border-bottom:1px solid var(--line);
+    text-align:left;
+  }
+  .s-head .label{font-family:var(--en);font-size:11px;color:var(--orange);font-weight:700;margin-bottom:14px;letter-spacing:.25em;text-transform:uppercase;}
+  .s-head h2{font-family:var(--en);font-size:clamp(36px,3.6vw,52px);font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--black);margin-bottom:12px;margin-left:-0.05em;}
+  .s-head .zh-title{font-size:14px;font-weight:600;color:var(--g500);letter-spacing:.04em;}
+  .s-head .desc{margin-top:28px;font-size:16px;color:var(--g700);line-height:1.8;letter-spacing:0.05em;max-width:720px;}
+  .s-head .desc p+p{margin-top:10px;}
+  .s-head .desc strong{color:var(--orange);font-weight:700;}
+
+  /* ── download link ── */
+  .dl{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:11px 22px;border:1px solid var(--black);font-family:var(--en);font-size:12.5px;font-weight:700;letter-spacing:.06em;border-radius:var(--r-pill);transition:background var(--t),color var(--t),transform var(--t);}
+  .dl:hover{background:var(--black);color:var(--white);transform:translateY(-2px);}
+  .dl+.dl{margin-left:8px;}
+
+  /* ── pdf image (full display) ── */
+  .pdf-embed{margin-top:24px;border-radius:var(--r);overflow:hidden;background:var(--white);border:1px solid var(--line);transition:transform var(--t),box-shadow var(--t);transform:translateZ(0);-webkit-mask-image:-webkit-radial-gradient(white,black);}
+  .pdf-embed:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.06);}
+  .pdf-embed img{width:100%;display:block;cursor:zoom-in;}
+  .ref-img img{cursor:zoom-in;}
+
+  /* lightbox */
+  #lightbox{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s ease;}
+  #lightbox.open{opacity:1;pointer-events:auto;}
+  #lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:var(--r);box-shadow:0 32px 80px rgba(0,0,0,.5);cursor:zoom-out;transform:scale(.94);transition:transform .25s ease;}
+  #lightbox.open img{transform:scale(1);}
+  #lightbox-close{position:absolute;top:20px;right:24px;width:40px;height:40px;background:rgba(255,255,255,.12);border:none;border-radius:50%;color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+
+  /* ── panel (1-1 / personality) ── */
+  .panel{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(360px,1fr);gap:80px;align-items:stretch;}
+  .ref-stack{display:flex;flex-direction:column;gap:24px;}
+  .ref-item{display:flex;flex-direction:column;gap:14px;}
+  .ref-mark{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;line-height:1.5;}
+  .ref-mark .icon{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1.5px solid currentColor;display:inline-flex;align-items:center;justify-content:center;}
+  .ref-mark .icon svg{width:11px;height:11px;}
+  .ref-mark.good{color:#2BA86A;}
+  .ref-mark.bad{color:#E0473C;}
+  .ref-mark .caption{color:var(--g700);font-weight:500;}
+  .ref-img{overflow:hidden;border-radius:var(--r);background:var(--g100);transition:transform var(--t),box-shadow var(--t);transform:translateZ(0);-webkit-mask-image:-webkit-radial-gradient(white,black);}
+  .ref-img img{display:block;width:100%;height:auto;transition:transform .6s ease;}
+  .ref-item:hover .ref-img{box-shadow:0 12px 36px rgba(0,0,0,.08);transform:translateY(-2px);}
+  .ref-item:hover .ref-img img{transform:scale(1.02);}
+  .copy-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+  .copy-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;font-size:14px;line-height:1.7;color:var(--g700);transition:border-color var(--t);}
+  .copy-card:hover{border-color:var(--orange);}
+  .copy-card .tag{font-family:var(--en);font-size:10px;letter-spacing:.2em;padding:3px 8px;border-radius:4px;display:block;width:fit-content;margin-bottom:10px;font-weight:700;}
+  .copy-card .tag.ok{background:#e7f5e7;color:#2a7a2a;}
+  .copy-card .tag.ng{background:#fdecec;color:#a82323;}
+  .panel.personality+.panel.personality{margin-top:56px;padding-top:56px;border-top:1px solid var(--line);}
+  .panel-desc .label{font-family:var(--en);font-size:11px;font-weight:700;color:var(--orange);margin-bottom:12px;letter-spacing:.25em;text-transform:uppercase;}
+  .panel-desc .en-title{font-family:var(--en);font-size:36px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:8px;color:var(--black);}
+  .panel-desc .zh-title{font-size:14px;font-weight:600;color:var(--g500);letter-spacing:.04em;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+  .panel-desc p{font-size:14px;color:var(--g700);line-height:1.85;letter-spacing:0.05em;}
+  .panel-desc p+p{margin-top:12px;}
+  .panel-desc strong{color:var(--orange);font-weight:700;}
+
+  /* ── logo feature (1-1) ── */
+  .logo-feature{background:var(--white);padding:32px 40px 28px;border:1px solid var(--line);border-radius:var(--r);text-align:center;transition:box-shadow var(--t);display:flex;flex-direction:column;justify-content:space-between;}
+  .logo-feature:hover{box-shadow:0 12px 36px rgba(0,0,0,.04);}
+  .logo-feature>img{margin:0 auto 32px;max-width:78%;display:block;}
+  .logo-meaning{display:flex;justify-content:center;gap:48px;padding-top:28px;border-top:1px solid var(--line);}
+  .logo-meaning .mm{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px 8px;transition:transform var(--t);width:140px;}
+  .logo-meaning .mm:hover{transform:translateY(-4px);}
+  .logo-meaning .mm .icon{width:100px;height:100px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;}
+  .logo-meaning .mm .icon img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;}
+  .logo-meaning .mm .icon img[src*="路探索"]{max-width:78%;max-height:78%;}
+  .logo-meaning .mm h4{color:var(--orange);font-size:14px;font-weight:700;margin-bottom:6px;letter-spacing:.03em;}
+  .logo-meaning .mm p{font-family:var(--en);font-size:12px;color:var(--g500);letter-spacing:.15em;text-transform:uppercase;}
+
+  /* ── combo (1-2) ── */
+  .combo{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .combo .item{background:var(--white);border:1px solid var(--line);padding:64px 48px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:340px;border-radius:var(--r);transition:transform var(--t),box-shadow var(--t),border-color var(--t);position:relative;}
+  @media(max-width:1024px){.combo .item{min-height:220px;padding:40px 32px;}.combo .item.vertical img{max-height:165px;max-width:67%;}}
+  .combo .item:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.06);border-color:#d8d8d8;}
+  .combo .item>.ck{position:absolute;top:24px;left:28px;font-family:var(--en);font-size:11px;color:var(--g500);font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
+  .combo .item img{max-height:200px;width:auto;}
+  .combo .item.horizontal img{max-width:min(78%,360px);height:auto;}
+  .combo .item.vertical img{max-height:200px;transform:scale(0.88);}
+
+  /* ── color palette ── */
+  .palette{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);}
+  .palette .swatch{display:grid;grid-template-columns:240px 1fr 360px;align-items:center;padding:32px 36px;min-height:112px;font-family:var(--en);font-size:13px;cursor:pointer;position:relative;transition:padding var(--t);}
+  .palette .swatch:hover{padding-top:42px;padding-bottom:42px;}
+  .palette .swatch .tag{font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.85;}
+  .palette .swatch .name{font-weight:800;font-size:18px;letter-spacing:-.01em;margin-top:6px;}
+  .palette .swatch .code{line-height:1.85;font-size:12.5px;font-weight:500;opacity:.95;}
+  .palette .swatch .code span{display:block;font-variant-numeric:tabular-nums;}
+  .palette .swatch .copy-hint{position:absolute;right:36px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px;border:1px solid currentColor;border-radius:99px;opacity:0;transition:opacity var(--t);pointer-events:none;}
+  .palette .swatch:hover .copy-hint{opacity:.9;}
+  .palette .swatch.copied .copy-hint{opacity:1;background:rgba(255,255,255,.18);}
+  .sw-orange{background:var(--orange);color:#fff;}
+  .sw-y900{background:var(--y900);color:var(--black);}
+  .sw-y500{background:var(--y500);color:var(--black);}
+  .sw-y300{background:var(--y300);color:var(--black);}
+  .sw-black{background:var(--black);color:#fff;}
+  .sw-galaxy{background:var(--galaxy);color:#fff;}
+  .sw-g500{background:var(--g500);color:#fff;}
+  .sw-g300{background:var(--g300);color:var(--black);}
+
+  /* ── don'ts ── */
+  .donts-head{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .donts-head .head-card{padding:14px 22px;border-radius:var(--r);font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.05em;display:flex;align-items:center;gap:10px;}
+  .donts-head .head-card.good{background:#E8F7EE;color:#1F8A4C;}
+  .donts-head .head-card.bad{background:#FCE8E8;color:#C0392B;}
+  .donts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .dont-cell{position:relative;padding:36px 8px 16px;min-height:240px;overflow:hidden;cursor:pointer;display:grid;grid-template-rows:1fr auto;gap:14px;transition:transform var(--t);}
+  .dont-cell:hover,.dont-cell.tapped{transform:translateY(-4px);}
+  .dont-cell .stage{position:relative;min-height:140px;display:flex;align-items:center;justify-content:center;}
+  .dont-cell .demo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease;}
+  .dont-cell .demo>img,.dont-cell .demo.demo-bad-recombo,.dont-cell .demo.demo-bad-font{max-width:92%;max-height:100%;height:auto;width:auto;}
+  .dont-cell .demo.demo-bad-element>img{max-width:92%;max-height:100%;height:auto;}
+  .dont-cell .demo.good{opacity:0;}
+  .dont-cell:hover .demo.bad,.dont-cell.tapped .demo.bad{opacity:0;}
+  .dont-cell:hover .demo.good,.dont-cell.tapped .demo.good{opacity:1;}
+  .dont-cell::before{content:"";position:absolute;left:10%;right:10%;top:calc(50% - 22px);height:2px;background:#C0392B;opacity:.5;transform:rotate(-10deg);transition:opacity var(--t);pointer-events:none;z-index:2;}
+  .dont-cell:hover::before,.dont-cell.tapped::before{opacity:0;}
+  .dont-cell .badge{position:absolute;top:14px;left:14px;width:24px;height:24px;border-radius:50%;background:#C0392B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;z-index:3;transition:background var(--t),transform var(--t);}
+  .dont-cell:hover .badge,.dont-cell.tapped .badge{background:#1F8A4C;transform:rotate(360deg);}
+  .dont-cell:hover .badge::before,.dont-cell.tapped .badge::before{content:"✓";}
+  .dont-cell:hover .badge .x,.dont-cell.tapped .badge .x{display:none;}
+  .dont-cell .label{font-size:12.5px;font-weight:600;color:var(--g700);text-align:center;transition:color var(--t);align-self:end;}
+  .dont-cell:hover .label,.dont-cell.tapped .label{color:var(--orange);}
+  .demo-bad-rotate{transform:rotate(-12deg) scale(.85);}
+  .demo-bad-stretch{transform:scaleY(.55) scaleX(1.15);}
+  .demo-bad-color{filter:hue-rotate(180deg) saturate(1.3);}
+  .demo-bad-glow{filter:drop-shadow(0 0 12px rgba(255,117,0,.95));}
+  .demo-bad-thin{filter:contrast(.4) brightness(1.4);}
+  .demo-bad-outline{filter:contrast(0) brightness(2);opacity:.45;}
+  .demo-bad-font{font-family:'Times New Roman',serif;font-weight:700;font-size:30px;color:var(--orange);letter-spacing:.05em;}
+  .demo-bad-recombo{font-family:var(--en);font-weight:800;color:var(--orange);font-size:16px;line-height:1.2;}
+  .demo-bad-element{position:relative;}
+  .demo-bad-element::after{content:"";position:absolute;right:-2%;top:5%;width:25%;height:60%;background:#fff;}
+
+  /* ── typography showcase ── */
+  .type-showcase{background:var(--white);border:1px solid var(--line);padding:56px;border-radius:var(--r);}
+  .type-block{padding-bottom:40px;border-bottom:1px solid var(--line);margin-bottom:40px;}
+  .type-block:last-child{padding-bottom:0;border-bottom:none;margin-bottom:0;}
+  .type-block .lbl{font-family:var(--en);font-size:11px;color:var(--g500);letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+  .type-block .fam{font-family:var(--en);font-size:14px;color:var(--black);margin-bottom:16px;font-weight:600;}
+  .type-en{font-family:var(--en);font-weight:800;font-size:clamp(40px,5vw,64px);letter-spacing:-.02em;line-height:1.05;}
+  .type-zh{font-family:var(--tc);font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1.4;letter-spacing:.02em;}
+
+  /* ── type hierarchy ── */
+  .hier{display:grid;grid-template-columns:240px 1fr;gap:64px;background:var(--white);border:1px solid var(--line);padding:56px;border-radius:var(--r);}
+  .hier .key{font-size:12px;color:var(--g700);line-height:1.85;}
+  .hier .key .row{padding:16px 0;border-top:1px solid var(--line);}
+  .hier .key .row:first-child{border-top:none;}
+  .hier .key .row strong{display:block;color:var(--black);font-size:13px;margin-bottom:6px;font-family:var(--en);letter-spacing:.05em;}
+  .hier h1{font-family:var(--en);font-size:clamp(40px,4.2vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:14px;}
+  .hier h1.zh{font-family:var(--tc);font-weight:900;font-size:clamp(32px,3.6vw,44px);line-height:1.3;margin-bottom:30px;}
+  .hier h2{font-family:var(--en);font-size:clamp(20px,2vw,28px);font-weight:700;margin-bottom:8px;}
+  .hier h2.zh{font-family:var(--tc);font-size:clamp(18px,1.6vw,22px);font-weight:700;margin-bottom:28px;}
+  .hier p{font-size:13.5px;color:var(--g700);line-height:1.95;margin-bottom:16px;}
+
+  /* ── patterns ── */
+  .patterns-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .p-item{position:relative;background:var(--white);border:1px solid var(--line);aspect-ratio:1/1;padding:16% 12% 36px;border-radius:var(--r);overflow:hidden;cursor:pointer;transition:transform var(--t),box-shadow var(--t),border-color var(--t);}
+  .p-item:hover,.p-item.tapped{transform:translateY(-4px);box-shadow:0 14px 36px rgba(255,117,0,.14);border-color:var(--orange);}
+  .p-layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20%;transition:opacity var(--t);}
+  .p-layer img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;}
+  .p-layer.y{opacity:0;}
+  .p-item:hover .p-layer.o,.p-item.tapped .p-layer.o{opacity:0;}
+  .p-item:hover .p-layer.y,.p-item.tapped .p-layer.y{opacity:1;}
+  .p-name{position:absolute;left:20px;bottom:18px;right:20px;font-family:var(--en);font-weight:700;font-size:16px;color:var(--orange);letter-spacing:.04em;}
+  .p-name small{display:block;font-family:var(--tc);font-weight:400;font-size:12px;color:var(--g500);letter-spacing:0;margin-top:4px;}
+
+  /* ── PFP ── */
+  .pfp-set{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .pfp-item{text-align:center;}
+  .pfp-item .ring{aspect-ratio:1/1;margin-bottom:20px;border-radius:var(--r);overflow:hidden;display:flex;align-items:center;justify-content:center;transition:border-radius var(--t),transform var(--t),box-shadow var(--t);transform:translateZ(0);-webkit-mask-image:-webkit-radial-gradient(white,black);}
+  .pfp-item:hover .ring{border-radius:50%;transform:scale(1.02);box-shadow:0 16px 40px rgba(0,0,0,.12);}
+  .pfp-item.white-bg .ring{background:var(--white);border:1px solid var(--line);}
+  .pfp-item.orange-bg .ring{background:var(--orange);}
+  .pfp-item .ring img{max-width:78%;height:auto;}
+  .pfp-item .cap{font-family:var(--en);font-weight:700;font-size:13px;color:var(--g500);letter-spacing:.06em;}
+  .pfp-item .cap b{display:block;color:var(--black);margin-bottom:4px;font-family:var(--tc);font-size:14px;font-weight:700;}
+
+  /* ── social row ── */
+  .social-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:start;}
+  .social-row .s-item .lbl{font-family:var(--en);font-weight:700;font-size:13px;color:var(--orange);margin-bottom:14px;letter-spacing:.1em;}
+  .social-row .s-item .box{background:var(--g100);overflow:hidden;border-radius:var(--r);transition:transform var(--t),box-shadow var(--t);transform:translateZ(0);-webkit-mask-image:-webkit-radial-gradient(white,black);}
+  .social-row .s-item:hover .box{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.10);}
+  .social-row .s-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  .social-row .fb .box{aspect-ratio:4/5;}
+  .social-row .ig .box{aspect-ratio:1/1;}
+  .social-row .reels .box{aspect-ratio:9/16;}
+
+  /* ── co-branding ── */
+  .cobrand{background:var(--white);border:1px solid var(--line);padding:80px 64px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:80px;flex-wrap:wrap;}
+  .cobrand .partner{display:flex;align-items:center;justify-content:center;}
+  .cobrand .partner img{max-width:640px;width:100%;height:auto;display:block;}
+
+  /* ── footer ── */
+  footer{background:var(--black);color:#999;padding:72px var(--pad-x);margin-left:var(--sb-w);font-size:13px;}
+  .footer-logo{width:120px;display:block;filter:brightness(0) invert(1);opacity:.9;}
+
+  #back-top{position:fixed;right:32px;bottom:32px;z-index:500;width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(255,117,0,.35);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .25s,transform .25s;}
+  #back-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+  #back-top:hover{background:#e66800;}
+  footer .footer-inner{max-width:var(--maxw);display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;align-items:start;}
+  footer h4{color:#fff;font-size:11px;font-family:var(--en);letter-spacing:.3em;text-transform:uppercase;margin-bottom:14px;font-weight:700;}
+  footer .brand-name{font-family:var(--en);font-size:20px;font-weight:800;color:var(--orange);margin-bottom:6px;letter-spacing:-.01em;}
+  footer a{color:#fff;border-bottom:1px solid #333;transition:border-color var(--t);}
+  footer a:hover{border-bottom-color:#fff;}
+  footer .copy{grid-column:1/-1;margin-top:32px;padding-top:24px;border-top:1px solid #1a1a1a;font-size:11px;color:#555;text-align:center;letter-spacing:.05em;}
+
+  /* ── fade-in ── */
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.25,.1,.25,1),transform .8s cubic-bezier(.25,.1,.25,1);}
+  .fade-in.show{opacity:1;transform:none;}
+
+  /* ── toast ── */
+  .toast{position:fixed;left:calc(var(--sb-w) + 50%);bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--black);color:#fff;padding:12px 24px;border-radius:var(--r-pill);font-size:13px;letter-spacing:.05em;opacity:0;pointer-events:none;transition:opacity var(--t),transform var(--t);z-index:200;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ── brand essence (0-1) ── */
+  .essence-grid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:0 24px;margin-top:32px;}
+  .essence-col img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);display:block;margin-bottom:20px;}
+  .essence-col h3{font-family:var(--tc);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--orange);margin-bottom:10px;line-height:1.3;}
+  .essence-col p{font-size:15px;line-height:1.7;color:var(--black);}
+  .essence-arrow{color:var(--orange);font-size:20px;display:flex;align-items:flex-start;padding-top:clamp(60px,6.5vw,90px);}
+  @media(max-width:1024px){.essence-grid{grid-template-columns:1fr;gap:32px 0;}.essence-arrow{display:none;}}
+
+  /* ── text on color (1-8) ── */
+  .toc-wrap{display:flex;flex-direction:column;gap:28px;margin-top:24px;}
+  .toc-badge{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
+  .toc-badge.ok{color:#1F8A4C;}.toc-badge.ng{color:#C0392B;}
+  .toc-badge svg{width:20px;height:20px;flex-shrink:0;}
+  .toc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .toc-card{border-radius:var(--r);padding:24px 20px;display:flex;flex-direction:column;gap:5px;min-height:160px;}
+  .toc-card span{font-size:13.5px;font-weight:700;line-height:1.5;font-family:var(--en);}
+  .toc-bad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .toc-bad-card{border-radius:8px;padding:14px 12px;display:flex;flex-direction:column;gap:3px;min-height:100px;}
+  .toc-bad-card span{font-size:12px;font-weight:700;font-family:var(--en);line-height:1.6;opacity:.85;}
+
+  /* ── mobile ── */
+  .menu-btn{display:none;}
+  .menu-bd{display:none;}
+  @media(max-width:1024px){
+    :root{--sb-w:0px;--pad-x:24px;--pad-y:48px;}
+    #progress-bar{left:0;}
+    .sidebar{transform:translateX(-100%);width:280px;transition:transform .3s;z-index:200;}
+    .sidebar.open{transform:translateX(0);}
+    main,footer{margin-left:0;}
+    .menu-btn{display:flex;position:fixed;top:14px;right:14px;z-index:300;width:48px;height:48px;border-radius:50%;background:var(--orange);color:#fff;border:none;font-size:22px;font-weight:700;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.18);}
+    .menu-bd{display:block;position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity var(--t);z-index:150;}
+    .menu-bd.show{opacity:1;pointer-events:auto;}
+    .panel{grid-template-columns:1fr;gap:32px;}
+    .panel.personality+.panel.personality{margin-top:40px;padding-top:40px;}
+    .contents-grid{grid-template-columns:1fr;gap:36px;}
+    .patterns-grid{grid-template-columns:repeat(2,1fr);}
+    .donts-grid{grid-template-columns:repeat(2,1fr);}
+    .pfp-set,.combo{grid-template-columns:1fr;gap:24px;}
+    .logo-meaning{flex-wrap:wrap;gap:24px;}
+    .logo-meaning::before{display:none;}
+    .social-row{grid-template-columns:1fr;gap:32px;}
+    .palette .swatch{grid-template-columns:1fr;gap:8px;padding:24px;}
+    .palette .swatch:hover{padding:24px;}
+    .palette .swatch .copy-hint{display:none;}
+    .hier{grid-template-columns:1fr;gap:32px;padding:32px;}
+    .type-showcase{padding:32px;}
+    .copy-compare{grid-template-columns:1fr;}
+    .cobrand{padding:48px 24px 32px;gap:32px;}
+    .cobrand .partner img{max-width:100%;}
+    footer{padding:48px var(--pad-x);}
+    footer .footer-inner{grid-template-columns:1fr;gap:24px;}
+    .toast{left:50%;}
+    .hero-version{right:24px;bottom:32px;}
+    .toc-grid,.toc-bad-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="關閉">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<div id="progress-bar"></div>
+<button class="menu-btn" id="menuBtn" aria-label="目錄">≡</button>
+<div class="menu-bd" id="menuBd"></div>
+
+<aside class="sidebar" id="sidebar">
+  <img class="sb-logo" src="web-assets/logo/logo-h-white.svg" alt="食尚玩家">
+  <div class="nav-grp">
+    <div class="nav-grp-title">Brand Strategy</div>
+    <ul>
+      <li><a href="#s0-1"><span class="nav-num">0-1</span>品牌本質</a></li>
+      <li><a href="#s0-2"><span class="nav-num">0-2</span>品牌性格</a></li>
+    </ul>
+  </div>
+  <div class="nav-grp">
+    <div class="nav-grp-title">Basic System</div>
+    <ul>
+      <li><a href="#s1-1"><span class="nav-num">1-1</span>品牌標誌</a></li>
+      <li><a href="#s1-2"><span class="nav-num">1-2</span>品牌標誌組合</a></li>
+      <li><a href="#s1-3"><span class="nav-num">1-3</span>品牌標誌組合關係</a></li>
+      <li><a href="#s1-4"><span class="nav-num">1-4</span>品牌標誌淨空範圍</a></li>
+      <li><a href="#s1-5"><span class="nav-num">1-5</span>品牌標誌極小化</a></li>
+      <li><a href="#s1-6"><span class="nav-num">1-6</span>品牌標誌錯誤應用</a></li>
+      <li><a href="#s1-7"><span class="nav-num">1-7</span>品牌色彩計畫</a></li>
+      <li><a href="#s1-8"><span class="nav-num">1-8</span>品牌文字顏色</a></li>
+      <li><a href="#s1-9"><span class="nav-num">1-9</span>品牌標誌色彩</a></li>
+      <li><a href="#s1-10"><span class="nav-num">1-10</span>品牌標誌背景</a></li>
+      <li><a href="#s1-11"><span class="nav-num">1-11</span>品牌指定字體</a></li>
+      <li><a href="#s1-12"><span class="nav-num">1-12</span>品牌字體層級</a></li>
+      <li><a href="#s1-13"><span class="nav-num">1-13</span>品牌輔助圖案</a></li>
+      <li><a href="#s1-14"><span class="nav-num">1-14</span>品牌輔助圖案色彩</a></li>
+      <li><a href="#s1-15"><span class="nav-num">1-15</span>品牌輔助圖案應用</a></li>
+    </ul>
+  </div>
+  <div class="nav-grp">
+    <div class="nav-grp-title">Application</div>
+    <ul>
+      <li><a href="#s2-1"><span class="nav-num">2-1</span>品牌社群頭像</a></li>
+      <li><a href="#s2-2"><span class="nav-num">2-2</span>品牌社群版型</a></li>
+      <li><a href="#s2-3"><span class="nav-num">2-3</span>品牌聯名規範</a></li>
+    </ul>
+  </div>
+  <div class="nav-grp">
+    <div class="nav-grp-title">Asset</div>
+    <ul>
+      <li><a href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer"><span class="nav-num">↗</span>雲端素材庫</a></li>
+      <li><a href="../tvbs-食尚玩家-brand-guidelines%20ver%201.0.pdf" target="_blank" rel="noopener noreferrer"><span class="nav-num">↓</span>下載 PDF 手冊</a></li>
+    </ul>
+  </div>
+</aside>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="cover">
+  <svg id="hero-logo-svg" class="hero-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 696.91 287.61" aria-label="食尚玩家" role="img">
+    <path d="M696.15,204.86l-73.97-19.48,37.18-10.59c.68-.19,1.2-.74,1.36-1.43l6.93-29.82c.34-1.45-1.04-2.67-2.44-2.17l-36.83,13.09,4.32-18.99,27.09-3.12c.81-.09,1.49-.7,1.67-1.5l5.4-23.82,7.91-.91c.81-.09,1.49-.7,1.67-1.5l2.48-10.89h0l3.22-14.12,10.74-12.6-25.18,2.97h0s-12.84,1.49-12.84,1.49h0s-23.85,2.75-23.85,2.75l4.38-6.64c.55-.84-.1-1.92-1.09-1.81l-46.79,5.38c-.71.08-1.2.77-1.04,1.47l1.54,6.55-22.71,2.62h0l-1.11.13-27.27,3.14h0l-.17.02c-.06,0-.11.04-.17.05-.03,0-.06.02-.1.03-.2.05-.38.14-.56.25-.07.04-.14.09-.21.14-.02.01-.03.02-.05.04-.47.36-.82.88-.95,1.48l-5.17,23.88-2.2,9.67c-.29,1.26.74,2.41,2.02,2.26l8.06-.93-5.14,22.61c-.29,1.26.74,2.41,2.02,2.26l63.93-7.37-18.57,81.86-15.56,1.79c-1.05.12-2.02.63-2.71,1.43l-22.21,25.48c-1.14,1.31-.12,3.3,1.59,3.1l49.84-5.74,15.68-1.73c.82-.09,1.49-.7,1.68-1.5l7.62-33.5,34.55,21.56c.45.28,1.02.29,1.49.02l44.73-25.45c.82-.47.68-1.7-.22-1.93ZM648.7,98.6l-2.17,9.56c-.1.43-.45.75-.89.8l-87.41,10.07c-.71.08-1.28-.56-1.13-1.26l2.18-9.56c.1-.43.45-.75.89-.8l87.4-10.07c.71-.08,1.28.56,1.13,1.26Z"/>
+    <path d="M557.57,213.74c6.41-4.72,13.87-11.85,11.44-21.23-2.41-8.69-9.67-13.14-17.48-16.14,8.12-2.87,19.48-5.94,29.27-8.61.47-.13.83-.51.94-.98l2.86-12.61c.21-.92-.58-1.76-1.51-1.6-11.65,1.99-26.27,4.13-37.2,6.79-7.4,1.95-15.87,3.87-21.6,9.83-3.48,3.65-4.94,9.79-2.55,14.45,3.09,6.18,10.37,8.73,16.48,11.5-2.4,1.23-23.09,10.38-32.23,14-.53.21-.86.73-.83,1.3l1.72,30.59c.05.91,1.01,1.48,1.83,1.07,6.19-3.04,24.6-12.9,35.12-19.24,4.62-2.83,9.3-5.79,13.75-9.14Z"/>
+    <path d="M349.54,137.16l8.88-1.02-4.5,19.76-10.32,1.19c-.81.09-1.49.7-1.67,1.5l-4.96,21.8c-.29,1.26.74,2.41,2.02,2.26l9.09-1.05-4.4,19.33-10.76,1.24c-.54.06-.99.47-1.11,1l-5.26,23.1c-.19.84.49,1.61,1.35,1.51l38.31-4.41c.41-.05.78-.29.98-.66l13.43-24.02c.5-.9-.2-1.97-1.21-1.85l-8.8,1.01,4.4-19.35,9.71-1.12c.82-.09,1.49-.7,1.67-1.51l4.84-21.79c.28-1.26-.74-2.4-2.02-2.25l-8.35.96,4.5-19.76,9.92-1.14c.82-.09,1.49-.7,1.67-1.51l4.84-21.79c.28-1.26-.74-2.4-2.02-2.25l-45.61,5.26c-.81.09-1.49.7-1.67,1.5l-4.96,21.8c-.29,1.26.74,2.41,2.02,2.26Z"/>
+    <path d="M492.37,203.28h-.04s0,.01,0,.01l-9.75,3.47-.15.05h0l-25.35,9.02-7.62,2.71,17.95-18.64,9.79-47.89,12.44-1.43c.81-.09,1.49-.7,1.67-1.5l4.97-21.8c.29-1.26-.74-2.41-2.02-2.26l-85.59,9.86c-.81.09-1.49.7-1.67,1.5l-4.96,21.8c-.29,1.26.74,2.41,2.02,2.26l48.41-5.58-31.25,89.94c-.44,1.29.56,2.58,1.91,2.47l35.2-3.06h0s0,0,0,0c0,0,9.33-.66,18.73-1.39l-2.2,14.77c-.23,1.55,1.41,2.66,2.78,1.88l18.57-10.59c.64-.36,1.02-1.06.98-1.78l-2.33-42.18c-.07-1.24-1.3-2.06-2.49-1.63Z"/>
+    <path d="M430.14,168.78l-16.28,1.88c-.61.07-1.16.44-1.47.98l-39.32,68.67c2.94,1.07,5.79,3.17,6.53,7.3.08.44.37,1.93-.92,2.31-.64.19-2.13.13-3.95-.06l-6.4-.88s-.1-.02-.14-.02h0s-20.58-2.82-20.58-2.82c-.85-.2-1.74.12-2.29.81l-29.38,37.07c-1.24,1.56-.02,3.81,1.95,3.58l76.47-8.63,37.74-107.71c.46-1.31-.59-2.63-1.96-2.47Z"/>
+    <path d="M513.64,87.35l-17.78,2.1-78.71,9.07c-.81.09-1.49.7-1.67,1.5l-4.96,21.8c-.29,1.26.74,2.41,2.02,2.26l85.58-9.86c.81-.09,1.49-.7,1.67-1.5l2.84-12.45,11.01-12.91Z"/>
+    <path d="M266.55,179.02l2.79-12.31h-.05s9.85-43.45,9.85-43.45c.29-1.26-.74-2.4-2.02-2.26l-10.02,1.15s-.03,0-.05,0l-39.37,4.54c-.81.09-1.49.7-1.67,1.5l-.3,1.31h0s-3.76,16.52-3.76,16.52h0s-7.72,33.95-7.72,33.95c-1.36,5.96,3.48,11.38,9.54,10.68l8.43-.97v-.03c.15-.01.3,0,.45-.03l25.37-2.92c4.16-.48,7.61-3.58,8.54-7.68ZM243.35,143.56l9.89-1.14c.71-.08,1.28.56,1.13,1.26l-5.62,24.72c-.1.43-.45.75-.89.8l-9.87,1.14c-.71.08-1.28-.56-1.13-1.26l5.6-24.71c.1-.43.45-.75.89-.8Z"/>
+    <path d="M297.09,69.01l31.09-3.58c.87-.1,1.58-.74,1.78-1.59l4.15-18.22h0l12.04-14.77-16.9,2-25.85,2.92c-.87.1-1.59.74-1.78,1.59l-6.66,29.26c-.31,1.34.78,2.56,2.15,2.4Z"/>
+    <path d="M200.54,80.18l31.09-3.58c.87-.1,1.58-.74,1.78-1.59l6.64-29.19c.3-1.34-.78-2.56-2.14-2.4l-31.07,3.51c-.87.1-1.59.74-1.78,1.59l-6.66,29.26c-.31,1.34.78,2.56,2.15,2.4Z"/>
+    <path d="M331.59,100.86l5.38-23.15c.29-1.26-.73-2.42-2.02-2.27l-56.07,6.46,9.78-43.01c.16-.71-.41-1.35-1.13-1.27l-33.08,3.81c-.46.05-.83.39-.93.84l-9.94,43.69-55.21,6.36c-.81.09-1.49.7-1.67,1.5l-5.07,22.28-15.72,69.13c-.16.72.1,1.45.67,1.89l24.97,19.08c1.09.83,2.7.23,3.01-1.13l20.66-90.82,82.54-9.51-21.41,94.11-12.12,13.56c-.78.87-.1,2.21,1.05,2.08l40.18-4.63c.81-.09,1.49-.7,1.67-1.5l24.46-107.52h0Z"/>
+    <path d="M16.4,94.54l35.79,5.11c.79.11,1.58-.29,1.97-1l10.62-19.7,59.93-6.91,10.74,16.9c.5.78,1.5,1.07,2.36.68l33.05-15.15c1.23-.56,1.53-2.18.57-3.1l-17.89-17.14,10.16-11.38-19.62,2.32h0s-98.18,11.31-98.18,11.31l-30.6,34.97c-.99,1.13-.37,2.89,1.1,3.1Z"/>
+    <path d="M114.91,170.26l2.44-.29,28.38-3.5c.81-.09,1.49-.7,1.67-1.5l15.29-67.21c.29-1.26-.74-2.41-2.02-2.26l-11.7,1.35h0l-41.62,4.8,8.36-14.97c.75-1.35-.3-2.95-1.82-2.77l-38.52,4.44c-1.07.12-1.84,1.11-1.7,2.17l1.94,14.79-28.87,3.33h0s-15.78,1.82-15.78,1.82c-.51.06-.94.44-1.05.94L.05,242.22c-.28,1.25.75,2.4,2.02,2.25l31.54-3.63,35.85-3.9c.75-.09,1.39-.61,1.62-1.33l11.16-34.42c.48-1.49-.93-2.86-2.4-2.33l-39.5,14.21,8.33-35.29,31.23-3.42,40.27,55.68c.39.54,1.04.82,1.71.75l58.08-6.37c1.71-.19,2.35-2.36,1.01-3.39l-66.04-50.78ZM124.04,116.56l-2.19,9.63c-.1.43-.45.75-.89.8l-60.53,6.98c-.71.08-1.29-.57-1.12-1.26l2.25-9.52c.1-.42.45-.74.89-.79l60.48-7.08c.71-.08,1.29.56,1.13,1.26ZM55.9,150.05l60.72-7.11c.71-.08,1.29.56,1.13,1.26l-2.18,9.6c-.1.43-.45.75-.89.8l-60.77,7c-.71.08-1.29-.57-1.12-1.26l2.24-9.5c.1-.42.45-.74.89-.79Z"/>
+    <path d="M367.78,73.69l8.62-37.6-1.59-8.42,18.93-2.18c3.94-.45,7.09-.3,9.43.45,2.34.76,3.86,2.31,4.56,4.65.7,2.35.56,5.67-.43,9.97-1.36,5.93-3.79,10.38-7.28,13.33-3.49,2.96-8.18,4.77-14.05,5.45l-2.5.29-2.88,12.58-12.82,1.48ZM385.6,50.42c2.1-.24,3.8-.98,5.08-2.22,1.29-1.24,2.26-3.3,2.92-6.18.5-2.19.7-3.83.58-4.9-.12-1.07-.58-1.76-1.38-2.07-.81-.31-2.02-.36-3.64-.18l-3.56,15.54Z"/>
+    <path d="M416.81,22.84l12.82-1.48-8.13,35.47,14.53-1.67-4.55,11.2-25.31,2.91,10.64-46.44Z"/>
+    <path d="M451.58,57.95l-2.68,6.4-13.74,1.58,18.78-41.72-.06-6.15,19.85-2.29-.44,45.76-13.61,1.57.19-6.11-8.28.95ZM455.18,47.81l5.59-.64,1.11-16.58-6.7,17.22Z"/>
+    <path d="M484.23,46.47l-4.57-30.87,13.8-1.59.68,13.23-.25,5.56.13-.02,2.35-5.8,6.95-14.11,13.15-1.51-19.42,33.63-3.25,14.19-12.82,1.48,3.25-14.19Z"/>
+    <path d="M544.98,53.92c-4.29.49-7.59.17-9.89-.96s-3.66-3.37-4.07-6.69c-.41-3.32.08-8.02,1.47-14.08s3.08-10.89,5.08-14.49c2-3.6,4.48-6.27,7.44-8.01,2.96-1.74,6.59-2.86,10.88-3.36,4.29-.49,7.59-.17,9.89.97,2.3,1.14,3.65,3.37,4.07,6.69.41,3.32-.08,8.01-1.47,14.08s-3.08,10.89-5.08,14.49c-2,3.6-4.48,6.27-7.44,8.02-2.96,1.74-6.59,2.86-10.88,3.36ZM554.6,29.51c.85-3.7,1.38-6.51,1.58-8.44.21-1.93.1-3.23-.32-3.92-.42-.68-1.18-.96-2.27-.84-1.05.12-1.97.59-2.76,1.42-.79.82-1.52,2.23-2.21,4.21-.69,1.98-1.46,4.82-2.31,8.52-.84,3.66-1.37,6.48-1.59,8.47-.22,1.99-.12,3.35.31,4.08.43.73,1.17,1.03,2.22.91,1.1-.13,2.03-.62,2.8-1.49.77-.86,1.51-2.32,2.22-4.37s1.48-4.9,2.31-8.56Z"/>
+    <path d="M593.37,2.51l3.19,25.44,6.08-26.51,12.49-1.44-10.64,46.44-15.38,1.77-2.88-23.15-5.53,24.12-12.49,1.44,9.12-39.79-1.17-6.33,17.22-1.98Z"/>
+  </svg>
+  <div class="hero-title">Brand Identity<br/>Guidelines</div>
+  <div class="hero-meta">
+    <b>Owner</b>　Brand Empowerment Center<br/>
+    <b>Usage</b>　Social · Digital · Video · Partnership · Print<br/>
+    <b>Contact</b>　<a style="border-bottom:1px solid rgba(255,255,255,.4);" href="mailto:onochen@tvbs.com.tw">onochen@tvbs.com.tw</a>
+  </div>
+  <div class="hero-version">Ver. 1.0</div>
+  <a class="hero-scroll" href="#contents">SCROLL ↓</a>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents fade-in" id="contents">
+  <div class="contents-top">
+    <div class="contents-title">Contents</div>
+    <div class="contents-meta">20 Sections</div>
+  </div>
+  <h1 class="contents-h">目錄</h1>
+  <div class="contents-grid">
+    <div>
+      <h3>Brand Strategy</h3>
+      <ul>
+        <li><a href="#s0-1"><span class="num">0-1</span>品牌本質</a></li>
+        <li><a href="#s0-2"><span class="num">0-2</span>品牌性格</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Basic System</h3>
+      <ul>
+        <li><a href="#s1-1"><span class="num">1-1</span>品牌標誌</a></li>
+        <li><a href="#s1-2"><span class="num">1-2</span>品牌標誌組合</a></li>
+        <li><a href="#s1-3"><span class="num">1-3</span>品牌標誌組合關係</a></li>
+        <li><a href="#s1-4"><span class="num">1-4</span>品牌標誌淨空範圍</a></li>
+        <li><a href="#s1-5"><span class="num">1-5</span>品牌標誌極小化</a></li>
+        <li><a href="#s1-6"><span class="num">1-6</span>品牌標誌錯誤應用</a></li>
+        <li><a href="#s1-7"><span class="num">1-7</span>品牌色彩計畫</a></li>
+        <li><a href="#s1-8"><span class="num">1-8</span>品牌文字顏色</a></li>
+        <li><a href="#s1-9"><span class="num">1-9</span>品牌標誌色彩</a></li>
+        <li><a href="#s1-10"><span class="num">1-10</span>品牌標誌背景</a></li>
+        <li><a href="#s1-11"><span class="num">1-11</span>品牌指定字體</a></li>
+        <li><a href="#s1-12"><span class="num">1-12</span>品牌字體層級</a></li>
+        <li><a href="#s1-13"><span class="num">1-13</span>品牌輔助圖案</a></li>
+        <li><a href="#s1-14"><span class="num">1-14</span>品牌輔助圖案色彩</a></li>
+        <li><a href="#s1-15"><span class="num">1-15</span>品牌輔助圖案應用</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Application</h3>
+      <ul>
+        <li><a href="#s2-1"><span class="num">2-1</span>品牌社群頭像</a></li>
+        <li><a href="#s2-2"><span class="num">2-2</span>品牌社群版型</a></li>
+        <li><a href="#s2-3"><span class="num">2-3</span>品牌聯名規範</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 0-1 品牌本質 -->
+<section id="s0-1" class="fade-in">
+  <div class="s-head">
+    <div class="label">0-1</div>
+    <h2>Brand Essence</h2>
+    <div class="zh-title">品牌本質</div>
+  </div>
+  <div class="essence-grid">
+    <div class="essence-col">
+      <img src="web-assets/images/playful.jpg" alt="從吃回到玩">
+      <h3>從「吃」回到「玩」</h3>
+      <p>美食只是旅程中的一站，核心在於「整趣怎麼玩」與「一起玩的記憶」</p>
+    </div>
+    <div class="essence-arrow">▶</div>
+    <div class="essence-col">
+      <img src="web-assets/images/imaginative.jpg" alt="從資訊回到體驗">
+      <h3>從「資訊」回到「體驗」</h3>
+      <p>不主打誰的資料最豐富，誰最能把零碎資訊變成有故事、有驚喜、有共鳴的體驗。</p>
+    </div>
+    <div class="essence-arrow">▶</div>
+    <div class="essence-col">
+      <img src="web-assets/images/real.jpg" alt="從節目回到朋友">
+      <h3>從「節目」回到「朋友」</h3>
+      <p>不是站在台上像主持人一樣「介紹」景點，而是像朋友自然地「分享」最近怎麼玩、哪種玩法超好玩</p>
+    </div>
+  </div>
+</section>
+
+<!-- 0-2 品牌性格 -->
+<section id="s0-2" class="fade-in">
+  <div class="s-head">
+    <div class="label">0-2</div>
+    <h2>Brand Personality</h2>
+    <div class="zh-title">品牌性格</div>
+    <div class="desc">
+      <p>三個性格關鍵字定義食尚玩家的調性：<strong>Playful</strong>（愛玩、會玩）、<strong>Imaginative</strong>（玩出新想像）、<strong>Real</strong>（真實、不做作、在地）。在任何視覺與文案應用中，都應同步貫徹這三個精神。</p>
+    </div>
+  </div>
+  <div class="panel personality">
+    <div class="ref-stack">
+      <div class="ref-item">
+        <div class="ref-mark good"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg></span><span class="caption">畫面要有正在玩的行動感，而不是促銷式的熱鬧</span></div>
+        <div class="ref-img"><img src="web-assets/pdf-pages/p05-good.jpg" alt="Playful 正例" loading="lazy"></div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-mark bad"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span><span class="caption">將好玩誤用為吵雜的促銷視覺</span></div>
+        <div class="ref-img"><img src="web-assets/pdf-pages/p05-bad.jpg" alt="Playful 反例" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="panel-desc">
+      <div class="label">Personality 01</div>
+      <div class="en-title" style="color:var(--orange);">Playful</div>
+      <div class="zh-title">愛玩、會玩</div>
+      <p>把資訊變成讓人想立刻出發的入口。天生愛玩、也敢玩。敢提瘋狂玩法，也真的去執行，把玩這件事當成認真的事來做。</p>
+      <p><strong>品牌性格重點</strong><br>
+      ・ 把資訊說成一個可以跟著走的玩法<br>
+      ・ 用輕鬆、有畫面的語句，讓內容有行動感<br>
+      ・ 可以幽默，但不要浮誇、叫賣或硬玩梗<br>
+      ・ 避免「最狂、必吃、爆紅」等刺激字眼<br>
+      ・ 有趣之餘，仍要保留清楚主題與實用資訊</p>
+      <div class="copy-compare">
+        <div class="copy-card"><span class="tag ok">OK</span>台南不只牛肉湯，這條路線會讓你一路吃到想請假。</div>
+        <div class="copy-card"><span class="tag ng">NG</span>全台最狂台南美食！沒吃過真的會後悔！</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel personality">
+    <div class="ref-stack">
+      <div class="ref-item">
+        <div class="ref-mark good"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg></span><span class="caption">畫面要看得出新的觀看角度，而不是把景點與美食重新拼貼一次</span></div>
+        <div class="ref-img"><img src="web-assets/pdf-pages/p06-good.jpg" alt="Imaginative 正例" loading="lazy"></div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-mark bad"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span><span class="caption">沒有新觀看角度，只是把熟悉的景點重新拼貼</span></div>
+        <div class="ref-img"><img src="web-assets/pdf-pages/p06-bad.jpg" alt="Imaginative 反例" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="panel-desc">
+      <div class="label">Personality 02</div>
+      <div class="en-title" style="color:var(--orange);">Imaginative</div>
+      <div class="zh-title">玩出新想像</div>
+      <p>用新的規則或主題重新打開熟悉點。同一個城市，可以玩出不同主題、不同路線、不同故事，讓舊地方變成新體驗。</p>
+      <p><strong>品牌性格重點</strong><br>
+      ・ 從熟悉題材中找出新的切角，不只整理資訊<br>
+      ・ 用「主題、路線、任務、故事」重新組合內容<br>
+      ・ 標題帶出新鮮感：「換個玩法」「另一面」「重新認識」<br>
+      ・ 看完讓人有「原來還可以這樣玩」的感覺<br>
+      ・ 畫面創造想像空間，避免無重點拼貼</p>
+      <div class="copy-compare">
+        <div class="copy-card"><span class="tag ok">OK</span>大稻埕新體驗，這次我們找出新玩法。</div>
+        <div class="copy-card"><span class="tag ng">NG</span>大稻埕十大必訪景點，熱門店家一次看。</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel personality">
+    <div class="ref-stack">
+      <div class="ref-item">
+        <div class="ref-mark good"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg></span><span class="caption">保留旅途中真實感的捕捉</span></div>
+        <div class="ref-img"><img src="web-assets/pdf-pages/p07-good.jpg" alt="Real 正例" loading="lazy"></div>
+      </div>
+      <div class="ref-item">
+        <div class="ref-mark bad"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span><span class="caption">把旅行拍成過度修飾的觀光美照</span></div>
+        <div class="ref-img"><img src="web-assets/pdf-pages/p07-bad.jpg" alt="Real 反例" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="panel-desc">
+      <div class="label">Personality 03</div>
+      <div class="en-title" style="color:var(--orange);">Real</div>
+      <div class="zh-title">真實、不做作、在地</div>
+      <p>講實話不演戲。好玩就說好玩，也會提醒可能的落差與狀況。觀眾看到的不是業配腳本，而是一群真的去吃、去玩過、敢負責任的玩伴。</p>
+      <p><strong>品牌性格語氣</strong><br>
+      ・ 用真實觀察取代浮誇形容，少用「最強、神級、必訪」<br>
+      ・ 可以有優缺點，也提醒可能踩雷的地方<br>
+      ・ 多寫現場細節：排隊、價格、份量、交通、口味落差<br>
+      ・ 語氣像朋友分享，不像業配介紹或官方推薦<br>
+      ・ 在地不是堆地名，而是當地人的生活感與使用情境</p>
+      <div class="copy-compare">
+        <div class="copy-card"><span class="tag ok">OK</span>花蓮小旅行路線：不趕場、也不錯過重點行程。</div>
+        <div class="copy-card"><span class="tag ng">NG</span>花蓮絕美景點大公開，一生必去的夢幻旅程。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 01 -->
+<section class="divider fade-in">
+  <div class="d-num">Chapter 01</div>
+  <h2>Basic System</h2>
+</section>
+
+<!-- 1-1 品牌標誌 -->
+<section id="s1-1" class="fade-in">
+  <div class="panel">
+    <div class="logo-feature">
+      <img src="web-assets/logo/logo-h.svg" alt="食尚玩家 Logo">
+      <div class="logo-meaning">
+        <div class="mm">
+          <div class="icon"><img src="Guideline/link/玩行動力.png" alt="玩｜行動力"></div>
+          <h4>玩｜行動力</h4><p>Action</p>
+        </div>
+        <div class="mm">
+          <div class="icon"><img src="Guideline/link/路探索.png" alt="路｜探索"></div>
+          <h4>路｜探索</h4><p>Discovery</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel-desc">
+      <div class="label">1-1</div>
+      <div class="en-title">Logo</div>
+      <div class="zh-title">品牌標誌</div>
+      <p>標誌設計將「玩」的字根與「行走的腳步」合而為一，形塑出玩家即刻出發的動感姿態，並結合品牌標語「PLAY ON」，展現永不停歇的行動力。</p>
+      <p><strong>玩｜行動力</strong>：取自「玩」字的動態筆觸，轉化為踏出的雙腳。象徵品牌不僅是資訊提供者，更是引領大眾即刻出發、實踐玩樂的驅動者。</p>
+      <p><strong>路｜探索</strong>：將「家」的筆畫結構延伸為蜿蜒的路徑。代表從熟悉的日常出發，在看似平凡的線條中，為觀眾開拓出未曾察覺的探索視角。</p>
+      <p><strong>PLAY ON｜永不停歇</strong>：品牌標語以傾斜動感呈現，與標誌主體呼應。強調一種「玩無止境」的態度。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 1-2 品牌標誌組合 -->
+<section id="s1-2" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-2</div>
+    <h2>Combination</h2>
+    <div class="zh-title">品牌標誌組合</div>
+    <div class="desc">
+      <p>食尚玩家標誌由標準字與核心圖案構成。為適應不同版位需求，建立了橫式與直式的標準組合模式。</p>
+      <p><strong>橫式 Horizontal</strong>：水平排列，流暢可讀，建議作為各設計版位的優先選擇。</p>
+      <p><strong>直式 Vertical</strong>：適用窄縮版位、垂直旗幟、社群限動或狹長版面。</p>
+      <a class="dl" href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer">Logo 雲端下載 ↗</a>
+    </div>
+  </div>
+  <div class="combo">
+    <div class="item horizontal"><span class="ck">Horizontal</span><img src="web-assets/logo/logo-h.svg" alt="橫式標誌"></div>
+    <div class="item vertical"><span class="ck">Vertical</span><img src="web-assets/logo/logo-v.svg" alt="直式標誌"></div>
+  </div>
+</section>
+
+<!-- 1-3 品牌標誌組合關係 -->
+<section id="s1-3" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-3</div>
+    <h2>Configurations</h2>
+    <div class="zh-title">品牌標誌組合關係</div>
+  </div>
+  <div class="pdf-embed"><img src="web-assets/pdf-pages/p11.jpg" alt="標誌組合關係" loading="lazy"></div>
+</section>
+
+<!-- 1-4 品牌標誌淨空範圍 -->
+<section id="s1-4" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-4</div>
+    <h2>Clear Space</h2>
+    <div class="zh-title">品牌標誌淨空範圍</div>
+  </div>
+  <div class="pdf-embed"><img src="web-assets/pdf-pages/p12.jpg" alt="淨空範圍" loading="lazy"></div>
+</section>
+
+<!-- 1-5 品牌標誌極小化 -->
+<section id="s1-5" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-5</div>
+    <h2>Minimum Size</h2>
+    <div class="zh-title">品牌標誌極小化</div>
+  </div>
+  <div class="pdf-embed"><img src="web-assets/pdf-pages/p13.jpg" alt="極小化" loading="lazy"></div>
+</section>
+
+<!-- 1-6 品牌標誌錯誤應用 -->
+<section id="s1-6" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-6</div>
+    <h2>Don'ts</h2>
+    <div class="zh-title">品牌標誌錯誤應用</div>
+  </div>
+  <div class="pdf-embed"><img src="web-assets/pdf-pages/p14.jpg" alt="品牌標誌錯誤應用" loading="lazy"></div>
+</section>
+
+<!-- 1-7 品牌色彩計畫 -->
+<section id="s1-7" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-7</div>
+    <h2>Color Palette</h2>
+    <div class="zh-title">品牌色彩計畫</div>
+    <div class="desc">
+      <p>為確保品牌在任何場合皆能清晰呈現，應嚴格遵循色彩規範，維持一致且專業的視覺形象。<strong>禁止自行調配色號以外的漸層或色彩</strong>，以確保跨平台視覺的一致性。</p>
+      <p style="color:var(--black);font-weight:700;">▸ 點擊任一色塊即複製 HEX。</p>
+    </div>
+  </div>
+  <div class="palette">
+    <div class="swatch sw-orange" data-hex="#FF7500"><div><div class="tag">Primary</div><div class="name">Orange</div></div><div></div><div class="code"><span>CMYK　0, 54, 100, 0</span><span>RGB　　255, 117, 0</span><span>HEX　　#FF7500</span></div><div class="copy-hint">Copy HEX</div></div>
+    <div class="swatch sw-y900" data-hex="#FAD700"><div><div class="tag">Secondary</div><div class="name">Yellow-900</div></div><div></div><div class="code"><span>CMYK　0, 14, 100, 2</span><span>RGB　　250, 215, 0</span><span>HEX　　#FAD700</span></div><div class="copy-hint">Copy HEX</div></div>
+    <div class="swatch sw-y500" data-hex="#FFFF54"><div><div class="tag">Secondary</div><div class="name">Yellow-500</div></div><div></div><div class="code"><span>CMYK　0, 0, 67, 0</span><span>RGB　　255, 255, 84</span><span>HEX　　#FFFF54</span></div><div class="copy-hint">Copy HEX</div></div>
+    <div class="swatch sw-y300" data-hex="#FAFFCD"><div><div class="tag">Secondary</div><div class="name">Yellow-300</div></div><div></div><div class="code"><span>CMYK　2, 0, 20, 0</span><span>RGB　　250, 255, 205</span><span>HEX　　#FAFFCD</span></div><div class="copy-hint">Copy HEX</div></div>
+    <div class="swatch sw-black" data-hex="#1A1A1A"><div><div class="tag">Neutral</div><div class="name">Black-900</div></div><div></div><div class="code"><span>CMYK　0, 0, 0, 90</span><span>RGB　　26, 26, 26</span><span>HEX　　#1A1A1A</span></div><div class="copy-hint">Copy HEX</div></div>
+    <div class="swatch sw-galaxy" data-hex="#273544"><div><div class="tag">Neutral</div><div class="name">Galaxy-900</div></div><div></div><div class="code"><span>CMYK　43, 23, 0, 73</span><span>RGB　　39, 53, 68</span><span>HEX　　#273544</span></div><div class="copy-hint">Copy HEX</div></div>
+    <div class="swatch sw-g500" data-hex="#A2A2A2"><div><div class="tag">Neutral</div><div class="name">Grey-500</div></div><div></div><div class="code"><span>CMYK　0, 0, 0, 36</span><span>RGB　　162, 162, 162</span><span>HEX　　#A2A2A2</span></div><div class="copy-hint">Copy HEX</div></div>
+    <div class="swatch sw-g300" data-hex="#E0E0E0"><div><div class="tag">Neutral</div><div class="name">Grey-300</div></div><div></div><div class="code"><span>CMYK　0, 0, 0, 13</span><span>RGB　　224, 224, 224</span><span>HEX　　#E0E0E0</span></div><div class="copy-hint">Copy HEX</div></div>
+  </div>
+</section>
+
+<!-- 1-8 品牌文字顏色 -->
+<section id="s1-8" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-8</div>
+    <h2>Text on Color</h2>
+    <div class="zh-title">品牌文字顏色</div>
+    <div class="desc"><p>品牌色彩的文字搭配可延伸至官網、社群與設計版位。請依左側規範使用，<strong>禁止使用錯誤的顏色組合</strong>，以確保跨平台視覺一致性。</p></div>
+  </div>
+  <div class="toc-wrap">
+    <div>
+      <div class="toc-badge ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg>正確配置</div>
+      <div class="toc-grid">
+        <div class="toc-card" style="background:#FF7500">
+          <span style="color:#FFFF54">Yellow-500</span>
+          <span style="color:#1A1A1A">Black</span>
+          <span style="color:#273544">Galaxy</span>
+          <span style="color:#fff">White</span>
+        </div>
+        <div class="toc-card" style="background:#FAD700">
+          <span style="color:#1A1A1A">Black</span>
+          <span style="color:#273544">Galaxy</span>
+        </div>
+        <div class="toc-card" style="background:#FFFF54">
+          <span style="color:#FF7500">Orange</span>
+          <span style="color:#1A1A1A">Black</span>
+          <span style="color:#273544">Galaxy</span>
+        </div>
+        <div class="toc-card" style="background:#FAFFCD">
+          <span style="color:#FF7500">Orange</span>
+          <span style="color:#1A1A1A">Black</span>
+          <span style="color:#273544">Galaxy</span>
+        </div>
+        <div class="toc-card" style="background:#1A1A1A">
+          <span style="color:#FF7500">Orange</span>
+          <span style="color:#FAD700">Yellow-900</span>
+          <span style="color:#FFFF54">Yellow-500</span>
+          <span style="color:#FAFFCD">Yellow-300</span>
+          <span style="color:#E0E0E0">Grey-300</span>
+          <span style="color:#fff">White</span>
+        </div>
+        <div class="toc-card" style="background:#A2A2A2">
+          <span style="color:#1A1A1A">Black</span>
+          <span style="color:#fff">White</span>
+        </div>
+        <div class="toc-card" style="background:#E0E0E0">
+          <span style="color:#1A1A1A">Black</span>
+          <span style="color:#273544">Galaxy</span>
+        </div>
+        <div class="toc-card" style="background:#273544">
+          <span style="color:#FF7500">Orange</span>
+          <span style="color:#FAD700">Yellow-900</span>
+          <span style="color:#FFFF54">Yellow-500</span>
+          <span style="color:#FAFFCD">Yellow-300</span>
+          <span style="color:#E0E0E0">Grey-300</span>
+          <span style="color:#fff">White</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="toc-badge ng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>錯誤配置</div>
+      <div class="toc-bad-grid">
+        <div class="toc-bad-card" style="background:#FAD700">
+          <span style="color:#FF7500">Orange</span>
+          <span style="color:#FFFF54">Yellow-500</span>
+          <span style="color:#FAFFCD">Yellow-300</span>
+          <span style="color:#fff">White</span>
+        </div>
+        <div class="toc-bad-card" style="background:#FFFF54">
+          <span style="color:#FAD700">Yellow-900</span>
+          <span style="color:#FAFFCD">Yellow-300</span>
+          <span style="color:#fff">White</span>
+        </div>
+        <div class="toc-bad-card" style="background:#1A1A1A">
+          <span style="color:#273544">Galaxy</span>
+          <span style="color:#A2A2A2">Grey-500</span>
+        </div>
+        <div class="toc-bad-card" style="background:#E0E0E0">
+          <span style="color:#fff">White</span>
+          <span style="color:#A2A2A2">Grey-500</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1-9 品牌標誌色彩 -->
+<section id="s1-9" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-9</div>
+    <h2>Logo Color</h2>
+    <div class="zh-title">品牌標誌色彩</div>
+  </div>
+  <div class="pdf-embed"><img src="web-assets/pdf-pages/p17.jpg" alt="品牌標誌色彩" loading="lazy"></div>
+</section>
+
+<!-- 1-10 品牌標誌背景 -->
+<section id="s1-10" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-10</div>
+    <h2>Logo on Image</h2>
+    <div class="zh-title">品牌標誌背景</div>
+  </div>
+  <a class="dl" href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer">陰影浮水印版本 ↗</a>
+  <div class="pdf-embed" style="margin-top:24px;"><img src="web-assets/pdf-pages/p18.jpg" alt="品牌標誌背景" loading="lazy"></div>
+</section>
+
+<!-- 1-11 品牌指定字體 -->
+<section id="s1-11" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-11</div>
+    <h2>Typography</h2>
+    <div class="zh-title">品牌指定字體</div>
+    <div class="desc">
+      <p>字體是傳達形象與調性的核心要素。為確保所有應用場合中的一致性與專業感，應嚴格遵循字體規範。</p>
+      <a class="dl" href="https://fonts.google.com/specimen/Google+Sans+Flex" target="_blank" rel="noopener noreferrer">Google Sans Flex ↗</a>
+      <a class="dl" href="https://seed.line.me/index_tw.html" target="_blank" rel="noopener noreferrer">LINE Seed TW ↗</a>
+    </div>
+  </div>
+  <div class="type-showcase">
+    <div class="type-block">
+      <div class="lbl">英文標題指定字體</div>
+      <div class="fam">Google Sans Flex</div>
+      <div class="type-en">anywhere anytime any way</div>
+    </div>
+    <div class="type-block">
+      <div class="lbl">中英文混打指定字體</div>
+      <div class="fam">LINE Seed TW</div>
+      <div class="type-zh">食尚玩家，是一個懂玩、敢玩、<br>隨時都找得到的玩咖朋友</div>
+    </div>
+  </div>
+</section>
+
+<!-- 1-12 品牌字體層級 -->
+<section id="s1-12" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-12</div>
+    <h2>Text Hierarchy</h2>
+    <div class="zh-title">品牌字體層級</div>
+    <div class="desc">
+      <p>字體階層能有效保持排版系統的一致性，透過標題、內文及強調字等不同層級的設計，建立清晰且有條理的視覺結構。</p>
+    </div>
+  </div>
+  <div class="hier">
+    <div class="key">
+      <div class="row"><strong>H1</strong>Headline (English)<br>Google Sans Flex<br>Extra Bold / Bold</div>
+      <div class="row"><strong>H1</strong>Headline (Chinese)<br>LINE Seed TW<br>Extra Bold</div>
+      <div class="row"><strong>H2</strong>Subline (EN/ZH)<br>LINE Seed TW Bold</div>
+      <div class="row"><strong>H3</strong>Subline (EN/ZH)<br>LINE Seed TW Regular</div>
+    </div>
+    <div>
+      <h1>Anywhere Anytime Any Way</h1>
+      <h1 class="zh">隨時隨地出發</h1>
+      <h2>Tonight's Foodie Map</h2>
+      <h2 class="zh">今晚我想來點⋯ 獨家私藏清單</h2>
+      <p>天生愛玩，更要把玩這件事做到極致。食尚玩家不僅僅是帶路，更要在同一個城市裡，用想像力翻玩出完全不同的私藏路線，讓平凡的舊地標變成充滿驚喜的新體驗。</p>
+      <p>At Super Taste, we take "play" seriously. Beyond just following maps, we use our imagination to reinvent travel routes, turning familiar spots into fresh, unexpected adventures.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 1-13 品牌輔助圖案 -->
+<section id="s1-13" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-13</div>
+    <h2>Patterns</h2>
+    <div class="zh-title">品牌輔助圖案</div>
+    <div class="desc">
+      <p><strong>「每一條路，都是探索。」</strong>路徑線是從 Logo DNA 延伸而出的核心視覺元素，不只是裝飾，更是品牌帶領玩家穿梭世界的生命軌跡。</p>
+      <p><strong>品牌基因延伸</strong>：承襲 Logo 流動筆觸，將品牌記憶點轉化為無限延伸符號。<br><strong>真實探索軌跡</strong>：保留線條的不規則感與隨性筆觸，象徵品牌自由、多變、充滿驚喜的個性。</p>
+      <p style="color:var(--black);font-weight:700;">▸ 點擊或 Hover 切換 Orange / Yellow 兩款配色。</p>
+      <a class="dl" href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer">完整圖案包 ↗</a>
+    </div>
+  </div>
+  <div class="patterns-grid">
+    <div class="p-item"><div class="p-layer o"><img src="web-assets/patterns/Flow-orage-H.svg" alt="Flow Orange"></div><div class="p-layer y"><img src="web-assets/patterns/Flow-yellow-H.svg" alt="Flow Yellow"></div><div class="p-name">Flow<small>路徑線 01</small></div></div>
+    <div class="p-item"><div class="p-layer o"><img src="web-assets/patterns/Ridge-orange-H.svg" alt="Ridge Orange"></div><div class="p-layer y"><img src="web-assets/patterns/Ridge-yellow-H.svg" alt="Ridge Yellow"></div><div class="p-name">Ridge<small>路徑線 02</small></div></div>
+    <div class="p-item"><div class="p-layer o"><img src="web-assets/patterns/Sweep-orange-H.svg" alt="Sweep Orange"></div><div class="p-layer y"><img src="web-assets/patterns/Sweep-yellow-H.svg" alt="Sweep Yellow"></div><div class="p-name">Sweep<small>路徑線 03</small></div></div>
+    <div class="p-item"><div class="p-layer o"><img src="web-assets/patterns/Loop-orange-H.svg" alt="Loop Orange"></div><div class="p-layer y"><img src="web-assets/patterns/Loop-yellow-H.svg" alt="Loop Yellow"></div><div class="p-name">Loop<small>路徑線 04</small></div></div>
+    <div class="p-item"><div class="p-layer o"><img src="web-assets/patterns/Knot-orange-H.svg" alt="Knot Orange"></div><div class="p-layer y"><img src="web-assets/patterns/Knot-yellow-H.svg" alt="Knot Yellow"></div><div class="p-name">Knot<small>路徑線 05</small></div></div>
+    <div class="p-item"><div class="p-layer o"><img src="web-assets/patterns/Trail-orange-H.svg" alt="Trail Orange"></div><div class="p-layer y"><img src="web-assets/patterns/Trail-yellow-H.svg" alt="Trail Yellow"></div><div class="p-name">Trail<small>路徑線 06</small></div></div>
+  </div>
+</section>
+
+<!-- 1-14 品牌輔助圖案色彩 -->
+<section id="s1-14" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-14</div>
+    <h2>Pattern Color</h2>
+    <div class="zh-title">品牌輔助圖案色彩</div>
+  </div>
+  <div class="pdf-embed"><img src="web-assets/pdf-pages/p22.jpg" alt="輔助圖案色彩" loading="lazy"></div>
+</section>
+
+<!-- 1-15 品牌輔助圖案應用 -->
+<section id="s1-15" class="fade-in">
+  <div class="s-head">
+    <div class="label">1-15</div>
+    <h2>Pattern Application</h2>
+    <div class="zh-title">品牌輔助圖案應用</div>
+  </div>
+  <div class="pdf-embed"><img src="web-assets/pdf-pages/p23.jpg" alt="輔助圖案應用" loading="lazy"></div>
+</section>
+
+<!-- Chapter 02 -->
+<section class="divider fade-in">
+  <div class="d-num">Chapter 02</div>
+  <h2>Application</h2>
+</section>
+
+<!-- 2-1 品牌社群頭像 -->
+<section id="s2-1" class="fade-in">
+  <div class="s-head">
+    <div class="label">2-1</div>
+    <h2>Social PFP</h2>
+    <div class="zh-title">品牌社群頭像</div>
+    <div class="desc">
+      <p>圓形裁切下仍精準呈現。標誌主體須在中央 1X 淨空安全區內，避免在各平台自動裁切時資訊被遮蓋。</p>
+      <p><strong>白底彩色標誌</strong>：強調品牌完整色彩層次。<br><strong>橘底反白標誌</strong>：強化色彩張力與視覺衝擊力。</p>
+      <a class="dl" href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer">PFP 兩款下載 ↗</a>
+    </div>
+  </div>
+  <div class="pfp-set">
+    <div class="pfp-item white-bg">
+      <div class="ring"><img src="web-assets/logo/pfp-white-bg.png" alt="白底彩色標誌" loading="lazy"></div>
+      <div class="cap"><b>白底彩色標誌</b>MODE A</div>
+    </div>
+    <div class="pfp-item orange-bg">
+      <div class="ring"><img src="web-assets/logo/pfp-orange-bg.png" alt="橘底反白標誌" loading="lazy"></div>
+      <div class="cap"><b>橘底反白標誌</b>MODE B</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2-2 品牌社群版型 -->
+<section id="s2-2" class="fade-in">
+  <div class="s-head">
+    <div class="label">2-2</div>
+    <h2>Social Media Layouts</h2>
+    <div class="zh-title">品牌社群版型</div>
+    <div class="desc">
+      <p>為確保社群平台（IG/FB）的視覺一致性，建立了標準化版型，協助同仁快速產出具品牌感的內容。</p>
+      <p><strong>單一聚焦原則</strong>：以單張高品質影像為主，不建議多張拼圖。<br><strong>語氣一致</strong>：文字撰寫遵循 0-2 品牌性格規範。<br><strong>版型尺寸</strong>：FB 4:5 / IG 1:1 / Reels 9:16。</p>
+    </div>
+  </div>
+  <div class="social-row">
+    <div class="s-item fb"><div class="lbl">FB · 4:5</div><div class="box"><img src="web-assets/images/social-fb.png" alt="FB 版型" loading="lazy"></div></div>
+    <div class="s-item ig"><div class="lbl">IG · 1:1</div><div class="box"><img src="web-assets/images/social-ig.png" alt="IG 版型" loading="lazy"></div></div>
+    <div class="s-item reels"><div class="lbl">Reels · 9:16</div><div class="box"><img src="web-assets/images/social-reels.png" alt="Reels 版型" loading="lazy"></div></div>
+  </div>
+</section>
+
+<!-- 2-3 品牌聯名規範 -->
+<section id="s2-3" class="fade-in">
+  <div class="s-head">
+    <div class="label">2-3</div>
+    <h2>Co-branding</h2>
+    <div class="zh-title">品牌聯名規範</div>
+    <div class="desc">
+      <p>為確保食尚玩家與合作對象並列時，仍能維持品牌的獨立性與平衡感。</p>
+      <p><strong>視覺平衡與間距</strong>：兩個標誌之間須保留適當水平空間，避免視覺干擾。<br><strong>對齊與比例</strong>：以中心水平線為對齊基準。合作對象標誌高度不應超過食尚玩家主標誌。</p>
+    </div>
+  </div>
+  <div class="cobrand">
+    <div class="partner"><img src="Guideline/link/parther logo.png" alt="食尚玩家 × 享食尚"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img class="footer-logo" src="web-assets/logo/logo-h.svg" alt="食尚玩家">
+      <div style="color:#555;line-height:1.8;margin-top:16px;font-size:12px;">Brand Identity Guidelines<br/>Ver. 1.0</div>
+    </div>
+    <div><h4>Owner</h4><div>Brand Empowerment<br/>Center</div></div>
+    <div><h4>Contact</h4><div><a href="mailto:onochen@tvbs.com.tw">onochen@tvbs.com.tw</a></div></div>
+    <div>
+      <h4>Asset</h4>
+      <div><a href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer">Google Drive ↗</a></div>
+      <div style="margin-top:8px;"><a href="../tvbs-食尚玩家-brand-guidelines%20ver%201.0.pdf" target="_blank" rel="noopener noreferrer">Download PDF ↓</a></div>
+    </div>
+    <div class="copy">© TVBS Super Taste — Play On.</div>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="回頂端">↑</button>
+<div class="toast" id="toast">已複製</div>
+
+<script>
+  // progress bar
+  const bar = document.getElementById('progress-bar');
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+    backTop.classList.toggle('show', window.scrollY > 400);
+  }, {passive:true});
+  backTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // mobile menu
+  const btn = document.getElementById('menuBtn');
+  const sb  = document.getElementById('sidebar');
+  const bd  = document.getElementById('menuBd');
+  const setMenu = open => { sb.classList.toggle('open',open); bd.classList.toggle('show',open); btn.textContent = open ? '×' : '≡'; };
+  btn?.addEventListener('click', () => setMenu(!sb.classList.contains('open')));
+  bd?.addEventListener('click',  () => setMenu(false));
+  sb?.addEventListener('click',  e => { if(e.target.tagName==='A') setMenu(false); });
+
+  // palette copy
+  const toast = document.getElementById('toast');
+  let tt;
+  const showToast = msg => { toast.textContent=msg; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1800); };
+  document.querySelectorAll('.palette .swatch').forEach(s => {
+    s.addEventListener('click', async () => {
+      const hex = s.dataset.hex; if(!hex) return;
+      try { await navigator.clipboard.writeText(hex); } catch {
+        const ta=document.createElement('textarea'); ta.value=hex; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      }
+      const hint=s.querySelector('.copy-hint'), orig=hint?.textContent;
+      if(hint){ hint.textContent='已複製 '+hex; s.classList.add('copied'); }
+      showToast('已複製 '+hex);
+      setTimeout(()=>{ if(hint) hint.textContent=orig; s.classList.remove('copied'); },1400);
+    });
+  });
+
+  // don'ts tap toggle
+  document.querySelectorAll('.dont-cell').forEach(c => c.addEventListener('click', ()=>c.classList.toggle('tapped')));
+
+  // patterns tap toggle
+  document.querySelectorAll('.p-item').forEach(i => i.addEventListener('click', ()=>i.classList.toggle('tapped')));
+
+  // sidebar scrollspy
+  const links = document.querySelectorAll('.sidebar a[href^="#"]');
+  const sects = [...links].map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const navObs = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting) links.forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+e.target.id)); });
+  }, {rootMargin:'-30% 0px -60% 0px'});
+  sects.forEach(s=>navObs.observe(s));
+
+  // fade-in
+  const fadeObs = new IntersectionObserver(es => {
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); fadeObs.unobserve(e.target); } });
+  }, {threshold:0.08, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.fade-in').forEach(el=>fadeObs.observe(el));
+
+  // lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.pdf-embed img, .ref-img img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('lightbox-close').addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if(e.target === lb || e.target === lbImg) closeLb(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLb(); });
+
+  // SVG stroke draw-on animation for hero logo (inline SVG, no fetch needed)
+  (async function(){
+    const svg = document.getElementById('hero-logo-svg');
+    if(!svg) return;
+    const paths = Array.from(svg.querySelectorAll('path'));
+    paths.forEach(p => {
+      let len = 600;
+      try { len = p.getTotalLength(); } catch(e){}
+      p.style.fill = 'transparent';
+      p.style.stroke = '#ffffff';
+      p.style.strokeWidth = '1.5';
+      p.style.strokeLinecap = 'round';
+      p.style.strokeLinejoin = 'round';
+      p.style.strokeDasharray = len;
+      p.style.strokeDashoffset = len;
+      p.style.transition = 'none';
+    });
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const DRAW = 900, STAGGER = 35;
+    paths.forEach((p, i) => {
+      p.style.transition = `stroke-dashoffset ${DRAW}ms cubic-bezier(0.4,0,0.2,1) ${i*STAGGER}ms`;
+      p.style.strokeDashoffset = '0';
+    });
+    const totalDelay = DRAW + STAGGER * paths.length + 100;
+    await new Promise(r => setTimeout(r, totalDelay));
+    paths.forEach((p, i) => {
+      p.style.transition = `fill 400ms ease ${i*12}ms, stroke-opacity 400ms ease ${i*12}ms`;
+      p.style.fill = '#ffffff';
+      p.style.strokeOpacity = '0';
+    });
+  })();
+</script>
+</body>
+</html>
