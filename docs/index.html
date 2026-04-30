@@ -322,7 +322,9 @@
 
   /* ── brand essence (0-1) ── */
   .essence-grid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:0 24px;margin-top:32px;}
-  .essence-col img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);display:block;margin-bottom:20px;}
+  .essence-img{overflow:hidden;border-radius:var(--r);margin-bottom:20px;}
+  .essence-col img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 0.45s ease;}
+  .essence-img:hover img{transform:scale(1.05);}
   .essence-col h3{font-family:var(--tc);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--orange);margin-bottom:10px;line-height:1.3;}
   .essence-col p{font-size:15px;line-height:1.7;color:var(--black);}
   .essence-arrow{color:var(--orange);font-size:20px;display:flex;align-items:flex-start;padding-top:clamp(60px,6.5vw,90px);}
@@ -523,19 +525,19 @@
   </div>
   <div class="essence-grid">
     <div class="essence-col">
-      <img src="web-assets/images/playful.jpg" alt="從吃回到玩">
+      <div class="essence-img"><img src="web-assets/images/playful.jpg" alt="從吃回到玩"></div>
       <h3>從「吃」回到「玩」</h3>
       <p>美食只是旅程中的一站，核心在於「整趣怎麼玩」與「一起玩的記憶」</p>
     </div>
     <div class="essence-arrow">▶</div>
     <div class="essence-col">
-      <img src="web-assets/images/imaginative.jpg" alt="從資訊回到體驗">
+      <div class="essence-img"><img src="web-assets/images/imaginative.jpg" alt="從資訊回到體驗"></div>
       <h3>從「資訊」回到「體驗」</h3>
       <p>不主打誰的資料最豐富，誰最能把零碎資訊變成有故事、有驚喜、有共鳴的體驗。</p>
     </div>
     <div class="essence-arrow">▶</div>
     <div class="essence-col">
-      <img src="web-assets/images/real.jpg" alt="從節目回到朋友">
+      <div class="essence-img"><img src="web-assets/images/real.jpg" alt="從節目回到朋友"></div>
       <h3>從「節目」回到「朋友」</h3>
       <p>不是站在台上像主持人一樣「介紹」景點，而是像朋友自然地「分享」最近怎麼玩、哪種玩法超好玩</p>
     </div>
