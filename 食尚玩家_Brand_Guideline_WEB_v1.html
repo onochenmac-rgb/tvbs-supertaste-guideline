@@ -177,6 +177,18 @@
   .logo-meaning .mm h4{color:var(--orange);font-size:14px;font-weight:700;margin-bottom:6px;letter-spacing:.03em;}
   .logo-meaning .mm p{font-family:var(--en);font-size:12px;color:var(--g500);letter-spacing:.15em;text-transform:uppercase;}
 
+  /* ── minimum size (1-5) ── */
+  .minsize-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .minsize-col{display:flex;flex-direction:column;}
+  .minsize-col .ref-logo{height:auto;display:block;margin-bottom:24px;}
+  .minsize-col.horiz .ref-logo{width:100%;max-width:240px;}
+  .minsize-col.vert .ref-logo{max-width:110px;}
+  .minsize-rule{width:100%;height:1px;background:var(--line);margin-bottom:24px;}
+  .minsize-col .min-logo{display:block;height:auto;}
+  .minsize-col .min-label{font-family:var(--en);font-size:12px;color:var(--g500);line-height:1.8;margin-top:14px;letter-spacing:.01em;}
+  .minsize-col .min-label strong{display:block;color:var(--black);font-weight:700;margin-bottom:2px;}
+  @media(max-width:1024px){.minsize-wrap{grid-template-columns:1fr;}}
+
   /* ── combo (1-2) ── */
   .combo{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   .combo .item{background:var(--white);border:1px solid var(--line);padding:64px 48px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:340px;border-radius:var(--r);transition:transform var(--t),box-shadow var(--t),border-color var(--t);position:relative;}
@@ -734,12 +746,31 @@
 
 <!-- 1-5 品牌標誌極小化 -->
 <section id="s1-5" class="fade-in">
-  <div class="s-head">
-    <div class="label">1-5</div>
-    <h2>Minimum Size</h2>
-    <div class="zh-title">品牌標誌極小化</div>
+  <div class="panel">
+    <div class="minsize-wrap">
+      <div class="minsize-col horiz">
+        <img src="../../web-assets/logo/logo-h.png" class="ref-logo" alt="橫式標誌">
+        <div class="minsize-rule"></div>
+        <img src="../../web-assets/logo/logo-h.png" class="min-logo" style="width:50px;" alt="橫式最小尺寸 50px">
+        <div class="min-label"><strong>Horizontal</strong>印刷最小(W) 25 mm<br>數位最小(W) 50 px</div>
+      </div>
+      <div class="minsize-col vert">
+        <img src="../../web-assets/logo/logo-v.png" class="ref-logo" alt="直式標誌">
+        <div class="minsize-rule"></div>
+        <img src="../../web-assets/logo/logo-v.png" class="min-logo" style="width:70px;" alt="直式最小尺寸 70px">
+        <div class="min-label"><strong>Vertical</strong>印刷最小(W) 35 mm<br>數位最小(W) 70 px</div>
+      </div>
+    </div>
+    <div class="panel-desc">
+      <div class="label">1-5</div>
+      <div class="en-title">Minimum Size</div>
+      <div class="zh-title">品牌標誌極小化</div>
+      <p>為確保標誌在數位與印刷應用中皆能清晰辨識，使用時必須遵守最小尺寸規範。</p>
+      <p>低於最小尺寸時，標誌細節將無法清楚辨識。若版面極度受限，建議改用純文字「食尚玩家」取代。</p>
+      <p><strong>橫式 Horizontal</strong>：印刷最小 W 25mm　數位最小 W 50px</p>
+      <p><strong>直式 Vertical</strong>：印刷最小 W 35mm　數位最小 W 70px</p>
+    </div>
   </div>
-  <div class="pdf-embed"><img src="../../web-assets/pdf-pages/p13.jpg" alt="極小化" loading="lazy"></div>
 </section>
 
 <!-- 1-6 品牌標誌錯誤應用 -->
