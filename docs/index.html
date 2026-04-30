@@ -184,7 +184,13 @@
   .combo .item img{max-height:200px;width:auto;}
   .combo .item.horizontal img{max-width:min(78%,360px);height:auto;}
   .combo .item.vertical img{max-height:200px;transform:scale(0.88);}
-  .combo .item.config img{max-width:74%;height:auto;max-height:none;}
+  .combo-config{grid-template-columns:1.5fr 1fr;}
+  .combo-config .item{min-height:auto;}
+  .combo-config .item.h-config{aspect-ratio:16/9;}
+  .combo-config .item.v-config{aspect-ratio:3/4;}
+  .combo-config .item.h-config img{max-width:85%;height:auto;max-height:none;}
+  .combo-config .item.v-config img{max-width:75%;height:auto;max-height:none;}
+  @media(max-width:1024px){.combo-config{grid-template-columns:1fr;}.combo-config .item.h-config,.combo-config .item.v-config{aspect-ratio:auto;min-height:220px;}}
 
   /* ── color palette ── */
   .palette{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);}
@@ -706,9 +712,9 @@
       <p><strong>直式標誌</strong>：寬度比例為 6.5X，總高度為 4.5X。透過雙行堆疊與比例調整，確保在垂直受限的空間下，依然保有最大的品牌辨識度與結構平衡。</p>
     </div>
   </div>
-  <div class="combo">
-    <div class="item config"><span class="ck">Horizontal</span><img src="web-assets/logo/logo-configurations-28.png" alt="橫式標誌比例 8.8X × 3.2X" loading="lazy"></div>
-    <div class="item config"><span class="ck">Vertical</span><img src="web-assets/logo/logo-configurations-29.png" alt="直式標誌比例 6.5X × 4.5X" loading="lazy"></div>
+  <div class="combo combo-config">
+    <div class="item h-config"><span class="ck">Horizontal</span><img src="web-assets/logo/logo-configurations-28.png" alt="橫式標誌比例 8.8X × 3.2X" loading="lazy"></div>
+    <div class="item v-config"><span class="ck">Vertical</span><img src="web-assets/logo/logo-configurations-29.png" alt="直式標誌比例 6.5X × 4.5X" loading="lazy"></div>
   </div>
 </section>
 
