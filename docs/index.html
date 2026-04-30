@@ -31,7 +31,7 @@
 
     --sb-w:230px;
     --pad-x:64px;
-    --pad-y:48px;
+    --pad-y:40px;
     --maxw:1240px;
     --r:12px;
     --r-pill:999px;
@@ -70,6 +70,7 @@
   /* ── layout ── */
   main{margin-left:var(--sb-w);}
   section{padding:var(--pad-y) var(--pad-x);}
+  section.fade-in+section.fade-in{border-top:1px solid var(--line);}
 
   /* ── hero ── */
   .hero{background:var(--orange);color:var(--white);min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:96px var(--pad-x);position:relative;overflow:hidden;}
