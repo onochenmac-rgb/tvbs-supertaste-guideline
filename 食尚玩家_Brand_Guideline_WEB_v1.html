@@ -175,10 +175,10 @@
   .logo-meaning .mm p{font-family:var(--en);font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.15em;text-transform:uppercase;}
 
   /* ── minimum size (1-5) ── */
-  .minsize-specs{display:flex;gap:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);margin-top:32px;}
-  .minsize-spec{display:flex;flex-direction:column;gap:6px;}
-  .minsize-spec .spec-en{font-family:var(--en);font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.18em;text-transform:uppercase;}
-  .minsize-spec .spec-val{font-family:var(--en);font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.8;}
+  .minsize-specs{display:flex;gap:32px;padding-top:20px;border-top:1px solid #e8e8e8;margin-top:auto;width:100%;}
+  .minsize-spec{display:flex;flex-direction:column;gap:4px;}
+  .minsize-spec .spec-en{font-family:var(--en);font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.15em;text-transform:uppercase;}
+  .minsize-spec .spec-val{font-family:var(--en);font-size:12px;color:#888;line-height:1.7;}
 
   /* ── combo (1-2) ── */
   .combo{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
@@ -811,28 +811,42 @@
 
 <!-- 1-5 品牌標誌極小化 -->
 <section id="s1-5" class="fade-in">
-  <div class="panel">
-    <div class="logo-feature">
-      <img src="../../web-assets/logo/logo-h.png" alt="食尚玩家 Logo">
+  <div class="s-head no-rule">
+    <div class="label">1-5</div>
+    <h2>Minimum Size</h2>
+    <div class="zh-title">品牌標誌極小化</div>
+    <div class="desc">
+      <p>為確保標誌在數位與印刷應用中皆能清晰辨識，使用時必須遵守最小尺寸規範。低於最小尺寸時，標誌細節將無法清楚辨識。若版面極度受限，建議改用純文字「食尚玩家」取代。</p>
+    </div>
+  </div>
+  <div class="combo">
+    <div class="item horizontal">
+      <span class="ck">Horizontal</span>
+      <img src="../../web-assets/logo/logo-h.png" alt="橫式標誌">
       <div class="minsize-specs">
         <div class="minsize-spec">
-          <div class="spec-en">Horizontal</div>
-          <div class="spec-val">印刷最小(W) 25 mm<br>數位最小(W) 50 px</div>
+          <div class="spec-en">Print Min</div>
+          <div class="spec-val">W 25 mm</div>
         </div>
         <div class="minsize-spec">
-          <div class="spec-en">Vertical</div>
-          <div class="spec-val">印刷最小(W) 35 mm<br>數位最小(W) 70 px</div>
+          <div class="spec-en">Digital Min</div>
+          <div class="spec-val">W 50 px</div>
         </div>
       </div>
     </div>
-    <div class="panel-desc">
-      <div class="label">1-5</div>
-      <div class="en-title">Minimum Size</div>
-      <div class="zh-title">品牌標誌極小化</div>
-      <p>為確保標誌在數位與印刷應用中皆能清晰辨識，使用時必須遵守最小尺寸規範。</p>
-      <p>低於最小尺寸時，標誌細節將無法清楚辨識。若版面極度受限，建議改用純文字「食尚玩家」取代。</p>
-      <p><strong>橫式 Horizontal</strong>：印刷最小 W 25mm　數位最小 W 50px</p>
-      <p><strong>直式 Vertical</strong>：印刷最小 W 35mm　數位最小 W 70px</p>
+    <div class="item vertical">
+      <span class="ck">Vertical</span>
+      <img src="../../web-assets/logo/logo-v.png" alt="直式標誌">
+      <div class="minsize-specs">
+        <div class="minsize-spec">
+          <div class="spec-en">Print Min</div>
+          <div class="spec-val">W 35 mm</div>
+        </div>
+        <div class="minsize-spec">
+          <div class="spec-en">Digital Min</div>
+          <div class="spec-val">W 70 px</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
