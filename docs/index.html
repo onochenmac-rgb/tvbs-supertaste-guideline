@@ -163,7 +163,7 @@
   /* ── logo feature (1-1) ── */
   .logo-feature{background:var(--white);padding:64px 40px 24px;border:1px solid var(--line);border-radius:var(--r);text-align:center;transition:box-shadow var(--t);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
   .logo-feature:hover{box-shadow:0 12px 36px rgba(0,0,0,.04);}
-  .logo-feature>img{margin:0 auto;max-width:84%;max-height:160px;object-fit:contain;object-position:center;display:block;}
+  .logo-feature>img{margin:0 auto;width:274px;height:209px;max-width:84%;object-fit:contain;display:block;}
   .feature-line{width:100%;height:auto;display:block;flex-shrink:0;filter:brightness(0) opacity(.18);}
   .logo-meaning{display:flex;justify-content:center;gap:48px;}
   .logo-meaning .mm{display:flex;flex-direction:column;align-items:center;text-align:center;padding:12px 8px 0;transition:transform var(--t);width:140px;}
@@ -183,11 +183,15 @@
   /* ── combo (1-2) ── */
   .combo{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   .combo .item{background:var(--white);border:1px solid var(--line);padding:64px 48px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:340px;border-radius:var(--r);transition:transform var(--t),box-shadow var(--t),border-color var(--t);position:relative;}
-  @media(max-width:1024px){.combo .item{min-height:220px;padding:40px 32px;}.combo .item.vertical img{max-height:165px;max-width:67%;}}
+  @media(max-width:1024px){.combo .item{min-height:220px;padding:40px 32px;}.combo .item img{width:min(80%,274px);height:auto;}.combo #s1-3 .item img,#s1-4 .item img{width:90%;height:auto;}}
   .combo .item:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.06);border-color:#d8d8d8;}
   .combo .item>.ck{position:absolute;top:24px;left:28px;font-family:var(--en);font-size:11px;color:var(--g500);font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
-  .combo .item.horizontal img{max-width:min(78%,360px);height:auto;}
-  .combo .item.vertical img{max-height:209px;width:auto;}
+  .combo .item img{width:274px;height:209px;object-fit:contain;}
+  #s1-3 .item.horizontal img{width:284px;height:143px;}
+  #s1-3 .item.vertical img{width:285px;height:234px;}
+  #s1-4 .combo{grid-template-columns:1fr;}
+  #s1-4 .item.horizontal img{width:437px;height:239px;}
+  #s1-4 .item.vertical img{width:608px;height:515px;}
 
   /* ── color palette ── */
   .palette{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);}
