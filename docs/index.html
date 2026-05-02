@@ -183,15 +183,11 @@
   /* ── combo (1-2) ── */
   .combo{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   .combo .item{background:var(--white);border:1px solid var(--line);padding:64px 48px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:340px;border-radius:var(--r);transition:transform var(--t),box-shadow var(--t),border-color var(--t);position:relative;}
-  @media(max-width:1024px){.combo .item{min-height:220px;padding:40px 32px;}.combo .item img{width:min(80%,274px);height:auto;}.combo #s1-3 .item img,#s1-4 .item img{width:90%;height:auto;}}
+  @media(max-width:1024px){.combo .item{min-height:220px;padding:40px 32px;}.combo .item img{width:80%;height:auto;}}
   .combo .item:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.06);border-color:#d8d8d8;}
   .combo .item>.ck{position:absolute;top:24px;left:28px;font-family:var(--en);font-size:11px;color:var(--g500);font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
-  .combo .item img{width:274px;height:209px;object-fit:contain;}
-  #s1-3 .item.horizontal img{width:284px;height:143px;}
-  #s1-3 .item.vertical img{width:285px;height:234px;}
-  #s1-4 .combo{grid-template-columns:1fr;}
-  #s1-4 .item.horizontal img{width:437px;height:239px;}
-  #s1-4 .item.vertical img{width:608px;height:515px;}
+  .combo .item img{width:274px;height:auto;}
+  #s1-5 .item img{height:209px;object-fit:contain;}
 
   /* ── color palette ── */
   .palette{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);}
@@ -708,8 +704,8 @@
     </div>
   </div>
   <div class="combo">
-    <div class="item horizontal"><span class="ck">Horizontal</span><img src="web-assets/logo/logo-h.png" alt="橫式標誌"></div>
-    <div class="item vertical"><span class="ck">Vertical</span><img src="web-assets/logo/logo-v.png" alt="直式標誌"></div>
+    <div class="item horizontal"><span class="ck">Horizontal</span><img src="web-assets/session/logo-combination-hoz.png" alt="橫式標誌"></div>
+    <div class="item vertical"><span class="ck">Vertical</span><img src="web-assets/session/logo-combination-ver.png" alt="直式標誌"></div>
   </div>
 </section>
 
@@ -728,11 +724,11 @@
   <div class="combo">
     <div class="item horizontal">
       <span class="ck">Horizontal</span>
-      <img src="web-assets/logo/logo-configurations-28.png" alt="橫式標誌比例">
+      <img src="web-assets/session/logo-configurations-hoz.png" alt="橫式標誌比例">
     </div>
     <div class="item vertical">
       <span class="ck">Vertical</span>
-      <img src="web-assets/logo/logo-configurations-29.png" alt="直式標誌比例">
+      <img src="web-assets/session/logo-configurations-ver.png" alt="直式標誌比例">
     </div>
   </div>
 </section>
@@ -751,11 +747,11 @@
   <div class="combo">
     <div class="item horizontal">
       <span class="ck">Horizontal</span>
-      <img src="web-assets/logo/logo-clearspace-30.png" alt="橫式標誌淨空">
+      <img src="web-assets/session/logo-clearspace-hoz.png" alt="橫式標誌淨空">
     </div>
     <div class="item vertical">
       <span class="ck">Vertical</span>
-      <img src="web-assets/logo/logo-clearspace-31.png" alt="直式標誌淨空">
+      <img src="web-assets/session/logo-clearspace-ver.png" alt="直式標誌淨空">
     </div>
   </div>
 </section>
