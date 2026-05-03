@@ -210,31 +210,16 @@
   .sw-g300{background:var(--g300);color:var(--black);}
 
   /* ── don'ts ── */
-  .donts-head{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
-  .donts-head .head-card{padding:14px 22px;border-radius:var(--r);font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.05em;display:flex;align-items:center;gap:10px;}
-  .donts-head .head-card.good{background:#E8F7EE;color:#1F8A4C;}
-  .donts-head .head-card.bad{background:#FCE8E8;color:#C0392B;}
-  .donts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .dont-cell{position:relative;padding:36px 8px 16px;min-height:240px;overflow:hidden;cursor:pointer;display:grid;grid-template-rows:1fr auto;gap:14px;transition:transform var(--t);}
-  .dont-cell:hover,.dont-cell.tapped{transform:translateY(-4px);}
-  .dont-cell .stage{position:relative;min-height:140px;display:flex;align-items:center;justify-content:center;}
-  .dont-cell .demo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease;}
-  .dont-cell .demo>img,.dont-cell .demo.demo-bad-recombo,.dont-cell .demo.demo-bad-font{max-width:92%;max-height:100%;height:auto;width:auto;}
-  .dont-cell .demo.demo-bad-element>img{max-width:92%;max-height:100%;height:auto;}
-  .dont-cell .demo.good{opacity:0;}
-  .dont-cell:hover .demo.bad,.dont-cell.tapped .demo.bad{opacity:0;}
-  .dont-cell:hover .demo.good,.dont-cell.tapped .demo.good{opacity:1;}
-  .dont-cell::before{content:"";position:absolute;left:10%;right:10%;top:calc(50% - 22px);height:2px;background:#C0392B;opacity:.5;transform:rotate(-10deg);transition:opacity var(--t);pointer-events:none;z-index:2;}
-  .dont-cell:hover::before,.dont-cell.tapped::before{opacity:0;}
-  .dont-cell .badge{position:absolute;top:14px;left:14px;width:24px;height:24px;border-radius:50%;background:#C0392B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;z-index:3;transition:background var(--t),transform var(--t);}
-  .dont-cell:hover .badge,.dont-cell.tapped .badge{background:#1F8A4C;transform:rotate(360deg);}
-  .dont-cell:hover .badge::before,.dont-cell.tapped .badge::before{content:"✓";}
-  .dont-cell:hover .badge .x,.dont-cell.tapped .badge .x{display:none;}
-  .dont-cell .label{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.75);text-align:center;transition:color var(--t);align-self:end;}
-  .dont-cell:hover .label,.dont-cell.tapped .label{color:var(--orange);}
-  .demo-bad-rotate{transform:rotate(-12deg) scale(.85);}
-  .demo-bad-stretch{transform:scaleY(.55) scaleX(1.15);}
-  .demo-bad-color{filter:hue-rotate(180deg) saturate(1.3);}
+  .donts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:1024px){.donts-grid{grid-template-columns:1fr 1fr;}}
+  .dont-card{position:relative;background:var(--white);border-radius:var(--r);overflow:hidden;}
+  .dont-card img{width:100%;height:auto;display:block;transition:opacity .28s ease;}
+  .dont-card:hover img{opacity:.4;}
+  .dont-badge{position:absolute;top:12px;left:12px;width:22px;height:22px;background:#C0392B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;z-index:2;line-height:1;}
+  .dont-label{position:absolute;bottom:0;left:0;right:0;background:rgba(26,26,26,.9);padding:14px 16px;transform:translateY(100%);transition:transform .28s ease;}
+  .dont-card:hover .dont-label{transform:translateY(0);}
+  .dont-zh{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;}
+  .dont-en{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;}
   .demo-bad-glow{filter:drop-shadow(0 0 12px rgba(255,117,0,.95));}
   .demo-bad-thin{filter:contrast(.4) brightness(1.4);}
   .demo-bad-outline{filter:contrast(0) brightness(2);opacity:.45;}
@@ -805,7 +790,53 @@
     <h2>Don'ts</h2>
     <div class="zh-title">品牌標誌錯誤應用</div>
   </div>
-  <div class="pdf-embed"><img src="../../web-assets/pdf-pages/p14.jpg" alt="品牌標誌錯誤應用" loading="lazy"></div>
+  <div class="donts-grid">
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-09.png" alt="">
+      <div class="dont-label"><div class="dont-zh">比例錯誤</div><div class="dont-en">Wrong proportion</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-10.png" alt="">
+      <div class="dont-label"><div class="dont-zh">不可更改顏色</div><div class="dont-en">Wrong brand color</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-11.png" alt="">
+      <div class="dont-label"><div class="dont-zh">不可新增元素</div><div class="dont-en">No added elements</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-12.png" alt="">
+      <div class="dont-label"><div class="dont-zh">不可缺少元素</div><div class="dont-en">Missing elements</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-13.png" alt="">
+      <div class="dont-label"><div class="dont-zh">不可壓縮比例</div><div class="dont-en">Distorted proportion</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-14.png" alt="">
+      <div class="dont-label"><div class="dont-zh">不可加入陰影</div><div class="dont-en">No drop shadow</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-15.png" alt="">
+      <div class="dont-label"><div class="dont-zh">元素不可位移</div><div class="dont-en">No relocated elements</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-16.png" alt="">
+      <div class="dont-label"><div class="dont-zh">不可使用外框字</div><div class="dont-en">Outline not allowed</div></div>
+    </div>
+    <div class="dont-card">
+      <span class="dont-badge">✕</span>
+      <img src="../../web-assets/session/donts-17.png" alt="">
+      <div class="dont-label"><div class="dont-zh">不可修改字形</div><div class="dont-en">No modified letterform</div></div>
+    </div>
+  </div>
 </section>
 
 <!-- 1-7 品牌色彩計畫 -->
