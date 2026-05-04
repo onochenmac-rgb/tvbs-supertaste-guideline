@@ -343,6 +343,22 @@
   .toc-bad-card{border-radius:8px;padding:14px 12px;display:flex;flex-direction:column;gap:3px;min-height:100px;border:1px solid rgba(255,255,255,.12);}
   .toc-bad-card span{font-size:12px;font-weight:700;font-family:var(--en);line-height:1.6;opacity:.85;}
 
+  /* 1-9 Logo Color */
+  .lc-wrap{display:flex;flex-direction:column;gap:24px;margin-top:24px;}
+  .lc-hd{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
+  .lc-hd.ok{color:#1F8A4C;}.lc-hd.ng{color:#C0392B;}
+  .lc-hd svg{width:18px;height:18px;flex-shrink:0;}
+  .lc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .lc-card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;cursor:default;}
+  .lc-card img{width:72%;height:auto;display:block;transition:opacity var(--t) ease;}
+  .lc-card:hover img{opacity:.2;}
+  .lc-info{position:absolute;bottom:0;left:0;right:0;padding:12px 14px;transform:translateY(100%);transition:transform var(--t) ease;background:rgba(0,0,0,.8);}
+  .lc-card:hover .lc-info{transform:translateY(0);}
+  .lc-name{font-size:12px;font-weight:700;color:#fff;margin-bottom:2px;}
+  .lc-hex{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.08em;font-family:var(--en);}
+  .lc-reason{font-size:11px;color:rgba(255,255,255,.75);line-height:1.5;}
+  .lc-x{position:absolute;top:10px;left:10px;width:20px;height:20px;background:#C0392B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;z-index:2;line-height:1;}
+
   /* ── mobile ── */
   .menu-btn{display:none;}
   .menu-bd{display:none;}
@@ -376,7 +392,7 @@
     footer .footer-inner{grid-template-columns:1fr;gap:24px;}
     .toast{left:50%;}
     .hero-version{right:24px;bottom:32px;}
-    .toc-grid,.toc-bad-grid{grid-template-columns:repeat(2,1fr);}
+    .toc-grid,.toc-bad-grid,.lc-grid{grid-template-columns:repeat(2,1fr);}
   }
 </style>
 </head>
@@ -956,7 +972,86 @@
     <h2>Logo Color</h2>
     <div class="zh-title">品牌標誌色彩</div>
   </div>
-  <div class="pdf-embed"><img src="web-assets/pdf-pages/p17.jpg" alt="品牌標誌色彩" loading="lazy"></div>
+  <p style="font-size:15px;color:rgba(255,255,255,.75);line-height:1.8;max-width:600px;margin-bottom:8px;">在不同的傳播媒介或印刷製作的條件限制下，可能都會影響標誌的呈現，因應這些不同條件的變化，標誌的呈現也會有不同的表現規範，請透過以下規範的參考使用，請勿使用錯誤的顏色組合。</p>
+  <div class="lc-wrap">
+    <div>
+      <div class="lc-hd ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg>正確配置</div>
+      <div class="lc-grid">
+        <div class="lc-card" style="background:#F07C22;">
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-name">Brand Orange</div><div class="lc-hex">#F07C22</div></div>
+        </div>
+        <div class="lc-card" style="background:#FAD700;border:1px solid rgba(0,0,0,.08);">
+          <img src="web-assets/logo/logo-h.png" alt="">
+          <div class="lc-info"><div class="lc-name">Yellow 900</div><div class="lc-hex">#FAD700</div></div>
+        </div>
+        <div class="lc-card" style="background:#FFFF54;border:1px solid rgba(0,0,0,.08);">
+          <img src="web-assets/logo/logo-h.png" alt="">
+          <div class="lc-info"><div class="lc-name">Yellow 500</div><div class="lc-hex">#FFFF54</div></div>
+        </div>
+        <div class="lc-card" style="background:#FAFFCD;border:1px solid rgba(0,0,0,.08);">
+          <img src="web-assets/logo/logo-h.png" alt="">
+          <div class="lc-info"><div class="lc-name">Yellow 300</div><div class="lc-hex">#FAFFCD</div></div>
+        </div>
+        <div class="lc-card" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.12);">
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-name">Black</div><div class="lc-hex">#1A1A1A</div></div>
+        </div>
+        <div class="lc-card" style="background:#A2A2A2;">
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-name">Grey 500</div><div class="lc-hex">#A2A2A2</div></div>
+        </div>
+        <div class="lc-card" style="background:#E0E0E0;border:1px solid rgba(0,0,0,.08);">
+          <img src="web-assets/logo/logo-h.png" alt="">
+          <div class="lc-info"><div class="lc-name">Grey 300</div><div class="lc-hex">#E0E0E0</div></div>
+        </div>
+        <div class="lc-card" style="background:#273544;">
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-name">Galaxy</div><div class="lc-hex">#273544</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="lc-hd ng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>錯誤配置</div>
+      <div class="lc-grid">
+        <div class="lc-card" style="background:#FAD700;border:1px solid rgba(0,0,0,.08);">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-reason">白色標誌壓淺色底，對比不足</div></div>
+        </div>
+        <div class="lc-card" style="background:#FFFF54;border:1px solid rgba(0,0,0,.08);">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-reason">白色標誌壓亮黃底，對比不足</div></div>
+        </div>
+        <div class="lc-card" style="background:#FAFFCD;border:1px solid rgba(0,0,0,.08);">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-reason">白色標誌壓極淺底，不可識別</div></div>
+        </div>
+        <div class="lc-card" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.12);">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/logo/logo-h.png" alt="">
+          <div class="lc-info"><div class="lc-reason">彩色標誌壓深色底，請改用白色版</div></div>
+        </div>
+        <div class="lc-card" style="background:#A2A2A2;">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/logo/logo-h.png" alt="">
+          <div class="lc-info"><div class="lc-reason">彩色標誌壓中性灰底，請改用白色版</div></div>
+        </div>
+        <div class="lc-card" style="background:#E0E0E0;border:1px solid rgba(0,0,0,.08);">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/logo/logo-h-white.png" alt="">
+          <div class="lc-info"><div class="lc-reason">白色標誌壓淺灰底，對比不足</div></div>
+        </div>
+        <div class="lc-card" style="background:#273544;">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/logo/logo-h.png" alt="">
+          <div class="lc-info"><div class="lc-reason">彩色標誌壓深藍底，請改用白色版</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- 1-10 品牌標誌背景 -->
