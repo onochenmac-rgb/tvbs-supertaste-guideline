@@ -183,11 +183,7 @@
   /* ── combo (1-2) ── */
   .combo{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   .combo .item{background:var(--white);border:1px solid var(--line);padding:64px 48px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:340px;border-radius:var(--r);transition:transform var(--t),box-shadow var(--t),border-color var(--t);position:relative;}
-  @media(max-width:1024px){
-    .combo .item{min-height:220px;padding:40px 32px;}
-    .combo .item img{height:100px;width:auto;max-width:90%;}
-    #s1-2 .item.horizontal img,#s1-3 .item.horizontal img,#s1-4 .item.horizontal img,#s1-5 .item.horizontal img{height:100px;width:auto;max-width:90%;}
-  }
+  @media(max-width:1024px){.combo .item{min-height:220px;padding:40px 32px;}.combo .item img{height:100px;width:auto;max-width:90%;}}
   .combo .item:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.06);border-color:#d8d8d8;}
   .combo .item>.ck{position:absolute;top:24px;left:28px;font-family:var(--en);font-size:11px;color:var(--g500);font-weight:700;letter-spacing:.2em;text-transform:uppercase;}
   .combo .item img{width:274px;height:auto;}
@@ -405,6 +401,7 @@
     .toast{left:50%;}
     .hero-version{right:24px;bottom:32px;}
     .toc-grid,.toc-bad-grid,.lc-grid{grid-template-columns:repeat(2,1fr);}
+    #s1-2 .item.horizontal img,#s1-3 .item.horizontal img,#s1-4 .item.horizontal img,#s1-5 .item.horizontal img{height:100px;width:auto;max-width:90%;}
     #s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:repeat(2,1fr);}
   }
   #s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:repeat(3,1fr);}
