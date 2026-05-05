@@ -212,8 +212,8 @@
   /* ── don'ts ── */
   .donts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   @media(max-width:1024px){.donts-grid{grid-template-columns:1fr 1fr;}}
-  .dont-card{position:relative;background:var(--white);border-radius:var(--r);overflow:hidden;}
-  .dont-card img{width:75%;height:auto;display:block;margin:0 auto;transition:opacity .28s ease;}
+  .dont-card{position:relative;background:var(--white);border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;}
+  .dont-card img{width:75%;height:auto;display:block;transition:opacity .28s ease;}
   .dont-card:hover img{opacity:.35;}
   .dont-card::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent calc(50% - 1px),rgba(0,0,0,.22) 50%,transparent calc(50% + 1px));z-index:1;pointer-events:none;transition:opacity .28s ease;}
   .dont-card:hover::before{opacity:0;}
