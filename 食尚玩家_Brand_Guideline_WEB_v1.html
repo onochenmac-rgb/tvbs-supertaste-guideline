@@ -409,9 +409,9 @@
     .combo .item{height:240px;}
     .combo .item img{width:55%;height:auto;}
     #s1-2 .item.horizontal img,#s1-3 .item.horizontal img,#s1-4 .item.horizontal img,#s1-5 .item.horizontal img{width:70%;height:auto;}
-    #s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:repeat(2,1fr);}
+    #s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:1fr;}
   }
-  #s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:repeat(3,1fr);}
+  @media(min-width:1025px){#s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:repeat(3,1fr);}}
   #s1-14 .lc-card{background:var(--white);border:1px solid rgba(255,255,255,.1);}
 </style>
 </head>
