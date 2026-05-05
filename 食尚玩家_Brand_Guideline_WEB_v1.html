@@ -349,7 +349,9 @@
   .lc-hd.ok{color:#1F8A4C;}.lc-hd.ng{color:#C0392B;}
   .lc-hd svg{width:18px;height:18px;flex-shrink:0;}
   .lc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .lc-grid.sm{gap:12px;}
   .lc-card{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;cursor:default;}
+  .lc-grid.sm .lc-card{aspect-ratio:16/9;}
   .lc-card img{width:72%;height:auto;display:block;transition:opacity var(--t) ease;}
   .lc-card:hover img{opacity:.35;}
   .lc-info{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;transform:translateY(100%);transition:transform var(--t) ease;background:rgba(26,26,26,.9);}
@@ -1016,7 +1018,7 @@
     </div>
     <div>
       <div class="lc-hd ng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>錯誤配置</div>
-      <div class="lc-grid">
+      <div class="lc-grid sm">
         <div class="lc-card" style="background:#FAD700;border:1px solid rgba(0,0,0,.08);">
           <span class="lc-x">✕</span>
           <img src="../../web-assets/logo/logo-h.png" alt="">
