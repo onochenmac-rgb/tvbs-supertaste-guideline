@@ -359,7 +359,7 @@
   .lc-card:hover .lc-info{transform:translateY(0);}
   .lc-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;}
   .lc-hex{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;font-family:var(--en);}
-  .lc-reason{font-size:13px;font-weight:700;color:#fff;}
+  .lc-reason{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;}
   .lc-x{position:absolute;top:10px;left:10px;width:20px;height:20px;background:#C0392B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;z-index:2;line-height:1;}
   .logo-dark{filter:brightness(0) saturate(100%) invert(14%) sepia(19%) saturate(1553%) hue-rotate(174deg) brightness(96%) contrast(98%);}
   .lc-card.photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:opacity var(--t) ease;}
@@ -402,6 +402,7 @@
     #s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:repeat(2,1fr);}
   }
   #s1-14 .lc-grid,#s1-15 .lc-grid{grid-template-columns:repeat(3,1fr);}
+  #s1-14 .lc-card{background:var(--white);border:1px solid rgba(255,255,255,.1);}
 </style>
 </head>
 <body>
@@ -1025,37 +1026,37 @@
         <div class="lc-card" style="background:#FAD700;border:1px solid rgba(0,0,0,.08);">
           <span class="lc-x">✕</span>
           <img src="web-assets/logo/logo-h.png" alt="">
-          <div class="lc-info"><div class="lc-reason">彩色版橘色系與黃底色調衝突</div></div>
+          <div class="lc-info"><div class="lc-reason">彩色版橘色系與黃底色調衝突</div><div class="lc-hex">Color Clash</div></div>
         </div>
         <div class="lc-card" style="background:#FFFF54;border:1px solid rgba(0,0,0,.08);">
           <span class="lc-x">✕</span>
           <img src="web-assets/logo/logo-h-white.png" alt="">
-          <div class="lc-info"><div class="lc-reason">白色標誌壓亮黃底，對比不足</div></div>
+          <div class="lc-info"><div class="lc-reason">白色標誌壓亮黃底，對比不足</div><div class="lc-hex">Low Contrast</div></div>
         </div>
         <div class="lc-card" style="background:#FAFFCD;border:1px solid rgba(0,0,0,.08);">
           <span class="lc-x">✕</span>
           <img src="web-assets/logo/logo-h-white.png" alt="">
-          <div class="lc-info"><div class="lc-reason">白色標誌壓極淺底，不可識別</div></div>
+          <div class="lc-info"><div class="lc-reason">白色標誌壓極淺底，不可識別</div><div class="lc-hex">Not Legible</div></div>
         </div>
         <div class="lc-card" style="background:#1A1A1A;border:1px solid rgba(255,255,255,.12);">
           <span class="lc-x">✕</span>
           <img src="web-assets/logo/logo-h.png" alt="">
-          <div class="lc-info"><div class="lc-reason">彩色標誌壓深色底，請改用白色版</div></div>
+          <div class="lc-info"><div class="lc-reason">彩色標誌壓深色底，請改用白色版</div><div class="lc-hex">Wrong Version</div></div>
         </div>
         <div class="lc-card" style="background:#A2A2A2;">
           <span class="lc-x">✕</span>
           <img src="web-assets/logo/logo-h.png" alt="">
-          <div class="lc-info"><div class="lc-reason">彩色標誌壓中性灰底，請改用白色版</div></div>
+          <div class="lc-info"><div class="lc-reason">彩色標誌壓中性灰底，請改用白色版</div><div class="lc-hex">Wrong Version</div></div>
         </div>
         <div class="lc-card" style="background:#E0E0E0;border:1px solid rgba(0,0,0,.08);">
           <span class="lc-x">✕</span>
           <img src="web-assets/logo/logo-h-white.png" alt="">
-          <div class="lc-info"><div class="lc-reason">白色標誌壓淺灰底，對比不足</div></div>
+          <div class="lc-info"><div class="lc-reason">白色標誌壓淺灰底，對比不足</div><div class="lc-hex">Low Contrast</div></div>
         </div>
         <div class="lc-card" style="background:#273544;">
           <span class="lc-x">✕</span>
           <img src="web-assets/logo/logo-h-white.png" alt="" class="logo-dark">
-          <div class="lc-info"><div class="lc-reason">深色版標誌壓深底，不可識別</div></div>
+          <div class="lc-info"><div class="lc-reason">深色版標誌壓深底，不可識別</div><div class="lc-hex">Not Legible</div></div>
         </div>
       </div>
     </div>
@@ -1099,22 +1100,22 @@
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/logoonimage-22.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">色相過於接近，標誌消失</div></div>
+          <div class="lc-info"><div class="lc-reason">色相過於接近，標誌消失</div><div class="lc-hex">Color Clash</div></div>
         </div>
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/logoonimage-23.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">對比不足，標誌不可識別</div></div>
+          <div class="lc-info"><div class="lc-reason">對比不足，標誌不可識別</div><div class="lc-hex">Low Contrast</div></div>
         </div>
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/logoonimage-24.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">背景過於雜亂，視覺重心失焦</div></div>
+          <div class="lc-info"><div class="lc-reason">背景過於雜亂，視覺重心失焦</div><div class="lc-hex">Too Cluttered</div></div>
         </div>
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/logoonimage-25.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">背景過於複雜，請重新調整位置</div></div>
+          <div class="lc-info"><div class="lc-reason">背景過於複雜，請重新調整位置</div><div class="lc-hex">Reposition</div></div>
         </div>
       </div>
     </div>
@@ -1230,17 +1231,17 @@
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/patterncolor-29.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">禁止使用漸層</div></div>
+          <div class="lc-info"><div class="lc-reason">禁止使用漸層</div><div class="lc-hex">No Gradient</div></div>
         </div>
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/patterncolor-30.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">辨識不清楚</div></div>
+          <div class="lc-info"><div class="lc-reason">辨識不清楚</div><div class="lc-hex">Poor Legibility</div></div>
         </div>
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/patterncolor-31.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">禁止使用規範外色彩</div></div>
+          <div class="lc-info"><div class="lc-reason">禁止使用規範外色彩</div><div class="lc-hex">Off-Brand Color</div></div>
         </div>
       </div>
     </div>
@@ -1279,17 +1280,17 @@
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/patternapplication-35.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">圖案不應遮擋人臉</div></div>
+          <div class="lc-info"><div class="lc-reason">圖案不應遮擋人臉</div><div class="lc-hex">Don't Block Faces</div></div>
         </div>
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/patternapplication-36.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">圖案不適合重複應用</div></div>
+          <div class="lc-info"><div class="lc-reason">圖案不適合重複應用</div><div class="lc-hex">No Repetition</div></div>
         </div>
         <div class="lc-card photo">
           <span class="lc-x">✕</span>
           <img src="web-assets/session/patternapplication-38.png" alt="" loading="lazy">
-          <div class="lc-info"><div class="lc-reason">圖案不適合形狀切割包裹</div></div>
+          <div class="lc-info"><div class="lc-reason">圖案不適合形狀切割包裹</div><div class="lc-hex">No Shape Masking</div></div>
         </div>
       </div>
     </div>
