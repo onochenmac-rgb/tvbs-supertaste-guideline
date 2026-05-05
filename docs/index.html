@@ -359,6 +359,8 @@
   .lc-reason{font-size:13px;font-weight:700;color:#fff;}
   .lc-x{position:absolute;top:10px;left:10px;width:20px;height:20px;background:#C0392B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;z-index:2;line-height:1;}
   .logo-dark{filter:brightness(0) saturate(100%) invert(14%) sepia(19%) saturate(1553%) hue-rotate(174deg) brightness(96%) contrast(98%);}
+  .lc-card.photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:filter var(--t) ease;}
+  .lc-card.photo:hover img{opacity:1;filter:brightness(.45);}
 
   /* ── mobile ── */
   .menu-btn{display:none;}
@@ -1062,8 +1064,56 @@
     <h2>Logo on Image</h2>
     <div class="zh-title">品牌標誌背景</div>
   </div>
-  <a class="dl" href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer">陰影浮水印版本 ↗</a>
-  <div class="pdf-embed" style="margin-top:24px;"><img src="web-assets/pdf-pages/p18.jpg" alt="品牌標誌背景" loading="lazy"></div>
+  <p style="font-size:15px;color:rgba(255,255,255,.75);line-height:1.8;max-width:600px;margin-bottom:8px;">依影像背景的明暗與色調選擇合適的標誌版本，淺色低飽和背景使用彩色版，深色或複雜背景使用白色反白版，以確保標誌辨識度。</p>
+  <div class="lc-wrap">
+    <div>
+      <div class="lc-hd ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 7"/></svg>正確配置</div>
+      <div class="lc-grid">
+        <div class="lc-card photo">
+          <img src="web-assets/session/logoonimage-18.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-name">彩色版</div><div class="lc-hex">淺色低飽和背景</div></div>
+        </div>
+        <div class="lc-card photo">
+          <img src="web-assets/session/logoonimage-19.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-name">白色反白版</div><div class="lc-hex">深色飽和背景</div></div>
+        </div>
+        <div class="lc-card photo">
+          <img src="web-assets/session/logoonimage-20.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-name">白色反白版</div><div class="lc-hex">自然景色深色背景</div></div>
+        </div>
+        <div class="lc-card photo">
+          <img src="web-assets/session/logoonimage-21.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-name">白色反白版</div><div class="lc-hex">夜景散景背景</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="lc-hd ng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>錯誤配置</div>
+      <div class="lc-grid">
+        <div class="lc-card photo">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/session/logoonimage-22.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-reason">色相過於接近，標誌消失</div></div>
+        </div>
+        <div class="lc-card photo">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/session/logoonimage-23.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-reason">對比不足，標誌不可識別</div></div>
+        </div>
+        <div class="lc-card photo">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/session/logoonimage-24.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-reason">背景過於雜亂，視覺重心失焦</div></div>
+        </div>
+        <div class="lc-card photo">
+          <span class="lc-x">✕</span>
+          <img src="web-assets/session/logoonimage-25.png" alt="" loading="lazy">
+          <div class="lc-info"><div class="lc-reason">背景過於複雜，請重新調整位置</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="dl" href="https://drive.google.com/drive/folders/1zBdxpINJ8CfuYqR4SegCoBvzPgwY_KFV?usp=sharing" target="_blank" rel="noopener noreferrer" style="margin-top:24px;display:inline-flex;">陰影浮水印版本 ↗</a>
 </section>
 
 <!-- 1-11 品牌指定字體 -->
